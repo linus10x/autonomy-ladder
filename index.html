@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomy Ladder™ — Regulated-Operations AI Governance</title>
+<meta name="description" content="A0→A4 governance for AI agents that have to hold under audit. Five maturity tiers, six open-source patterns, three CRE-native gates. Private Capital and Commercial Real Estate.">
+<link rel="canonical" href="https://autonomy-ladder.io/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="Autonomy Ladder™ — A0→A4 governance for AI in regulated operations">
+<meta property="og:description" content="Five maturity tiers, human-only to production-autonomous. The framework, open-source patterns, and a self-score demo — routing AI decisions through deterministic checks before they touch capital, customers, or compliance.">
+<meta property="og:url" content="https://autonomy-ladder.io/">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance framework">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Autonomy Ladder™ — A0→A4 governance for AI in regulated operations">
+<meta name="twitter:description" content="Five maturity tiers, human-only to production-autonomous. Framework, open-source patterns, self-score demo.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+
+<style>
+  :root{
+    --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b;
+    --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
+    --bg:#faf8f3; --card:#ffffff; --pc:#f1eef8; --cre:#eef3f1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px}
+  h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700}
+  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(184,137,59,.5)}
+  a:hover{border-bottom-color:var(--gold)}
+
+  header.bar{padding:26px 0 0}
+  .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0}
+  .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block}
+
+  .hero{padding:38px 0 30px; border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 14px}
+  h1{font-size:clamp(30px,5vw,48px); margin:0 0 18px}
+  .lede{font-size:19px; color:#33415a; max-width:48ch; margin:0 0 14px}
+  .casestudies{font-style:italic; color:var(--muted); font-size:16px; margin:0}
+
+  section{padding:40px 0; border-bottom:1px solid var(--line)}
+  .sec-label{font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 22px}
+
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  .card{border:1px solid var(--line); border-radius:14px; padding:22px}
+  .card.pc{background:var(--pc)} .card.cre{background:var(--cre)}
+  .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .card h3{font-size:21px; margin:6px 0 10px}
+  .card p{margin:0; font-size:15px; color:#39455c}
+
+  .ladder{display:flex; flex-direction:column; gap:10px}
+  .rung{display:grid; grid-template-columns:84px 1fr; gap:18px; align-items:start;
+        border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:10px;
+        padding:16px 18px; background:var(--card)}
+  .rung .lvl{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy)}
+  .rung .name{font-weight:700; color:var(--navy); display:block; margin-bottom:3px}
+  .rung .desc{font-size:14.5px; color:#46536c}
+  .rung[data-op="1"]{border-left-color:#d8c08a}
+  .rung[data-op="2"]{border-left-color:#cdb070}
+  .rung[data-op="3"]{border-left-color:#c2a157}
+  .rung[data-op="4"]{border-left-color:#b8893b}
+  .note{margin:18px 0 0; font-size:14px; color:var(--muted)}
+  .note b{color:var(--navy)}
+
+  .kit{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  .kit .k{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card)}
+  .k .repo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px; word-break:break-all}
+  .badge{display:inline-block; font-size:11px; font-weight:700; letter-spacing:1px; padding:2px 8px; border-radius:20px; background:#e7efe9; color:#1f6b43; margin-left:8px; vertical-align:middle}
+  .k p{font-size:14.5px; color:#39455c; margin:10px 0 0}
+
+  .demo p{font-size:16px; color:#39455c; max-width:60ch}
+  .demo .soon{display:inline-block; margin-top:8px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-weight:700}
+
+  footer{padding:44px 0 60px}
+  footer p{color:#39455c; max-width:62ch}
+  .cta a{display:inline-block; margin-top:14px; margin-right:10px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
+  .cta a.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
+  .fineprint{margin-top:26px; font-size:12.5px; color:#8a93a3}
+
+  @media (max-width:680px){
+    .cards,.kit{grid-template-columns:1fr}
+    .lede{font-size:17px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="bar">
+    <span class="brand"><span class="tick"></span> autonomy-ladder.io</span>
+  </header>
+
+  <div class="hero">
+    <p class="kicker">Regulated-Operations AI Governance</p>
+    <h1>One discipline, two verticals.</h1>
+    <p class="lede">A framework for AI agents that have to hold under audit. Five maturity tiers. Six open-source patterns. Three CRE-native gates on top.</p>
+    <p class="casestudies">Case studies in Private Capital and Commercial Real Estate.</p>
+  </div>
+
+  <section>
+    <p class="sec-label">The Verticals</p>
+    <div class="cards">
+      <div class="card pc">
+        <span class="tag">Private Capital</span>
+        <h3>Wealth · Alts · UHNW · Buy-Side AI</h3>
+        <p>Sovereign veto for autonomous allocators. Mandate, risk-limit, and fiduciary-reasonableness gates. SEC predictive-analytics rulemaking mapped. Buy-side adversarial gates informed by ongoing work with Marcos López de Prado.</p>
+      </div>
+      <div class="card cre">
+        <span class="tag">Commercial Real Estate</span>
+        <h3>PE-Backed Operators · Property Tech</h3>
+        <p>Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII data-residency partitioning. Colorado AI Act mapped. Post-SafeRent governance posture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="sec-label">The Ladder</p>
+    <div class="ladder">
+      <div class="rung" data-op="0">
+        <div class="lvl">A0</div>
+        <div><span class="name">Informational</span><span class="desc">Agent reads and recommends. No write authority.</span></div>
+      </div>
+      <div class="rung" data-op="1">
+        <div class="lvl">A1</div>
+        <div><span class="name">Assisted</span><span class="desc">Agent drafts. Human approves every write.</span></div>
+      </div>
+      <div class="rung" data-op="2">
+        <div class="lvl">A2</div>
+        <div><span class="name">Delegated</span><span class="desc">Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.</span></div>
+      </div>
+      <div class="rung" data-op="3">
+        <div class="lvl">A3</div>
+        <div><span class="name">Supervised Autonomous</span><span class="desc">Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.</span></div>
+      </div>
+      <div class="rung" data-op="4">
+        <div class="lvl">A4</div>
+        <div><span class="name">Production Autonomous</span><span class="desc">A3 plus inter-agent orchestration and operator-validated escalation paths.</span></div>
+      </div>
+    </div>
+    <p class="note"><b>A2 → A3 is the regulator-visible boundary.</b> Escalation is automatic; de-escalation is deliberate.</p>
+  </section>
+
+  <section>
+    <p class="sec-label">The Open-Source Kits</p>
+    <div class="kit">
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/finserv-agent-audit">github.com/linus10x/finserv-agent-audit</a><span class="badge">LIVE</span>
+        <p>Six governance patterns for AI agents in regulated finance — DEFCON state machine, sovereign veto, hash-chain audit, autonomy ladder, EU AI Act mapping, shadow mode. MIT-licensed.</p>
+      </div>
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/cre-agent-audit">github.com/linus10x/cre-agent-audit</a><span class="badge">LIVE</span>
+        <p>Sibling repo for commercial real estate. Same six patterns plus three CRE-native gates — lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency. MIT-licensed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo">
+    <p class="sec-label">The Self-Score Demo</p>
+    <p>Score your AI program on the ladder. Twelve questions across six dimensions. One-page, board-ready PDF. No data captured.</p>
+    <span class="soon">Launching July 2026</span>
+  </section>
+
+  <footer>
+    <p>Built by Kunjar Bhaduri — 25+ years of regulated-industry technology leadership across wealth management, banking, capital markets, payments, and healthcare payer tech.</p>
+    <p>I take calls from PE operating partners and CTOs at regulated firms.</p>
+    <div class="cta">
+      <a class="primary" href="https://www.linkedin.com/in/kunjarbhaduri/">DM on LinkedIn</a>
+      <a href="https://github.com/linus10x">GitHub</a>
+    </div>
+    <p class="fineprint">Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.</p>
+  </footer>
+
+</div>
+</body>
+</html>
