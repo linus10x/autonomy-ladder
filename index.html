@@ -88,11 +88,17 @@
   .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card); max-width:620px}
   .capture h3{font-size:21px; margin:0 0 8px}
   .capture .sub{font-size:15px; color:#39455c; max-width:58ch; margin:0 0 18px}
-  .cap-form{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .cap-form{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .cap-field{display:flex; flex-direction:column; gap:6px; min-width:0}
+  .cap-field.full{grid-column:1 / -1}
+  .cap-field label{font-size:11.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--navy)}
   .cap-form input,.cap-form select{width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
   .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold)}
-  .cap-form .full{grid-column:1 / -1}
-  .cap-form button{grid-column:1 / -1; padding:12px 20px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer}
+  .cap-other{margin-top:8px}
+  .cap-other[hidden]{display:none}
+  .cap-error{font-size:12.5px; color:#b3261e; font-weight:600; margin:6px 0 0}
+  .cap-error[hidden]{display:none}
+  .cap-form button{grid-column:1 / -1; padding:12px 20px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer; margin-top:2px}
   .cap-form button:hover{background:#0c1d34}
   .capture .privacy{font-size:12.5px; color:#8a93a3; margin:14px 0 0; max-width:58ch}
   @media (max-width:680px){ .cap-form{grid-template-columns:1fr} }
@@ -188,27 +194,84 @@
     <div class="capture">
       <h3>Get the governance brief now</h3>
       <p class="sub">The A0&#8594;A4 framework and the six open-source patterns, in one brief you can hand to a board. Subscribe and I&#8217;ll send your self-score and your tier benchmark the day the demo goes live.</p>
-      <form class="cap-form" action="https://app.kit.com/forms/9506738/subscriptions" method="post" target="_blank" rel="noopener">
-        <input class="full" type="email" name="email_address" placeholder="you@firm.com" autocomplete="email" required aria-label="Work email">
-        <select name="fields[role]" required aria-label="Your role">
-          <option value="" disabled selected>Your role</option>
-          <option>CTO / CIO / Chief AI Officer</option>
-          <option>CCO / Chief Risk / General Counsel</option>
-          <option>PE Operating Partner / Investor</option>
-          <option>Founder / CEO</option>
-          <option>Other</option>
-        </select>
-        <select name="fields[firm_type]" required aria-label="Firm type">
-          <option value="" disabled selected>Firm type</option>
-          <option>Private capital (wealth / alts / UHNW)</option>
-          <option>Bank / capital markets</option>
-          <option>CRE operator / property tech</option>
-          <option>PE / VC firm</option>
-          <option>Other regulated</option>
-        </select>
+      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post" target="_blank" rel="noopener">
+        <div class="cap-field full">
+          <label for="cap-email">Work email</label>
+          <input type="email" id="cap-email" name="email_address" placeholder="you@company.com" autocomplete="email" inputmode="email" required aria-describedby="cap-email-err">
+          <p class="cap-error" id="cap-email-err" role="alert" hidden>Please use your work email &#8212; it lets me route this to the right place. Personal inboxes (Gmail, Outlook, iCloud&#8230;) aren&#8217;t accepted here.</p>
+        </div>
+        <div class="cap-field">
+          <label for="cap-role">Your role</label>
+          <select id="cap-role" name="fields[role]" required>
+            <option value="" disabled selected>Select&#8230;</option>
+            <option>CTO / CIO</option>
+            <option>Chief AI Officer</option>
+            <option>CCO / Chief Risk / General Counsel</option>
+            <option>PE Operating Partner / Investor</option>
+            <option>Founder / CEO</option>
+            <option>Board member / Advisor</option>
+            <option value="Other">Other</option>
+          </select>
+          <input class="cap-other" type="text" id="cap-role-other" placeholder="Please specify your role" aria-label="Specify your role" hidden>
+        </div>
+        <div class="cap-field">
+          <label for="cap-firm">Firm type</label>
+          <select id="cap-firm" name="fields[firm_type]" required>
+            <option value="" disabled selected>Select&#8230;</option>
+            <option>Bank / capital markets</option>
+            <option>Asset / wealth manager</option>
+            <option>PE / VC firm</option>
+            <option>CRE operator</option>
+            <option>Insurer</option>
+            <option value="Other regulated">Other regulated</option>
+          </select>
+          <input class="cap-other" type="text" id="cap-firm-other" placeholder="Please specify your firm type" aria-label="Specify your firm type" hidden>
+        </div>
         <button type="submit">Email me the brief</button>
       </form>
-      <p class="privacy">Double opt-in &#8212; one email to confirm, and that&#8217;s the only one you get unless you confirm. No sharing, no selling, unsubscribe in one click.</p>
+      <script>
+        (function(){
+          var form=document.getElementById("capForm");
+          var email=document.getElementById("cap-email");
+          var err=document.getElementById("cap-email-err");
+          var pairs=[["cap-role","cap-role-other","Other","role"],["cap-firm","cap-firm-other","Other regulated","firm_type"]];
+          var FREE=["gmail.com","googlemail.com","yahoo.com","yahoo.co.uk","ymail.com","rocketmail.com","hotmail.com","hotmail.co.uk","outlook.com","live.com","msn.com","aol.com","icloud.com","me.com","mac.com","proton.me","protonmail.com","pm.me","gmx.com","gmx.net","mail.com","yandex.com","yandex.ru","zoho.com","hey.com","mailinator.com","guerrillamail.com","10minutemail.com","tempmail.com","temp-mail.org","trashmail.com","getnada.com","dispostable.com","sharklasers.com","yopmail.com","throwawaymail.com"];
+          function clearErr(){err.hidden=true; email.removeAttribute("aria-invalid"); email.style.borderColor="";}
+          email.addEventListener("input",clearErr);
+          pairs.forEach(function(p){
+            var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
+            sel.addEventListener("change",function(){
+              var isOther=sel.value===p[2];
+              oth.hidden=!isOther; oth.required=isOther;
+              if(!isOther){oth.value="";}
+            });
+          });
+          form.addEventListener("submit",function(e){
+            var v=(email.value||"").trim().toLowerCase();
+            var at=v.lastIndexOf("@");
+            var dom=at>-1?v.slice(at+1):"";
+            if(dom && FREE.indexOf(dom)>-1){
+              e.preventDefault();
+              err.hidden=false;
+              email.setAttribute("aria-invalid","true");
+              email.style.borderColor="#b3261e";
+              email.focus();
+              return;
+            }
+            clearErr();
+            pairs.forEach(function(p){
+              var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
+              if(sel.value===p[2] && oth.value.trim()){
+                sel.removeAttribute("name");
+                var h=document.createElement("input");
+                h.type="hidden"; h.name="fields["+p[3]+"]"; h.value=oth.value.trim();
+                form.appendChild(h);
+              }
+            });
+          });
+        })();
+      </script>
+      <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note &#8212; no spam, no sharing, no selling, unsubscribe in one click.</p>
     </div>
   </section>
 
