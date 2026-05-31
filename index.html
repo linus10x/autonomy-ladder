@@ -85,6 +85,18 @@
   .demo p{font-size:16px; color:#39455c; max-width:60ch}
   .demo .soon{display:inline-block; margin-top:8px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-weight:700}
 
+  .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card); max-width:620px}
+  .capture h3{font-size:21px; margin:0 0 8px}
+  .capture .sub{font-size:15px; color:#39455c; max-width:58ch; margin:0 0 18px}
+  .cap-form{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .cap-form input,.cap-form select{width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
+  .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold)}
+  .cap-form .full{grid-column:1 / -1}
+  .cap-form button{grid-column:1 / -1; padding:12px 20px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer}
+  .cap-form button:hover{background:#0c1d34}
+  .capture .privacy{font-size:12.5px; color:#8a93a3; margin:14px 0 0; max-width:58ch}
+  @media (max-width:680px){ .cap-form{grid-template-columns:1fr} }
+
   footer{padding:44px 0 60px}
   footer p{color:#39455c; max-width:62ch}
   .cta a{display:inline-block; margin-top:14px; margin-right:10px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
@@ -170,12 +182,38 @@
 
   <section class="demo">
     <p class="sec-label">The Self-Score Demo</p>
-    <p>Score your AI program on the ladder. Twelve questions across six dimensions. One-page, board-ready PDF. No data captured.</p>
-    <span class="soon">Launching July 2026</span>
+    <p>Score your AI program on the ladder — twelve questions across six dimensions, one board-ready page. The interactive version lands July 2026.</p>
+    <span class="soon">Demo · July 2026</span>
+
+    <div class="capture">
+      <h3>Get the governance brief now</h3>
+      <p class="sub">The A0&#8594;A4 framework and the six open-source patterns, in one brief you can hand to a board. Subscribe and I&#8217;ll send your self-score and your tier benchmark the day the demo goes live.</p>
+      <form class="cap-form" action="https://app.kit.com/forms/9506738/subscriptions" method="post" target="_blank" rel="noopener">
+        <input class="full" type="email" name="email_address" placeholder="you@firm.com" autocomplete="email" required aria-label="Work email">
+        <select name="fields[role]" required aria-label="Your role">
+          <option value="" disabled selected>Your role</option>
+          <option>CTO / CIO / Chief AI Officer</option>
+          <option>CCO / Chief Risk / General Counsel</option>
+          <option>PE Operating Partner / Investor</option>
+          <option>Founder / CEO</option>
+          <option>Other</option>
+        </select>
+        <select name="fields[firm_type]" required aria-label="Firm type">
+          <option value="" disabled selected>Firm type</option>
+          <option>Private capital (wealth / alts / UHNW)</option>
+          <option>Bank / capital markets</option>
+          <option>CRE operator / property tech</option>
+          <option>PE / VC firm</option>
+          <option>Other regulated</option>
+        </select>
+        <button type="submit">Email me the brief</button>
+      </form>
+      <p class="privacy">Double opt-in &#8212; one email to confirm, and that&#8217;s the only one you get unless you confirm. No sharing, no selling, unsubscribe in one click.</p>
+    </div>
   </section>
 
   <footer>
-    <p>Built by Kunjar Bhaduri — 25+ years of regulated-industry technology leadership across wealth management, banking, capital markets, payments, and healthcare payer tech.</p>
+    <p>Built by Kunjar Bhaduri — 25+ years of regulated-industry technology leadership across private capital, banking, capital markets, payments, and healthcare payer technology.</p>
     <p>I take calls from PE operating partners and CTOs at regulated firms.</p>
     <div class="cta">
       <a class="primary" href="https://www.linkedin.com/in/kunjarbhaduri/">DM on LinkedIn</a>
