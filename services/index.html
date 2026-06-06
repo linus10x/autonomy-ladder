@@ -27,8 +27,9 @@
 <style>
   :root{
     --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b;
-    --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
+    --ink:#1b2536; --muted:#5b6b7e; --muted-2:#43536b; --line:#e4e0d6;
     --bg:#faf8f3; --card:#ffffff; --pc:#f1eef8; --cre:#eef3f1;
+    --pad:clamp(16px,4.5vw,24px);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -36,30 +37,62 @@
     margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.55; -webkit-font-smoothing:antialiased;
+    overflow-wrap:anywhere;
   }
-  .wrap{max-width:880px; margin:0 auto; padding:0 24px}
-  h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700}
+  .wrap{max-width:880px; margin:0 auto; padding:0 var(--pad)}
+  h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700; overflow-wrap:anywhere; hyphens:auto}
   a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(184,137,59,.5)}
   a:hover{border-bottom-color:var(--gold)}
 
   header.bar{padding:26px 0 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
-  .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0}
-  .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block}
+  .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0; overflow-wrap:anywhere}
+  .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block; flex:none}
   .nav{font-size:14px; color:var(--muted)}
   .nav a{border:0; color:var(--muted); margin-left:18px}
   .nav a:hover{color:var(--navy)}
 
-  .hero{padding:38px 0 30px; border-bottom:1px solid var(--line)}
-  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 14px}
-  h1{font-size:clamp(30px,5vw,48px); margin:0 0 18px}
-  .lede{font-size:19px; color:#33415a; max-width:52ch; margin:0 0 14px}
-  .warmth{font-size:17px; color:#33415a; max-width:56ch; margin:0 0 22px}
-  .casestudies{font-style:italic; color:var(--muted); font-size:16px; margin:0}
+  /* --- hero --- */
+  .hero{padding:34px 0 30px; border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 16px}
 
-  section{padding:40px 0; border-bottom:1px solid var(--line)}
-  .sec-label{font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 22px}
-  section h2{font-size:clamp(24px,3.4vw,32px); margin:0 0 14px}
-  section > p{font-size:16px; color:#39455c; max-width:64ch}
+  /* scannable "is this me?" eyebrow — broadened to the six-vertical buyer set */
+  .audience{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 18px; list-style:none; padding:0}
+  .audience li{font-size:12.5px; font-weight:600; letter-spacing:.2px; color:var(--navy);
+    background:#fff; border:1px solid var(--line); border-left:3px solid var(--gold);
+    border-radius:7px; padding:6px 11px; line-height:1.3}
+  .audience .lbl{color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:1.5px;
+    font-size:11px; background:none; border:0; padding:6px 0; margin-right:2px}
+
+  h1{font-size:clamp(28px,5.2vw,48px); margin:0 0 16px}
+  .hook{font-size:clamp(17px,2.6vw,21px); color:var(--navy); font-weight:600; max-width:30ch; margin:0 0 16px; line-height:1.32; font-family:Georgia,"Iowan Old Style","Times New Roman",serif}
+  .lede{font-size:clamp(16px,2.1vw,19px); color:#33415a; max-width:52ch; margin:0 0 18px}
+  .warmth{font-size:clamp(15px,1.9vw,17px); color:#33415a; max-width:56ch; margin:0 0 20px}
+
+  /* hero proof chip — one hard credibility signal above the fold */
+  .proof{display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; margin:0 0 22px; padding:0; list-style:none}
+  .proof li{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted-2); font-weight:600}
+  .proof li::before{content:""; width:6px; height:6px; border-radius:2px; background:var(--gold); flex:none}
+  .proof b{color:var(--navy); font-weight:700}
+
+  /* hero CTAs — primary navy-FILLED is the strongest action, never grey */
+  .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin:0}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:48px;
+    padding:12px 22px; border-radius:9px; font-weight:700; font-size:15.5px; line-height:1.2;
+    border:1.5px solid var(--navy); cursor:pointer; text-align:center}
+  .btn-primary{background:#0f2440; color:#fff; border-color:#0f2440; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .btn-primary:hover{background:#0c1d34; border-color:#0c1d34}
+  .btn-secondary{background:#fff; color:var(--navy); border-color:var(--navy)}
+  .btn-secondary:hover{background:#f3eee2}
+  .casestudies{font-style:italic; color:var(--muted); font-size:15px; margin:20px 0 0}
+
+  section{padding:clamp(34px,6vw,44px) 0; border-bottom:1px solid var(--line)}
+  /* tonal landmark sections break the monotone scroll */
+  section.band{background:#f4f1e8; border-radius:0}
+  section.band .wrap-pad{}
+  .sec-label{font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 12px}
+  section h2{font-size:clamp(23px,3.4vw,32px); margin:0 0 14px}
+  .lead-in{font-weight:700; color:var(--navy)}
+  section > p{font-size:clamp(15px,1.8vw,16px); color:#39455c; max-width:64ch}
 
   .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   .card{border:1px solid var(--line); border-radius:14px; padding:22px}
@@ -70,21 +103,24 @@
 
   .ladder{display:flex; flex-direction:column; gap:10px}
   .rung{display:grid; grid-template-columns:84px 1fr; gap:18px; align-items:start;
-        border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:10px;
+        border:1px solid var(--line); border-left:6px solid var(--gold); border-radius:10px;
         padding:16px 18px; background:var(--card)}
+  .rung .lvlwrap{display:flex; align-items:baseline; gap:8px}
   .rung .lvl{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy)}
   .rung .name{font-weight:700; color:var(--navy); display:block; margin-bottom:3px}
   .rung .desc{font-size:14.5px; color:#46536c}
-  .rung[data-op="1"]{border-left-color:#d8c08a}
-  .rung[data-op="2"]{border-left-color:#cdb070}
-  .rung[data-op="3"]{border-left-color:#c2a157}
-  .rung[data-op="4"]{border-left-color:#b8893b}
-  .note{margin:18px 0 0; font-size:14px; color:var(--muted)}
+  /* non-color cue: border thickens as the ladder climbs (survives greyscale) */
+  .rung[data-op="0"]{border-left-width:3px; border-left-color:#ddd2bb}
+  .rung[data-op="1"]{border-left-width:4px; border-left-color:#d8c08a}
+  .rung[data-op="2"]{border-left-width:5px; border-left-color:#cdb070}
+  .rung[data-op="3"]{border-left-width:7px; border-left-color:#c2a157}
+  .rung[data-op="4"]{border-left-width:9px; border-left-color:#b8893b}
+  .note{margin:18px 0 0; font-size:14px; color:var(--muted-2)}
   .note b{color:var(--navy)}
 
   .kit{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   .kit .k{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card)}
-  .k .repo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13.5px; word-break:break-all}
+  .k .repo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13.5px; word-break:break-all; overflow-wrap:anywhere}
   .badge{display:inline-block; font-size:11px; font-weight:700; letter-spacing:1px; padding:2px 8px; border-radius:20px; background:#e7efe9; color:#1f6b43; margin-left:8px; vertical-align:middle}
   .k p{font-size:14.5px; color:#39455c; margin:10px 0 0}
 
@@ -97,15 +133,20 @@
 
   /* --- engagement ladder (outcomes, no prices) --- */
   .engage{display:flex; flex-direction:column; gap:12px}
-  .step{display:grid; grid-template-columns:140px 1fr; gap:18px; align-items:start;
+  .step{display:grid; grid-template-columns:150px 1fr; gap:18px; align-items:start;
         border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:12px;
         padding:18px 20px; background:var(--card)}
+  .step .snum{font-family:Georgia,serif; font-weight:700; font-size:13px; color:var(--gold); letter-spacing:1px; display:block; margin-bottom:2px}
   .step .stitle{font-family:Georgia,serif; font-weight:700; font-size:20px; color:var(--navy)}
   .step .stag{display:block; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-top:4px}
-  .step .sbody{font-size:15px; color:#39455c}
+  .step .sbody{font-size:15px; color:#39455c; overflow-wrap:anywhere}
   .step .sbody b{color:var(--navy)}
-  .step[data-tier="2"]{border-left-color:#cdb070}
-  .step[data-tier="3"]{border-left-color:#b8893b}
+  .step .leave{display:block; margin-top:10px; font-size:14px; color:var(--navy)}
+  .step .leave b{color:var(--gold); text-transform:uppercase; letter-spacing:1px; font-size:11.5px; font-weight:700}
+  /* non-color cue: thickening border + the "Step 1/2/3" index */
+  .step[data-tier="1"]{border-left-width:4px; border-left-color:#cdb070}
+  .step[data-tier="2"]{border-left-width:6px; border-left-color:#c2a157}
+  .step[data-tier="3"]{border-left-width:8px; border-left-color:#b8893b}
   @media (max-width:680px){ .step{grid-template-columns:1fr; gap:6px} }
 
   /* --- operator block --- */
@@ -114,69 +155,83 @@
   .operator li{display:grid; grid-template-columns:14px 1fr; gap:12px; font-size:15.5px; color:#39455c}
   .operator li::before{content:""; width:7px; height:7px; margin-top:9px; border-radius:2px; background:var(--gold); display:block}
   .operator li b{color:var(--navy)}
-  .operator .close{margin:18px 0 0; font-size:15px; color:var(--muted); font-style:italic}
+  .operator .close{margin:18px 0 0; font-size:15px; color:var(--muted-2); font-style:italic}
 
   /* --- regulatory urgency strip --- */
   .reg{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px}
   .reg .r{border:1px solid var(--line); border-radius:12px; padding:16px 18px; background:var(--card)}
-  .reg .r .when{font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy)}
+  .reg .r .when{font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); overflow-wrap:anywhere; hyphens:auto}
   .reg .r .what{font-size:13.5px; color:#46536c; margin:6px 0 0}
   @media (max-width:680px){ .reg{grid-template-columns:1fr} }
 
   /* --- self-scorer --- */
-  .scorer{border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card)}
+  .scorer{border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:clamp(18px,4vw,24px); background:var(--card)}
   .scorer h3{font-size:22px; margin:0 0 8px}
   .scorer .intro{font-size:15px; color:#39455c; max-width:60ch; margin:0 0 6px}
+
+  /* progress affordance — sticky bar that fills as the form is answered */
+  .scoreprog{position:sticky; top:0; z-index:5; margin:14px 0 4px; padding:10px 0 8px; background:var(--card)}
+  .scoreprog .track{height:8px; border-radius:6px; background:#efeadd; overflow:hidden}
+  .scoreprog .fill{height:100%; width:0; background:linear-gradient(90deg,#cdb070,#b8893b); border-radius:6px; transition:width .25s ease}
+  .scoreprog .plabel{display:block; margin-top:7px; font-size:12.5px; font-weight:700; color:var(--navy)}
+
   .q{padding:18px 0; border-top:1px solid var(--line)}
   .q:first-of-type{border-top:0}
-  .q .qtext{font-weight:700; color:var(--navy); font-size:15.5px; margin:0 0 12px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .q .qtext{font-weight:700; color:var(--navy); font-size:15.5px; margin:0 0 12px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; overflow-wrap:anywhere; hyphens:auto}
   .q .qtext .qnum{color:var(--gold); margin-right:8px}
   .opts{display:grid; gap:8px}
-  .opt{display:grid; grid-template-columns:22px 1fr; gap:10px; align-items:start; padding:11px 14px; border:1px solid var(--line); border-radius:9px; cursor:pointer; font-size:14.5px; color:#39455c; background:#fff; transition:border-color .12s,background .12s}
+  .opt{display:grid; grid-template-columns:24px 1fr; gap:10px; align-items:center; min-height:48px; padding:11px 14px; border:1px solid var(--line); border-radius:9px; cursor:pointer; font-size:14.5px; color:#39455c; background:#fff; transition:border-color .12s,background .12s}
   .opt:hover{border-color:var(--gold-soft)}
-  .opt input{margin:3px 0 0; accent-color:var(--navy)}
+  .opt input{width:20px; height:20px; margin:0; accent-color:var(--navy); flex:none}
   .opt.sel{border-color:var(--gold); background:#fbf7ef}
   .scorebar{display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:22px}
-  .scorebar button{padding:12px 22px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer}
+  .scorebar button{min-height:48px; padding:12px 24px; border:1.5px solid #0f2440; border-radius:8px; background:#0f2440; color:#fff; font-weight:700; font-size:15px; cursor:pointer; -webkit-print-color-adjust:exact; print-color-adjust:exact}
   .scorebar button:hover{background:#0c1d34}
-  .scorebar button[disabled]{opacity:.45; cursor:not-allowed}
-  .scorebar .progress{font-size:13px; color:var(--muted)}
+  /* disabled reads "locked — finish the form", NOT broken */
+  .scorebar button[disabled]{opacity:1; background:#fff; color:var(--navy); border-style:dashed; border-color:var(--navy); cursor:not-allowed}
+  .scorebar .progress{font-size:13px; font-weight:600; color:var(--navy-2)}
   .result{margin-top:22px; padding:22px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:12px; background:#fbf9f4}
   .result[hidden]{display:none}
   .result .rtier{font-family:Georgia,serif; font-weight:700; font-size:34px; color:var(--navy); line-height:1}
   .result .rname{font-weight:700; color:var(--navy); margin:6px 0 0; font-size:16px}
   .result .rverdict{font-size:15.5px; color:#39455c; margin:14px 0 0; max-width:62ch}
-  .result .rpeer{font-size:14.5px; color:var(--muted); margin:12px 0 0; max-width:62ch}
+  .result .rpeer{font-size:14.5px; color:var(--muted-2); margin:12px 0 0; max-width:62ch}
   .result .rnext{font-size:14.5px; color:#39455c; margin:14px 0 0; max-width:62ch}
   .result .rnext b{color:var(--navy)}
 
   /* --- capture (verbatim grammar from source, free-domain gate REMOVED) --- */
-  .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card); max-width:620px}
+  .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:clamp(18px,4vw,24px); background:var(--card); max-width:620px}
   .capture h3{font-size:21px; margin:0 0 8px}
   .capture .sub{font-size:15px; color:#39455c; max-width:58ch; margin:0 0 18px}
   .cap-form{display:grid; grid-template-columns:1fr 1fr; gap:14px}
   .cap-field{display:flex; flex-direction:column; gap:6px; min-width:0}
   .cap-field.full{grid-column:1 / -1}
   .cap-field label{font-size:11.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--navy)}
-  .cap-form input,.cap-form select{width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
+  .cap-form input,.cap-form select{width:100%; min-height:48px; padding:12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
   .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold)}
   .cap-other{margin-top:8px}
   .cap-other[hidden]{display:none}
-  .cap-form button{grid-column:1 / -1; padding:12px 20px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer; margin-top:2px}
+  .cap-form button{grid-column:1 / -1; min-height:48px; padding:12px 20px; border:1.5px solid #0f2440; border-radius:8px; background:#0f2440; color:#fff; font-weight:700; font-size:15px; cursor:pointer; margin-top:2px; -webkit-print-color-adjust:exact; print-color-adjust:exact}
   .cap-form button:hover{background:#0c1d34}
-  .capture .privacy{font-size:12.5px; color:#8a93a3; margin:14px 0 0; max-width:58ch}
+  .capture .privacy{font-size:12.5px; color:#7c8597; margin:14px 0 0; max-width:58ch}
   @media (max-width:680px){ .cap-form{grid-template-columns:1fr} }
 
   footer{padding:44px 0 60px}
   footer p{color:#39455c; max-width:62ch}
-  .cta a{display:inline-block; margin-top:14px; margin-right:10px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
-  .cta a.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
-  .fineprint{margin-top:26px; font-size:12.5px; color:#8a93a3}
+  .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+  .cta a{display:inline-flex; align-items:center; min-height:48px; padding:11px 22px; border:1.5px solid var(--navy); border-radius:8px; font-weight:700; color:var(--navy)}
+  .cta a.primary{background:#0f2440; color:#fff; border-color:#0f2440; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .cta a.primary:hover{background:#0c1d34}
+  .fineprint{margin-top:26px; font-size:12.5px; color:#7c8597}
 
   @media (max-width:680px){
     .cards,.kit,.pillars{grid-template-columns:1fr}
-    .lede{font-size:17px}
     .nav{display:none}
+  }
+  @media (max-width:420px){
+    .rung{grid-template-columns:64px 1fr; gap:12px}
+    .rung .lvl{font-size:26px}
+    .hero-cta .btn{flex:1 1 auto}
   }
 </style>
 </head>
@@ -194,16 +249,37 @@
 
   <div class="hero">
     <p class="kicker">Services &amp; Methodology</p>
+
+    <ul class="audience">
+      <li class="lbl">For</li>
+      <li>Founder-led Private Capital principals</li>
+      <li>CTOs &amp; CCOs at regulated firms</li>
+      <li>PE operating partners</li>
+    </ul>
+
     <h1>Where complexity meets regulation.</h1>
-    <p class="warmth">I work with founder-led Private Capital principals and CTOs at regulated firms who want an AI agent to write — allocate, abstract, screen, decide — and need it to hold the first time a regulator, an auditor, or a limited partner asks how it reached that decision.</p>
+    <p class="hook">The first time a regulator, an auditor, or an LP asks how your AI reached that decision — can you answer from a record?</p>
     <p class="lede">The framework is public on purpose. Putting it into production under audit — and knowing which of the five tiers your program can actually defend today — is the work.</p>
+    <p class="warmth">I work with people standing up AI agents that <i>write</i> — allocate, abstract, screen, price, decide — across private capital, banking, payments, CRE, and healthcare payer, and need the answer to hold the first time it is asked under oath.</p>
+
+    <ul class="proof">
+      <li><b>$750M</b> platform architect</li>
+      <li><b>Ransomware-to-cloud</b> in 50 days</li>
+      <li><b>6 open libraries</b>, 5 DOI-archived</li>
+    </ul>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes</a>
+      <a class="btn btn-secondary" href="#scorer">Score your program</a>
+    </div>
+
     <p class="casestudies">A0&#8594;A4 methodology · sovereign veto · hash-chain audit · a ladder of engagements in outcome terms.</p>
   </div>
 
   <section id="methodology">
     <p class="sec-label">The Methodology</p>
-    <h2>Four load-bearing parts.</h2>
-    <p>Read the repositories and you have the patterns. The methodology is the order you apply them in, the boundary you defend, and the evidence you leave behind. These four parts are what an engagement actually builds.</p>
+    <h2>What an engagement actually builds.</h2>
+    <p><span class="lead-in">Read the repositories and you have the patterns.</span> The methodology is the order you apply them in, the boundary you defend, and the evidence you leave behind. These four load-bearing parts are what an engagement actually builds.</p>
     <div class="pillars" style="margin-top:22px">
       <div class="pillar">
         <span class="tag">A0 &#8594; A4</span>
@@ -230,8 +306,10 @@
   </section>
 
   <section>
-    <p class="sec-label">The Two Verticals</p>
-    <div class="cards">
+    <p class="sec-label">The Verticals</p>
+    <h2>Two named verticals, six libraries deep.</h2>
+    <p><span class="lead-in">Private Capital and Commercial Real Estate are where the work goes deepest</span> — but the open libraries also cover banking, payments, and healthcare payer, so a bank CCO or a payments CTO is reading the right page.</p>
+    <div class="cards" style="margin-top:22px">
       <div class="card pc">
         <span class="tag">Private Capital</span>
         <h3>Wealth · Alts · UHNW · Buy-Side AI</h3>
@@ -243,29 +321,31 @@
         <p>Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII data-residency partitioning. Colorado AI Act mapped. Post-SafeRent governance posture for screening models.</p>
       </div>
     </div>
+    <p class="note"><b>Also covered by the open libraries:</b> banking (model-risk, ECOA/Reg B, OFAC), payments (BSA/AML, Reg E, rail-finality), and healthcare payer (coverage, prior-auth, appeals).</p>
   </section>
 
   <section>
     <p class="sec-label">The Ladder</p>
-    <div class="ladder">
+    <h2>How far up the ladder can you defend?</h2>
+    <div class="ladder" style="margin-top:22px">
       <div class="rung" data-op="0">
-        <div class="lvl">A0</div>
+        <div class="lvlwrap"><span class="lvl">A0</span></div>
         <div><span class="name">Informational</span><span class="desc">Agent reads and recommends. No write authority.</span></div>
       </div>
       <div class="rung" data-op="1">
-        <div class="lvl">A1</div>
+        <div class="lvlwrap"><span class="lvl">A1</span></div>
         <div><span class="name">Assisted</span><span class="desc">Agent drafts. Human approves every write.</span></div>
       </div>
       <div class="rung" data-op="2">
-        <div class="lvl">A2</div>
+        <div class="lvlwrap"><span class="lvl">A2</span></div>
         <div><span class="name">Delegated</span><span class="desc">Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.</span></div>
       </div>
       <div class="rung" data-op="3">
-        <div class="lvl">A3</div>
+        <div class="lvlwrap"><span class="lvl">A3</span></div>
         <div><span class="name">Supervised Autonomous</span><span class="desc">Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.</span></div>
       </div>
       <div class="rung" data-op="4">
-        <div class="lvl">A4</div>
+        <div class="lvlwrap"><span class="lvl">A4</span></div>
         <div><span class="name">Production Autonomous</span><span class="desc">A3 plus inter-agent orchestration and operator-validated escalation paths.</span></div>
       </div>
     </div>
@@ -274,44 +354,46 @@
 
   <section id="engagements">
     <p class="sec-label">The Engagements</p>
-    <h2>A ladder of engagements, in outcome terms.</h2>
-    <p>Three ways to work, each a distinct outcome. Where you start depends on what your program can defend today — the self-scorer below puts a number on it. Scope and price are set in the conversation, not on a page.</p>
+    <h2>Three ways to work. You leave each with something concrete.</h2>
+    <p><span class="lead-in">Where you start depends on what your program can defend today</span> — the self-scorer below puts a number on it. Scope and price are set in the conversation, not on a page.</p>
     <div class="engage" style="margin-top:24px">
       <div class="step" data-tier="1">
-        <div><span class="stitle">Diagnostic</span><span class="stag">Where you stand</span></div>
-        <div class="sbody"><b>Outcome:</b> a board-ready read of where each AI decision class sits on A0&#8594;A4, where the regulator-visible boundary is being crossed without the gates to back it, and the two or three exposures to close first. A short, fixed-scope engagement that ends with a document you can hand to a risk committee.</div>
+        <div><span class="snum">Step 1</span><span class="stitle">Diagnostic</span><span class="stag">Where you stand</span></div>
+        <div class="sbody"><b>Outcome:</b> a board-ready read of where each AI decision class sits on A0&#8594;A4, where the regulator-visible boundary is being crossed without the gates to back it, and the two or three exposures to close first. A short, fixed-scope engagement.<span class="leave"><b>You leave with:</b> a risk-committee-ready exposure map across your decision classes.</span></div>
       </div>
       <div class="step" data-tier="2">
-        <div><span class="stitle">Audit</span><span class="stag">Build the evidence</span></div>
-        <div class="sbody"><b>Outcome:</b> the sovereign-veto gate, the independent verifier, and the hash-chained audit ledger built and wired into a live decision class — the difference between &#8220;we tested it&#8221; and &#8220;we can defend it.&#8221; Mapped to the specific regulation your vertical answers to.</div>
+        <div><span class="snum">Step 2</span><span class="stitle">Audit</span><span class="stag">Build the evidence</span></div>
+        <div class="sbody"><b>Outcome:</b> the sovereign-veto gate, the independent verifier, and the hash-chained audit ledger built and wired into a live decision class — the difference between &#8220;we tested it&#8221; and &#8220;we can defend it.&#8221; Mapped to the specific regulation your vertical answers to.<span class="leave"><b>You leave with:</b> a working gate, verifier, and audit ledger on one live decision class.</span></div>
       </div>
       <div class="step" data-tier="3">
-        <div><span class="stitle">Retainer</span><span class="stag">Hold the line</span></div>
-        <div class="sbody"><b>Outcome:</b> standing governance as the program moves up the ladder and the regulatory ground shifts under it. New decision classes earn their rung; gates and ledgers stay current with the rules. The governance lead a regulated firm needs but isn&#8217;t yet ready to hire full-time.</div>
+        <div><span class="snum">Step 3</span><span class="stitle">Retainer</span><span class="stag">Hold the line</span></div>
+        <div class="sbody"><b>Outcome:</b> standing governance as the program moves up the ladder and the regulatory ground shifts under it. New decision classes earn their rung; gates and ledgers stay current with the rules. The governance lead a regulated firm needs but isn&#8217;t yet ready to hire full-time.<span class="leave"><b>You leave with:</b> a standing governance lead without a full-time hire.</span></div>
       </div>
     </div>
     <p class="note">No standard list price. Each engagement is scoped to one program, one vertical, one regulator. <b>Price is set in the conversation.</b></p>
   </section>
 
-  <section>
-    <p class="sec-label">The Operator</p>
-    <div class="operator">
-      <h2 style="margin:0 0 6px">The framework is public. The operator is the scarce part.</h2>
-      <p style="font-size:16px;color:#39455c;max-width:64ch;margin:0">Anyone can clone the repositories. Far fewer people have shipped this kind of governance into production under real regulatory and operational fire. I build the governance, then I build the system that lives under it.</p>
-      <ul>
-        <li><b>$750M wealth-management contract.</b> Architected the platform behind one of the largest such contracts in years — the kind of fiduciary-grade, audit-bound system the Autonomy Ladder is built to govern.</li>
-        <li><b>Rebuilt a company on Azure during an active ransomware investigation.</b> Twelve days hard-down, no disaster recovery, a 50-day rebuild — security and compliance certified in the same window. Governance that holds when everything is on fire, not just in the demo.</li>
-        <li><b>Author of the Autonomy Ladder (A0&#8594;A4) framework.</b> Six MIT-licensed open-source pattern libraries — five of them DOI-archived — for regulated finance, commercial real estate, healthcare payer, private capital, banking, and payments, published on purpose, so the methodology is inspectable before you ever take a call.</li>
-        <li><b>25+ years in regulated-industry technology.</b> Private capital, banking, capital markets, payments, and healthcare payer technology — two decades of scar tissue across the exact domains where AI write authority is the hard problem.</li>
-      </ul>
-      <p class="close">Every chapter is rare on its own. The combination is the part that doesn&#8217;t reproduce.</p>
+  <section class="band">
+    <div class="wrap-pad">
+      <p class="sec-label">The Operator</p>
+      <div class="operator">
+        <h2 style="margin:0 0 6px">The framework is public. The operator is the scarce part.</h2>
+        <p style="font-size:16px;color:#39455c;max-width:64ch;margin:0">Anyone can clone the repositories. Far fewer people have shipped this kind of governance into production under real regulatory and operational fire. I build the governance, then I build the system that lives under it.</p>
+        <ul>
+          <li><b>$750M wealth-management contract.</b> Architected the platform behind one of the largest such contracts in years — the kind of fiduciary-grade, audit-bound system the Autonomy Ladder is built to govern.</li>
+          <li><b>Rebuilt a company on Azure during an active ransomware investigation.</b> Twelve days hard-down, no disaster recovery, a 50-day rebuild — security and compliance certified in the same window. Governance that holds when everything is on fire, not just in the demo.</li>
+          <li><b>Author of the Autonomy Ladder (A0&#8594;A4) framework.</b> Six MIT-licensed open-source pattern libraries — five of them DOI-archived — for regulated finance, commercial real estate, healthcare payer, private capital, banking, and payments, published on purpose, so the methodology is inspectable before you ever take a call.</li>
+          <li><b>25+ years in regulated-industry technology.</b> Private capital, banking, capital markets, payments, and healthcare payer technology — two decades of scar tissue across the exact domains where AI write authority is the hard problem.</li>
+        </ul>
+        <p class="close">Every chapter is rare on its own. The combination is the part that doesn&#8217;t reproduce.</p>
+      </div>
     </div>
   </section>
 
   <section>
     <p class="sec-label">Why Now</p>
-    <h2>Buyers have a deadline reason to act.</h2>
-    <p>The compliance horizon is no longer hypothetical. The regulations that govern AI write authority in these verticals carry real dates and real conduct standards.</p>
+    <h2>The compliance horizon carries real dates.</h2>
+    <p><span class="lead-in">The deadline reason to act is no longer hypothetical.</span> The regulations that govern AI write authority in these verticals carry real dates and real conduct standards.</p>
     <div class="reg" style="margin-top:22px">
       <div class="r">
         <div class="when">Jan 1, 2027</div>
@@ -329,14 +411,21 @@
     <p class="note">Reference framework, not legal advice. The deadlines are real; the right posture for your firm is a counsel-and-engineering conversation, not a checkbox.</p>
   </section>
 
-  <section id="scorer" class="demo">
+  <section id="scorer" class="demo band">
+    <div class="wrap-pad">
     <p class="sec-label">The Self-Scorer</p>
     <h2>Score your program in seven questions.</h2>
-    <p>Where does your AI program actually sit on A0&#8594;A4 today — not where the slide deck says, but where the gates, the verifier, and the audit ledger put you? Answer seven questions across model inventory, verifier independence, audit chain, and human authority. The verdict is framed against peers, never as a grade.</p>
+    <p><span class="lead-in">Where does your AI program actually sit on A0&#8594;A4 today</span> — not where the slide deck says, but where the gates, the verifier, and the audit ledger put you? Seven questions across model inventory, verifier independence, audit chain, and human authority. The verdict is framed against peers, never as a grade — and it never leaves your browser.</p>
 
     <div class="scorer" style="margin-top:24px">
       <h3>A0 &#8594; A4 Self-Scorer</h3>
       <p class="intro">No email required to see your tier. Nothing you enter leaves your browser — the score is computed on this page.</p>
+
+      <div class="scoreprog" aria-hidden="true">
+        <div class="track"><div class="fill" id="scoreFill"></div></div>
+        <span class="plabel" id="scoreProgTop">0 of 7 answered — answer all 7 to see your verdict</span>
+      </div>
+
       <form id="scoreForm" novalidate>
 
         <div class="q" data-q="1">
@@ -411,7 +500,7 @@
         </div>
 
         <div class="scorebar">
-          <button type="button" id="scoreBtn" disabled>See my tier</button>
+          <button type="button" id="scoreBtn" disabled>Answer all 7 to see your tier</button>
           <span class="progress" id="scoreProgress">0 of 7 answered</span>
         </div>
       </form>
@@ -430,6 +519,8 @@
         var form=document.getElementById("scoreForm");
         var btn=document.getElementById("scoreBtn");
         var prog=document.getElementById("scoreProgress");
+        var progTop=document.getElementById("scoreProgTop");
+        var fill=document.getElementById("scoreFill");
         var TOTAL=7;
         var TIER_NAME=["Informational","Assisted","Delegated","Supervised Autonomous","Production Autonomous"];
 
@@ -441,6 +532,14 @@
         function refresh(){
           var n=answeredCount();
           prog.textContent=n+" of "+TOTAL+" answered";
+          fill.style.width=Math.round((n/TOTAL)*100)+"%";
+          if(n<TOTAL){
+            progTop.textContent=n+" of "+TOTAL+" answered — answer all "+TOTAL+" to see your verdict";
+            btn.textContent="Answer all 7 to see your tier";
+          }else{
+            progTop.textContent="All "+TOTAL+" answered — your verdict is ready";
+            btn.textContent="See my tier";
+          }
           btn.disabled = n<TOTAL;
         }
         // selected-state styling + progress
@@ -577,11 +676,13 @@
       </script>
       <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note &#8212; no spam, no sharing, no selling, unsubscribe in one click.</p>
     </div>
+    </div>
   </section>
 
   <section>
     <p class="sec-label">The Open-Source Libraries</p>
-    <p>The methodology is inspectable before you take a call. Six MIT-licensed pattern libraries — one per vertical, each with the same governance spine; five are DOI-archived and the sixth is in the archival queue.</p>
+    <h2>Inspect the methodology before you take a call.</h2>
+    <p><span class="lead-in">Six MIT-licensed pattern libraries</span> — one per vertical, each with the same governance spine; five are DOI-archived and the sixth is in the archival queue.</p>
     <div class="kit" style="margin-top:22px">
       <div class="k">
         <a class="repo" href="https://github.com/linus10x/finserv-agent-audit">github.com/linus10x/finserv-agent-audit</a><span class="badge">LIVE</span>
