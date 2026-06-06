@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Autonomy Ladder Diagnostic — score your regulated-AI exposure</title>
+<meta name="description" content="Run the A0→A4 self-scorer in two minutes. Get a tier verdict on your regulated-AI exposure, a board-ready brief, and your benchmark against peer firms. Private Capital and regulated operators.">
+<link rel="canonical" href="https://autonomy-ladder.io/diagnostic">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="The Autonomy Ladder Diagnostic — score your regulated-AI exposure">
+<meta property="og:description" content="A two-minute A0→A4 self-scorer for AI agents that have to hold under audit. Get a tier verdict, a peer benchmark, and a board-ready brief.">
+<meta property="og:url" content="https://autonomy-ladder.io/diagnostic">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance diagnostic">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Autonomy Ladder Diagnostic — score your regulated-AI exposure">
+<meta name="twitter:description" content="Two-minute A0→A4 self-scorer. Tier verdict, peer benchmark, board-ready brief.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+
+<style>
+  :root{
+    --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b;
+    --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
+    --bg:#faf8f3; --card:#ffffff; --pc:#f1eef8; --cre:#eef3f1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px}
+  h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700}
+  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(184,137,59,.5)}
+  a:hover{border-bottom-color:var(--gold)}
+
+  header.bar{padding:26px 0 0}
+  .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0}
+  .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block}
+
+  .hero{padding:38px 0 30px; border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 14px}
+  h1{font-size:clamp(30px,5vw,48px); margin:0 0 18px}
+  .lede{font-size:19px; color:#33415a; max-width:48ch; margin:0 0 14px}
+  .casestudies{font-style:italic; color:var(--muted); font-size:16px; margin:0}
+
+  section{padding:40px 0; border-bottom:1px solid var(--line)}
+  .sec-label{font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 22px}
+
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  .card{border:1px solid var(--line); border-radius:14px; padding:22px}
+  .card.pc{background:var(--pc)} .card.cre{background:var(--cre)}
+  .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .card h3{font-size:21px; margin:6px 0 10px}
+  .card p{margin:0; font-size:15px; color:#39455c}
+
+  .ladder{display:flex; flex-direction:column; gap:10px}
+  .rung{display:grid; grid-template-columns:84px 1fr; gap:18px; align-items:start;
+        border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:10px;
+        padding:16px 18px; background:var(--card)}
+  .rung .lvl{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy)}
+  .rung .name{font-weight:700; color:var(--navy); display:block; margin-bottom:3px}
+  .rung .desc{font-size:14.5px; color:#46536c}
+  .rung[data-op="1"]{border-left-color:#d8c08a}
+  .rung[data-op="2"]{border-left-color:#cdb070}
+  .rung[data-op="3"]{border-left-color:#c2a157}
+  .rung[data-op="4"]{border-left-color:#b8893b}
+  .note{margin:18px 0 0; font-size:14px; color:var(--muted)}
+  .note b{color:var(--navy)}
+
+  .kit{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  .kit .k{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card)}
+  .k .repo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px; word-break:break-all}
+  .badge{display:inline-block; font-size:11px; font-weight:700; letter-spacing:1px; padding:2px 8px; border-radius:20px; background:#e7efe9; color:#1f6b43; margin-left:8px; vertical-align:middle}
+  .k p{font-size:14.5px; color:#39455c; margin:10px 0 0}
+
+  .demo p{font-size:16px; color:#39455c; max-width:60ch}
+  .demo .soon{display:inline-block; margin-top:8px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-weight:700}
+
+  .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card); max-width:620px}
+  .capture h3{font-size:21px; margin:0 0 8px}
+  .capture .sub{font-size:15px; color:#39455c; max-width:58ch; margin:0 0 18px}
+  .cap-form{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .cap-field{display:flex; flex-direction:column; gap:6px; min-width:0}
+  .cap-field.full{grid-column:1 / -1}
+  .cap-field label{font-size:11.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--navy)}
+  .cap-form input,.cap-form select{width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
+  .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold)}
+  .cap-other{margin-top:8px}
+  .cap-other[hidden]{display:none}
+  .cap-error{font-size:12.5px; color:#b3261e; font-weight:600; margin:6px 0 0}
+  .cap-error[hidden]{display:none}
+  .cap-form button{grid-column:1 / -1; padding:12px 20px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer; margin-top:2px}
+  .cap-form button:hover{background:#0c1d34}
+  .capture .privacy{font-size:12.5px; color:#8a93a3; margin:14px 0 0; max-width:58ch}
+  @media (max-width:680px){ .cap-form{grid-template-columns:1fr} }
+
+  footer{padding:44px 0 60px}
+  footer p{color:#39455c; max-width:62ch}
+  .cta a{display:inline-block; margin-top:14px; margin-right:10px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
+  .cta a.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
+  .fineprint{margin-top:26px; font-size:12.5px; color:#8a93a3}
+
+  @media (max-width:680px){
+    .cards,.kit{grid-template-columns:1fr}
+    .lede{font-size:17px}
+  }
+
+  /* --- diagnostic-only additions (scorer) --- */
+  .hero-cta{margin:22px 0 0}
+  .hero-cta a{display:inline-block; margin-right:10px; margin-top:8px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
+  .hero-cta a.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
+  .warmth{font-size:17px; color:#33415a; max-width:56ch; margin:0 0 16px}
+  .warmth b{color:var(--navy)}
+
+  .scorer{border:1px solid var(--line); border-radius:14px; background:var(--card); padding:8px 0 0}
+  .q{border-bottom:1px solid var(--line); padding:20px 22px}
+  .q:last-of-type{border-bottom:0}
+  .q .qnum{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 6px}
+  .q .qtext{font-family:Georgia,serif; font-weight:700; color:var(--navy); font-size:18px; margin:0 0 14px; line-height:1.3}
+  .opts{display:flex; flex-direction:column; gap:9px}
+  .opt{display:flex; gap:11px; align-items:flex-start; border:1px solid var(--line); border-radius:9px; padding:11px 14px; cursor:pointer; background:#fff; transition:border-color .12s, background .12s}
+  .opt:hover{border-color:var(--gold-soft)}
+  .opt input{margin:3px 0 0; accent-color:var(--gold); flex:0 0 auto}
+  .opt span{font-size:14.5px; color:#39455c}
+  .opt.sel{border-color:var(--gold); background:#fcf8ef}
+  .score-actions{padding:20px 22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+  .score-actions button{padding:12px 22px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer}
+  .score-actions button:hover{background:#0c1d34}
+  .score-actions button:disabled{opacity:.45; cursor:not-allowed}
+  .score-actions .hint{font-size:13px; color:var(--muted)}
+
+  .verdict{margin-top:24px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; background:#fcfaf5; padding:26px 24px}
+  .verdict[hidden]{display:none}
+  .verdict .vtier{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  .verdict .vtier .big{font-family:Georgia,serif; font-weight:700; font-size:46px; color:var(--navy); line-height:1}
+  .verdict .vtier .vname{font-family:Georgia,serif; font-weight:700; font-size:22px; color:var(--navy)}
+  .verdict .vread{font-size:16px; color:#33415a; margin:16px 0 0; max-width:60ch}
+  .verdict .vpeer{font-size:14.5px; color:var(--muted); margin:14px 0 0; max-width:60ch}
+  .verdict .vpeer b{color:var(--navy)}
+  .verdict .vgaps{margin:16px 0 0; padding:0; list-style:none}
+  .verdict .vgaps li{font-size:14.5px; color:#39455c; padding:7px 0 7px 22px; position:relative}
+  .verdict .vgaps li::before{content:"\203A"; position:absolute; left:4px; color:var(--gold); font-weight:700}
+  .meter{display:flex; gap:5px; margin:18px 0 0}
+  .meter .seg{flex:1; height:8px; border-radius:4px; background:var(--line)}
+  .meter .seg.on{background:var(--gold)}
+  .urgency{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px}
+  .urgency .u{border:1px solid var(--line); border-radius:12px; padding:18px; background:var(--card)}
+  .urgency .u .ud{font-family:Georgia,serif; font-weight:700; color:var(--navy); font-size:17px; margin:0 0 6px}
+  .urgency .u p{font-size:14px; color:#39455c; margin:0}
+  @media (max-width:680px){ .urgency{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="bar">
+    <span class="brand"><span class="tick"></span> autonomy-ladder.io</span>
+  </header>
+
+  <div class="hero">
+    <p class="kicker">Regulated-Operations AI Governance · The Diagnostic</p>
+    <h1>Score your regulated-AI exposure.</h1>
+    <p class="warmth">I work with <b>founder-led Private Capital principals and CTOs at regulated firms</b> who have AI agents reading mandates, abstracting leases, or screening counterparties &#8212; and a board that will eventually ask who can override the model, and where the proof is. That gap is usually invisible until an examiner names it.</p>
+    <p class="lede">Run the A0&#8594;A4 self-scorer below. Seven questions, two minutes, a tier verdict on where your program actually sits: not a grade, a read on your exposure.</p>
+    <div class="hero-cta">
+      <a class="primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes</a>
+      <a href="#scorer">Run the scorer</a>
+    </div>
+  </div>
+
+  <section id="scorer">
+    <p class="sec-label">The A0&#8594;A4 Self-Scorer</p>
+    <div class="scorer" id="scorerBox" aria-label="Autonomy Ladder self-scorer">
+      <!-- Questions injected by JS; static fallback below for no-JS -->
+    </div>
+    <noscript>
+      <p class="note">The interactive scorer needs JavaScript. The same five maturity tiers are described in <a href="#ladder">The Ladder</a> below &#8212; read them and place your program by hand, then <a href="https://calendly.com/kunjarbhaduri/new-meeting-1">book 15 minutes</a> to pressure-test it.</p>
+    </noscript>
+
+    <div class="verdict" id="verdict" hidden aria-live="polite">
+      <div class="vtier">
+        <span class="big" id="vTierCode">A0</span>
+        <span class="vname" id="vTierName">Informational</span>
+      </div>
+      <div class="meter" id="vMeter" aria-hidden="true"></div>
+      <p class="vread" id="vRead"></p>
+      <p class="vpeer" id="vPeer"></p>
+      <ul class="vgaps" id="vGaps"></ul>
+      <div class="hero-cta">
+        <a class="primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes to pressure-test this verdict</a>
+        <a href="#brief">Get the board-ready brief</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ladder">
+    <p class="sec-label">The Ladder</p>
+    <div class="ladder">
+      <div class="rung" data-op="0">
+        <div class="lvl">A0</div>
+        <div><span class="name">Informational</span><span class="desc">Agent reads and recommends. No write authority.</span></div>
+      </div>
+      <div class="rung" data-op="1">
+        <div class="lvl">A1</div>
+        <div><span class="name">Assisted</span><span class="desc">Agent drafts. Human approves every write.</span></div>
+      </div>
+      <div class="rung" data-op="2">
+        <div class="lvl">A2</div>
+        <div><span class="name">Delegated</span><span class="desc">Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.</span></div>
+      </div>
+      <div class="rung" data-op="3">
+        <div class="lvl">A3</div>
+        <div><span class="name">Supervised Autonomous</span><span class="desc">Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.</span></div>
+      </div>
+      <div class="rung" data-op="4">
+        <div class="lvl">A4</div>
+        <div><span class="name">Production Autonomous</span><span class="desc">A3 plus inter-agent orchestration and operator-validated escalation paths.</span></div>
+      </div>
+    </div>
+    <p class="note"><b>A2 &#8594; A3 is the regulator-visible boundary.</b> Escalation is automatic; de-escalation is deliberate. Most firms running agents in production believe they sit a rung higher than the audit chain can prove.</p>
+  </section>
+
+  <section>
+    <p class="sec-label">Why Now</p>
+    <div class="urgency">
+      <div class="u">
+        <p class="ud">Colorado SB 26-189</p>
+        <p>Compliance horizon January 1, 2027. The first U.S. cross-sector AI duty-of-care law a regulated operator has to answer to, covering risk management, disclosure, and a documented override path.</p>
+      </div>
+      <div class="u">
+        <p class="ud">EU AI Act, Article 14</p>
+        <p>Human oversight is a named obligation for high-risk systems. If you serve EU clients or data, "the model decided" is not a defensible audit answer.</p>
+      </div>
+      <div class="u">
+        <p class="ud">SR 26-2 (Fed / OCC / FDIC)</p>
+        <p>Model-risk supervision for larger institutions, and the counterparties that sell to them inherit the diligence. An effective-challenge story is becoming table stakes.</p>
+      </div>
+    </div>
+    <p class="note">These are deadlines, not talking points. The work to answer them takes longer than the gap between now and the dates above.</p>
+  </section>
+
+  <section>
+    <p class="sec-label">The Open-Source Patterns</p>
+    <p class="demo" style="margin:0 0 18px">Six MIT-licensed pattern libraries &#8212; five DOI-archived on Zenodo, the sixth (payments) published with its DOI pending. These are the same governance primitives the diagnostic scores you against: public, free, and yours to read before any conversation. This is demonstration, not a gate.</p>
+    <div class="kit">
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/finserv-agent-audit">github.com/linus10x/finserv-agent-audit</a><span class="badge">LIVE</span>
+        <p>Governance patterns for AI agents in regulated finance &#8212; DEFCON state machine, sovereign veto, hash-chain audit, the autonomy ladder, EU AI Act mapping, shadow mode.</p>
+      </div>
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/private-capital-agent-audit">github.com/linus10x/private-capital-agent-audit</a><span class="badge">LIVE</span>
+        <p>Standalone investment-adviser library &#8212; five primitives plus seven adviser controls mapped to the Advisers Act fiduciary duty. For buy-side and allocator AI.</p>
+      </div>
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/cre-agent-audit">github.com/linus10x/cre-agent-audit</a><span class="badge">LIVE</span>
+        <p>Commercial real estate sibling &#8212; the same patterns plus three CRE-native gates: lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency.</p>
+      </div>
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/banking-agent-audit">github.com/linus10x/banking-agent-audit</a><span class="badge">LIVE</span>
+        <p>Banking primitives with model-risk effective-challenge, an ECOA / Reg B adverse-action gate, and an OFAC reference workflow wired by the deployer.</p>
+      </div>
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/payer-agent-audit">github.com/linus10x/payer-agent-audit</a><span class="badge">LIVE</span>
+        <p>Healthcare-payer library &#8212; utilization and claims-adjacent governance for agents operating where coverage decisions and member PII meet regulation.</p>
+      </div>
+      <div class="k">
+        <a class="repo" href="https://github.com/linus10x/payments-agent-audit">github.com/linus10x/payments-agent-audit</a><span class="badge">LIVE</span>
+        <p>Payments library &#8212; real OFAC screening, BSA/AML and Reg E gates, plus a rail-finality / irreversibility check for actions that cannot be undone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brief">
+    <p class="sec-label">Your Benchmark + The Board-Ready Brief</p>
+    <div class="capture">
+      <h3>Get your tier benchmark and the board-ready brief</h3>
+      <p class="sub">The repos above are public. This is the part they aren&#8217;t: where your scored tier sits against the peer band for your firm type, plus a one-page brief written for the board. It covers the override question, the audit-chain question, and the deadline that applies to you. I send it to whatever inbox you use.</p>
+      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post" target="_blank" rel="noopener">
+        <div class="cap-field full">
+          <label for="cap-email">Email</label>
+          <input type="email" id="cap-email" name="email_address" placeholder="you@anywhere.com" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="cap-field">
+          <label for="cap-role">Your role</label>
+          <select id="cap-role" name="fields[role]" required>
+            <option value="" disabled selected>Select&#8230;</option>
+            <option>CTO / CIO</option>
+            <option>Chief AI Officer</option>
+            <option>CCO / Chief Risk / General Counsel</option>
+            <option>PE Operating Partner / Investor</option>
+            <option>Founder / CEO / Principal</option>
+            <option>Board member / Advisor</option>
+            <option value="Other">Other</option>
+          </select>
+          <input class="cap-other" type="text" id="cap-role-other" placeholder="Please specify your role" aria-label="Specify your role" hidden>
+        </div>
+        <div class="cap-field">
+          <label for="cap-firm">Firm type</label>
+          <select id="cap-firm" name="fields[firm_type]" required>
+            <option value="" disabled selected>Select&#8230;</option>
+            <option>Private Capital — wealth / alts / buy-side</option>
+            <option>PE / VC firm</option>
+            <option>Bank / capital markets</option>
+            <option>CRE operator</option>
+            <option>Insurer / payer</option>
+            <option value="Other regulated">Other regulated</option>
+          </select>
+          <input class="cap-other" type="text" id="cap-firm-other" placeholder="Please specify your firm type" aria-label="Specify your firm type" hidden>
+        </div>
+        <input type="hidden" id="cap-tier" name="fields[scored_tier]" value="">
+        <button type="submit">Send my benchmark + brief</button>
+      </form>
+      <script>
+        (function(){
+          var form=document.getElementById("capForm");
+          var pairs=[["cap-role","cap-role-other","Other","role"],["cap-firm","cap-firm-other","Other regulated","firm_type"]];
+          pairs.forEach(function(p){
+            var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
+            sel.addEventListener("change",function(){
+              var isOther=sel.value===p[2];
+              oth.hidden=!isOther; oth.required=isOther;
+              if(!isOther){oth.value="";}
+            });
+          });
+          form.addEventListener("submit",function(){
+            pairs.forEach(function(p){
+              var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
+              if(sel.value===p[2] && oth.value.trim()){
+                sel.removeAttribute("name");
+                var h=document.createElement("input");
+                h.type="hidden"; h.name="fields["+p[3]+"]"; h.value=oth.value.trim();
+                form.appendChild(h);
+              }
+            });
+          });
+        })();
+      </script>
+      <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note &#8212; no spam, no sharing, no selling, unsubscribe in one click. Any inbox is fine; personal email is welcome.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by Kunjar Bhaduri &#8212; 25+ years of regulated-industry technology leadership across Private Capital, banking, capital markets, payments, and healthcare-payer technology. I architected the platform behind a $750M wealth-management contract, and rebuilt a company on Azure during an active ransomware investigation: 12 days hard-down, 50-day rebuild. Author of the Autonomy Ladder (A0&#8594;A4) framework and the six open-source pattern libraries above.</p>
+    <p>The diagnostic is free. The engagements that follow run from a fixed-scope read of one program to a standing governance retainer, outcome first, scope agreed before any number. I take calls from PE operating partners, founder-principals, and CTOs at regulated firms.</p>
+    <div class="cta">
+      <a class="primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes</a>
+      <a href="https://autonomy-ladder.io/">The framework</a>
+      <a href="https://github.com/linus10x">GitHub</a>
+    </div>
+    <p class="fineprint">Autonomy Ladder&#8482; is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. Regulatory dates are summarized for orientation; confirm against primary sources for your jurisdiction. &copy; 2026.</p>
+  </footer>
+
+</div>
+
+<script>
+/* ---- A0→A4 self-scorer (vanilla JS, no libs) ---- */
+(function(){
+  // Each question maps to a governance dimension. Option value = rung evidence (0..4).
+  var QS=[
+    {dim:"Model inventory",
+     q:"Do you have a current, written inventory of every AI/agent system that can touch capital, clients, counterparties, or compliance?",
+     opts:[
+       [0,"No inventory — we&#8217;d have to go ask around to list them."],
+       [1,"An informal list lives in someone&#8217;s head or a slide."],
+       [2,"A maintained inventory exists but isn&#8217;t tied to risk tiers."],
+       [4,"Versioned inventory mapped to decision classes and risk tiers, reviewed on a cadence."]
+     ]},
+    {dim:"Write authority",
+     q:"What can your agents actually do without a human in the loop?",
+     opts:[
+       [0,"Read and recommend only — no write authority anywhere."],
+       [1,"They draft; a human approves every write."],
+       [2,"They write inside a defined envelope; out-of-envelope goes to a human."],
+       [3,"They write autonomously for an in-scope decision class, with a hard veto layer."]
+     ]},
+    {dim:"Verifier independence",
+     q:"When an agent makes a consequential call, what checks it before it lands?",
+     opts:[
+       [0,"Nothing deterministic — we trust the model&#8217;s own output."],
+       [1,"A human eyeballs it; no independent automated check."],
+       [2,"Rule-based checks, but they share code or prompts with the agent."],
+       [4,"An independent deterministic verifier the agent cannot edit or talk its way past."]
+     ]},
+    {dim:"Sovereign veto / human authority",
+     q:"Can a human stop or override an agent decision, and is that override impossible for the agent to suppress?",
+     opts:[
+       [0,"There&#8217;s no defined override path."],
+       [1,"A human can intervene, but only if they happen to be watching."],
+       [2,"A documented override exists; whether the agent can route around it is unclear."],
+       [4,"A non-overridable veto layer sits outside the agent and is tested."]
+     ]},
+    {dim:"Audit chain",
+     q:"If an examiner asked you to reconstruct exactly why an agent made a specific decision six months ago, could you?",
+     opts:[
+       [0,"No — the reasoning isn&#8217;t captured."],
+       [1,"We have logs, but they&#8217;re scattered and not tamper-evident."],
+       [2,"Decisions are logged centrally but the chain can be edited after the fact."],
+       [4,"A tamper-evident, hash-chained ledger reconstructs any decision end to end."]
+     ]},
+    {dim:"Escalation design",
+     q:"How are exceptions and edge cases handled when an agent hits the limit of its envelope?",
+     opts:[
+       [0,"Undefined — edge cases are handled ad hoc when noticed."],
+       [1,"Edge cases get flagged to a human inbox with no SLA."],
+       [3,"Automatic escalation on out-of-envelope events, with a defined owner."],
+       [4,"Automatic escalation plus operator-validated paths and de-escalation discipline."]
+     ]},
+    {dim:"Regulatory mapping",
+     q:"Have you mapped your AI program to the obligations that actually apply to you (e.g. Colorado SB 26-189, EU AI Act Art. 14, model-risk supervision)?",
+     opts:[
+       [0,"We haven&#8217;t looked at which apply to us."],
+       [1,"We&#8217;re aware of them but haven&#8217;t mapped controls to them."],
+       [2,"Partial mapping for one framework."],
+       [4,"Controls mapped to each applicable obligation with named owners and dates."]
+     ]}
+  ];
+
+  var TIERS=[
+    {code:"A0", name:"Informational",
+     read:"Your agents read and recommend, but the governance scaffolding around autonomy isn&#8217;t built yet. That&#8217;s a defensible place to be today &#8212; it stops being defensible the moment a write decision goes live without a verifier and a ledger underneath it.",
+     peer:"Most firms that have started experimenting but haven&#8217;t put an agent in front of a real decision land here. Peers in regulated operations are moving off A0 fast; the gap to watch is the first production write."},
+    {code:"A1", name:"Assisted",
+     read:"A human approves every write, which keeps you safe by keeping a person in the loop. The exposure is that this model doesn&#8217;t scale &#8212; and the controls that would let it scale (independent verifier, tamper-evident audit) aren&#8217;t in place yet, so the day you remove the human you fall, not climb.",
+     peer:"This is the most common honest answer from founder-led firms running real workflows. The peers pulling ahead are the ones building the verifier and the ledger <b>before</b> they widen the envelope, not after."},
+    {code:"A2", name:"Delegated",
+     read:"Your agents write inside an envelope &#8212; real autonomy with a boundary. You&#8217;re sitting on the regulator-visible line. The question an examiner asks next is whether your verifier is genuinely independent and whether the audit chain can be edited after the fact. If either answer is soft, your effective tier is lower than it feels.",
+     peer:"A2 is where exposure concentrates: enough autonomy to matter, not always enough proof to hold. <b>Most firms here believe they&#8217;re at A3.</b> The A2&#8594;A3 boundary is exactly what a diligence process or an exam tests first."},
+    {code:"A3", name:"Supervised Autonomous",
+     read:"You have autonomy with a non-overridable veto and a live audit ledger &#8212; the architecture regulators are converging toward. The remaining work is hardening: proving the verifier&#8217;s independence under adversarial conditions, and making escalation paths operator-validated rather than assumed.",
+     peer:"Few regulated firms genuinely hold A3 today. If your evidence backs this score, you&#8217;re ahead of the deadline curve on SB 26-189 and model-risk supervision; the conversation worth having is how to prove it, not whether to build it."},
+    {code:"A4", name:"Production Autonomous",
+     read:"This is the top of the ladder &#8212; inter-agent orchestration on validated escalation paths, with everything below it intact. If your evidence truly supports A4, you&#8217;re an outlier, and the valuable work is independent confirmation that the audit chain and veto layer hold when someone tries to break them.",
+     peer:"Almost no regulated operator can defend A4 under adversarial review. A self-score of A4 is worth pressure-testing hardest; the failure mode here is believing the architecture is complete when one untested path makes it A2 under examination."}
+  ];
+
+  var box=document.getElementById("scorerBox");
+  var answers=new Array(QS.length).fill(null);
+
+  QS.forEach(function(item, qi){
+    var q=document.createElement("div");
+    q.className="q";
+    var html='<p class="qnum">Q'+(qi+1)+' &middot; '+item.dim+'</p><p class="qtext">'+item.q+'</p><div class="opts">';
+    item.opts.forEach(function(o, oi){
+      html+='<label class="opt"><input type="radio" name="q'+qi+'" value="'+o[0]+'" data-qi="'+qi+'" data-oi="'+oi+'"><span>'+o[1]+'</span></label>';
+    });
+    html+='</div>';
+    q.innerHTML=html;
+    box.appendChild(q);
+  });
+
+  var actions=document.createElement("div");
+  actions.className="score-actions";
+  actions.innerHTML='<button id="scoreBtn" type="button" disabled>See my tier</button><span class="hint" id="scoreHint">Answer all 7 to see your verdict.</span>';
+  box.appendChild(actions);
+
+  var btn=document.getElementById("scoreBtn");
+  var hint=document.getElementById("scoreHint");
+
+  box.addEventListener("change", function(e){
+    var t=e.target;
+    if(t && t.type==="radio"){
+      var qi=parseInt(t.getAttribute("data-qi"),10);
+      answers[qi]=parseInt(t.value,10);
+      // highlight selected option
+      var group=t.closest(".opts");
+      Array.prototype.forEach.call(group.querySelectorAll(".opt"), function(l){ l.classList.remove("sel"); });
+      t.closest(".opt").classList.add("sel");
+      var done=answers.filter(function(a){return a!==null;}).length;
+      hint.textContent = done<QS.length ? (QS.length-done)+" question"+((QS.length-done)===1?"":"s")+" left." : "Ready — see your verdict.";
+      btn.disabled = done<QS.length;
+    }
+  });
+
+  function tierFromScore(vals){
+    // Tier is gated by the WEAKEST controlling dimension, not the average —
+    // a single missing verifier or audit chain caps the real tier. That mirrors how
+    // an examiner reads it: the chain is only as strong as its weakest link.
+    var min=Math.min.apply(null, vals);
+    var avg=vals.reduce(function(a,b){return a+b;},0)/vals.length;
+    // Cap the celebratory pull of a high average; the floor governs.
+    var tier=Math.min(Math.round(avg), min+1, 4);
+    if(tier<0) tier=0;
+    return tier;
+  }
+
+  btn.addEventListener("click", function(){
+    if(answers.indexOf(null)>-1) return;
+    var tier=tierFromScore(answers);
+    var T=TIERS[tier];
+
+    document.getElementById("vTierCode").textContent=T.code;
+    document.getElementById("vTierName").textContent=T.name;
+    document.getElementById("vRead").innerHTML=T.read;
+    document.getElementById("vPeer").innerHTML=T.peer;
+
+    // meter: 5 segments, light up through the achieved tier
+    var meter=document.getElementById("vMeter");
+    meter.innerHTML="";
+    for(var i=0;i<5;i++){
+      var s=document.createElement("div");
+      s.className="seg"+(i<=tier?" on":"");
+      meter.appendChild(s);
+    }
+
+    // gaps: name the weakest dimensions honestly
+    var gaps=document.getElementById("vGaps");
+    gaps.innerHTML="";
+    var ranked=QS.map(function(item,i){return {dim:item.dim, v:answers[i]};})
+                 .sort(function(a,b){return a.v-b.v;})
+                 .slice(0,3)
+                 .filter(function(x){return x.v<4;});
+    if(ranked.length){
+      var lead=document.createElement("li");
+      lead.innerHTML="<b style='color:var(--navy)'>The rungs holding you down:</b>";
+      lead.style.listStyle="none"; lead.style.paddingLeft="0";
+      gaps.appendChild(lead);
+      ranked.forEach(function(r){
+        var li=document.createElement("li");
+        li.textContent=r.dim+(r.v<=1?" — this is a floor on your whole program":r.v===2?" — partial, and an examiner will probe it":" — close, worth hardening");
+        gaps.appendChild(li);
+      });
+    }
+
+    // carry the scored tier into the lead-capture form
+    var tierField=document.getElementById("cap-tier");
+    if(tierField) tierField.value=T.code+" "+T.name;
+
+    var v=document.getElementById("verdict");
+    v.hidden=false;
+    v.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+})();
+</script>
+</body>
+</html>
