@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autonomy Ladder™ — Regulated-Operations AI Governance</title>
-<meta name="description" content="A0→A4 governance for AI agents that have to hold under audit. Five maturity tiers, six open-source pattern libraries, three CRE-native gates. Private Capital and Commercial Real Estate.">
+<meta name="description" content="A0→A4 governance for AI agents that have to hold under audit. Five maturity tiers, six open-source pattern libraries across six regulated verticals — Private Capital, CRE, Financial Services, Banking, Payments, and Healthcare Payer.">
 <link rel="canonical" href="https://autonomy-ladder.io/">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 
@@ -29,7 +29,7 @@
   :root{
     --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b; --gold-ink:#8a6420;
     --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
-    --bg:#faf8f3; --card:#ffffff; --pc:#f1eef8; --cre:#eef3f1;
+    --bg:#faf8f3; --card:#ffffff;
   }
   *{box-sizing:border-box}
   .skip{position:absolute; top:-48px; left:8px; z-index:100; background:var(--navy); color:#fff; padding:9px 14px; border-radius:6px; font-weight:600; font-size:14px; border:0; transition:top .15s}
@@ -68,12 +68,11 @@
   .sec-label{display:block; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 8px; font-family:inherit; line-height:1.4}
   .sec-title{font-size:clamp(21px,3vw,27px); color:var(--navy); margin:0 0 18px; line-height:1.2}
 
-  .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-  .card{border:1px solid var(--line); border-radius:14px; padding:22px}
-  .card.pc{background:var(--pc)} .card.cre{background:var(--cre)}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .card{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card); display:flex; flex-direction:column; gap:7px}
   .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
-  .card h3{font-size:21px; margin:6px 0 10px}
-  .card p{margin:0; font-size:15px; color:#39455c}
+  .card h3{font-size:18px; margin:2px 0 4px; line-height:1.25}
+  .card p{margin:0; font-size:14px; color:#39455c; line-height:1.45}
 
   .ladder{display:flex; flex-direction:column; gap:10px}
   .rung{display:grid; grid-template-columns:84px 1fr; gap:18px; align-items:start;
@@ -128,7 +127,7 @@
   .cta a.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
   .fineprint{margin-top:26px; font-size:12.5px; color:#5b6b7e}
 
-  @media (max-width:780px){ .libgrid{grid-template-columns:1fr 1fr} }
+  @media (max-width:780px){ .cards,.libgrid{grid-template-columns:1fr 1fr} }
   @media (max-width:680px){
     .cards,.libgrid{grid-template-columns:1fr}
     .lede{font-size:17px}
@@ -151,7 +150,7 @@
   <main id="main-content">
   <div class="hero">
     <p class="kicker">Regulated-Operations AI Governance</p>
-    <h1>One discipline, two verticals.</h1>
+    <h1>One discipline, six regulated verticals.</h1>
     <p class="lede">When an examiner, an investor, or an acquirer asks who can override your AI and where the record sits — this is the framework that answers.</p>
     <ul class="proof">
       <li><b>$750M</b> deal architect</li>
@@ -163,17 +162,38 @@
 
   <section>
     <span class="sec-label">The Verticals</span>
-    <h2 class="sec-title">Two regulated verticals, one governance backbone</h2>
+    <h2 class="sec-title">Six regulated verticals, one governance backbone</h2>
+    <p class="plain">One discipline &#8212; the A0&#8594;A4 ladder, sovereign veto, and hash-chain audit &#8212; hardened separately for the six regulated sectors where an autonomous agent can move money, deny a person, or bind a fiduciary. Each has its own regulator, its own rule cite, its own open library.</p>
     <div class="cards">
-      <div class="card pc">
+      <div class="card">
         <span class="tag">Private Capital</span>
-        <h3>Allocators · Alts · UHNW · Family Offices · Buy-Side AI</h3>
-        <p>Sovereign veto for autonomous allocators. Mandate, risk-limit, and fiduciary-reasonableness gates mapped to the Advisers Act &sect;206 fiduciary duty.</p>
+        <h3>Allocators, alts &amp; family offices</h3>
+        <p>Mandate, risk-limit, and fiduciary-reasonableness gates mapped to the Advisers Act &sect;206 fiduciary duty.</p>
       </div>
-      <div class="card cre">
+      <div class="card">
         <span class="tag">Commercial Real Estate</span>
-        <h3>PE-Backed CRE Operators</h3>
-        <p>Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII data-residency partitioning. Colorado SB 26-189 mapped.</p>
+        <h3>PE-backed CRE operators</h3>
+        <p>Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII residency. Colorado SB 26-189 mapped.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Financial Services</span>
+        <h3>Capital markets &amp; trading desks</h3>
+        <p>EU AI Act mapping for cross-border desks, plus a DEFCON-style readiness state machine, sovereign veto, and hash-chain audit for market-facing AI.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Banking</span>
+        <h3>Bank model-risk &amp; lending</h3>
+        <p>Model-risk effective-challenge, ECOA&nbsp;/&nbsp;Reg&nbsp;B adverse-action gate, OFAC reference workflow.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Payments</span>
+        <h3>Payment &amp; transfer operators</h3>
+        <p>OFAC screening, BSA&nbsp;/&nbsp;AML, Reg&nbsp;E &#8212; plus a rail-finality gate for transfers that can&#8217;t be clawed back.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Healthcare Payer</span>
+        <h3>Health-insurance payers</h3>
+        <p>Coverage-determination and utilization-management governance for health-insurance payers.</p>
       </div>
     </div>
   </section>
@@ -290,8 +310,9 @@
             <option>Bank / capital markets</option>
             <option>Asset / wealth manager</option>
             <option>PE / VC firm</option>
+            <option>Payments / fintech</option>
             <option>CRE operator</option>
-            <option>Insurer</option>
+            <option>Insurer / health payer</option>
             <option value="Other regulated">Other regulated</option>
           </select>
           <input class="cap-other" type="text" id="cap-firm-other" placeholder="Please specify your firm type" aria-label="Specify your firm type" hidden>
