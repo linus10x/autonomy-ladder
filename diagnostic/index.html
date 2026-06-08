@@ -26,11 +26,13 @@
 
 <style>
   :root{
-    --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b;
+    --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b; --gold-ink:#8a6420;
     --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
     --bg:#faf8f3; --card:#ffffff; --pc:#f1eef8; --cre:#eef3f1;
   }
   *{box-sizing:border-box}
+  .skip{position:absolute; top:-48px; left:8px; z-index:100; background:var(--navy); color:#fff; padding:9px 14px; border-radius:6px; font-weight:600; font-size:14px; border:0; transition:top .15s}
+  .skip:focus{top:8px}
   html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--ink);
@@ -40,25 +42,34 @@
   .wrap{max-width:880px; margin:0 auto; padding:0 24px}
   h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700}
   a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(184,137,59,.5)}
-  a:hover{border-bottom-color:var(--gold)}
+  a:hover{border-bottom-color:var(--gold-ink)}
 
-  header.bar{padding:26px 0 0}
+  header.bar{padding:26px 0 0; display:flex; align-items:center; justify-content:space-between; gap:12px 16px; flex-wrap:wrap}
   .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0}
   .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block}
+  .nav{font-size:14px; color:var(--muted); display:flex; flex-wrap:wrap; gap:6px 16px}
+  .nav a{border:0; color:var(--muted)}
+  .nav a:hover{color:var(--navy)}
 
   .hero{padding:38px 0 30px; border-bottom:1px solid var(--line)}
-  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 14px}
+  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 14px}
   h1{font-size:clamp(30px,5vw,48px); margin:0 0 18px}
   .lede{font-size:19px; color:#33415a; max-width:48ch; margin:0 0 14px}
   .casestudies{font-style:italic; color:var(--muted); font-size:16px; margin:0}
+  .proof{display:flex; flex-wrap:wrap; gap:6px 18px; margin:18px 0 4px; padding:0; list-style:none}
+  .proof li{font-size:13.5px; font-weight:600; color:#43536b; display:inline-flex; align-items:center; gap:8px}
+  .proof li::before{content:""; width:6px; height:6px; border-radius:2px; background:var(--gold); flex:none}
+  .proof b{color:var(--navy)}
+  @media (max-width:680px){ .proof{flex-direction:column; gap:8px} }
 
   section{padding:40px 0; border-bottom:1px solid var(--line)}
-  .sec-label{font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 22px}
+  .sec-label{display:block; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 8px; font-family:inherit; line-height:1.4}
+  .sec-title{font-size:clamp(21px,3vw,27px); color:var(--navy); margin:0 0 18px; line-height:1.2}
 
   .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   .card{border:1px solid var(--line); border-radius:14px; padding:22px}
   .card.pc{background:var(--pc)} .card.cre{background:var(--cre)}
-  .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
   .card h3{font-size:21px; margin:6px 0 10px}
   .card p{margin:0; font-size:15px; color:#39455c}
 
@@ -69,12 +80,15 @@
   .rung .lvl{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy)}
   .rung .name{font-weight:700; color:var(--navy); display:block; margin-bottom:3px}
   .rung .desc{font-size:14.5px; color:#46536c}
+  .rung[data-op="0"]{border-left-color:#e0d9c5}
   .rung[data-op="1"]{border-left-color:#d8c08a}
   .rung[data-op="2"]{border-left-color:#cdb070}
   .rung[data-op="3"]{border-left-color:#c2a157}
   .rung[data-op="4"]{border-left-color:#b8893b}
   .note{margin:18px 0 0; font-size:14px; color:var(--muted)}
   .note b{color:var(--navy)}
+  .plain{font-size:16px; color:#39455c; max-width:62ch; margin:0 0 22px}
+  .plain b{color:var(--navy); font-weight:700}
 
   .kit{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   .kit .k{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card)}
@@ -83,7 +97,7 @@
   .k p{font-size:14.5px; color:#39455c; margin:10px 0 0}
 
   .demo p{font-size:16px; color:#39455c; max-width:60ch}
-  .demo .soon{display:inline-block; margin-top:8px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .demo .soon{display:inline-block; margin-top:8px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
 
   .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card); max-width:620px}
   .capture h3{font-size:21px; margin:0 0 8px}
@@ -93,21 +107,21 @@
   .cap-field.full{grid-column:1 / -1}
   .cap-field label{font-size:11.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--navy)}
   .cap-form input,.cap-form select{width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
-  .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold)}
+  .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold-ink)}
   .cap-other{margin-top:8px}
   .cap-other[hidden]{display:none}
   .cap-error{font-size:12.5px; color:#b3261e; font-weight:600; margin:6px 0 0}
   .cap-error[hidden]{display:none}
   .cap-form button{grid-column:1 / -1; display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 20px; border:1px solid #0f2440; border-radius:8px; background:#0f2440; color:#fff; font-weight:600; font-size:15px; cursor:pointer; margin-top:2px; -webkit-print-color-adjust:exact; print-color-adjust:exact}
   .cap-form button:hover{background:#0c1d34}
-  .capture .privacy{font-size:12.5px; color:#8a93a3; margin:14px 0 0; max-width:58ch}
+  .capture .privacy{font-size:12.5px; color:#5b6b7e; margin:14px 0 0; max-width:58ch}
   @media (max-width:680px){ .cap-form{grid-template-columns:1fr} }
 
   footer{padding:44px 0 60px}
   footer p{color:#39455c; max-width:62ch}
   .cta a{display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:14px; margin-right:10px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
   .cta a.primary{background:#0f2440; color:#fff; border-color:#0f2440; -webkit-print-color-adjust:exact; print-color-adjust:exact}
-  .fineprint{margin-top:26px; font-size:12.5px; color:#8a93a3}
+  .fineprint{margin-top:26px; font-size:12.5px; color:#5b6b7e}
 
   @media (max-width:680px){
     .cards,.kit{grid-template-columns:1fr}
@@ -126,18 +140,18 @@
 
   /* hero hook — the provocation, surfaced */
   .hook{font-family:Georgia,serif; font-size:clamp(19px,2.6vw,23px); line-height:1.4; color:var(--navy); font-weight:700; margin:0 0 16px; padding-left:16px; border-left:4px solid var(--gold); max-width:30ch}
-  .hook span{color:var(--gold)}
+  .hook span{color:var(--gold-ink)}
 
   /* "is this you?" self-identify strip */
   .isyou{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin:6px 0 22px}
   .isyou .y{border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:11px; padding:15px 16px; background:var(--card)}
-  .isyou .y .yl{font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 7px}
+  .isyou .y .yl{font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 7px}
   .isyou .y p{font-size:14px; color:#33415a; margin:0; line-height:1.4}
   @media (max-width:680px){ .isyou{grid-template-columns:1fr; gap:10px} }
 
   /* sample verdict — show the payoff before the commitment */
   .sample{position:relative; border:1px dashed var(--line); border-radius:12px; background:#fcfaf5; padding:16px 18px; margin:0 0 8px}
-  .sample .stag{display:inline-block; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 8px}
+  .sample .stag{display:inline-block; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 8px}
   .sample .srow{display:flex; align-items:baseline; gap:11px; flex-wrap:wrap}
   .sample .scode{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy); line-height:1}
   .sample .sname{font-family:Georgia,serif; font-weight:700; font-size:16px; color:var(--navy)}
@@ -147,9 +161,9 @@
   .sample .sline{font-size:13.5px; color:#46536c; margin:11px 0 0; font-style:italic}
 
   /* scorer progress + sticky action */
-  .progress{position:sticky; top:0; z-index:5; background:rgba(250,248,243,.97); backdrop-filter:saturate(1.4) blur(2px); border-bottom:1px solid var(--line); padding:13px 22px 12px}
+  .progress{position:sticky; top:0; z-index:5; background:#faf8f3; border-bottom:1px solid var(--line); padding:13px 22px 12px}
   .progress .ptop{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin:0 0 8px}
-  .progress .pcount{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .progress .pcount{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
   .progress .pleft{font-size:12.5px; color:var(--muted)}
   .pbar{display:flex; gap:4px}
   .pbar i{flex:1; height:6px; border-radius:3px; background:var(--line); transition:background .18s}
@@ -158,15 +172,15 @@
   .scorer{border:1px solid var(--line); border-radius:14px; background:var(--card); padding:8px 0 0}
   .q{border-bottom:1px solid var(--line); padding:20px 22px}
   .q:last-of-type{border-bottom:0}
-  .q .qnum{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 6px}
+  .q .qnum{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 6px}
   .q .qtext{font-family:Georgia,serif; font-weight:700; color:var(--navy); font-size:18px; margin:0 0 14px; line-height:1.3}
   .opts{display:flex; flex-direction:column; gap:9px}
   .opt{display:flex; gap:11px; align-items:flex-start; min-height:48px; border:1px solid var(--line); border-radius:9px; padding:11px 14px; cursor:pointer; background:#fff; transition:border-color .12s, background .12s}
   .opt:hover{border-color:var(--gold-soft)}
-  .opt input{margin:3px 0 0; accent-color:var(--gold); flex:0 0 auto}
+  .opt input{margin:3px 0 0; accent-color:var(--gold-ink); flex:0 0 auto}
   .opt span{font-size:14.5px; color:#39455c}
-  .opt.sel{border-color:var(--gold); background:#fcf8ef}
-  .score-actions{position:sticky; bottom:0; z-index:5; padding:16px 22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; background:rgba(255,255,255,.97); backdrop-filter:saturate(1.4) blur(2px); border-top:1px solid var(--line); border-radius:0 0 14px 14px}
+  .opt.sel{border-color:var(--gold-ink); background:#fcf8ef}
+  .score-actions{position:sticky; bottom:0; z-index:5; padding:16px 22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; background:#ffffff; border-top:1px solid var(--line); border-radius:0 0 14px 14px}
   .score-actions button{display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:12px 24px; border:1px solid #0f2440; border-radius:8px; background:#0f2440; color:#fff; font-weight:600; font-size:15px; cursor:pointer; -webkit-print-color-adjust:exact; print-color-adjust:exact}
   .score-actions button:hover{background:#0c1d34}
   .score-actions button:disabled{background:#d7d2c6; border-color:#d7d2c6; color:#fff; cursor:not-allowed}
@@ -182,7 +196,9 @@
   .verdict .vpeer b{color:var(--navy)}
   .verdict .vgaps{margin:16px 0 0; padding:0; list-style:none}
   .verdict .vgaps li{font-size:14.5px; color:#39455c; padding:7px 0 7px 22px; position:relative}
-  .verdict .vgaps li::before{content:"\203A"; position:absolute; left:4px; color:var(--gold); font-weight:700}
+  .verdict .vgaps li::before{content:"\203A"; position:absolute; left:4px; color:var(--gold-ink); font-weight:700}
+  .verdict .vgaps li.vlead{padding-left:0}
+  .verdict .vgaps li.vlead::before{content:none}
   .meter{display:flex; gap:5px; margin:18px 0 0}
   .meter .seg{flex:1; height:8px; border-radius:4px; background:var(--line)}
   .meter .seg.on{background:var(--gold)}
@@ -194,25 +210,38 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main-content">Skip to content</a>
 <div class="wrap">
 
   <header class="bar">
-    <span class="brand"><span class="tick"></span> autonomy-ladder.io</span>
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/diagnostic">Diagnostic</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+      <a href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 min</a>
+    </nav>
   </header>
 
+  <main id="main-content">
   <div class="hero">
     <p class="kicker">Regulated-Operations AI Governance · The Diagnostic</p>
     <h1>Can your AI agents survive a diligence review?</h1>
     <p class="hook">Most firms running agents in production believe they sit <span>a rung higher</span> than their audit chain can prove. Find out where yours actually sits &#8212; in two minutes.</p>
     <p class="warmth">It is the gap an LP&#8217;s diligence team, an acquirer&#8217;s tech DD, or an examiner probes first: who can override the model, and where is the proof. Usually invisible &#8212; until someone with the power to walk asks.</p>
 
-    <div class="isyou" aria-label="Who this is for">
+    <div class="isyou" role="group" aria-label="Who this is for">
       <div class="y"><p class="yl">Principal</p><p>Your agents touch capital, mandates, or client decisions &#8212; and you carry the downside.</p></div>
       <div class="y"><p class="yl">CTO / CCO</p><p>You&#8217;ll be the one asked who can override the model, and to show the audit trail.</p></div>
       <div class="y"><p class="yl">PE Operating Partner</p><p>You&#8217;re carrying this same risk across a portfolio of companies, mostly unmeasured.</p></div>
     </div>
 
     <p class="lede">Run the A0&#8594;A4 self-scorer below. Seven questions, two minutes, a tier verdict on where your program actually sits: not a grade, a read on your exposure.</p>
+
+    <ul class="proof">
+      <li><b>$750M</b> deal architect</li>
+      <li><b>Ransomware-to-cloud</b>: 50-day MVP, not 6 months</li>
+      <li><b>6 open libraries</b>, 5 DOI-archived</li>
+    </ul>
 
     <div class="sample" aria-hidden="true">
       <span class="stag">What you get &#8212; sample verdict</span>
@@ -228,8 +257,9 @@
   </div>
 
   <section id="scorer">
-    <p class="sec-label">The A0&#8594;A4 Self-Scorer</p>
-    <div class="scorer" id="scorerBox" aria-label="Autonomy Ladder self-scorer">
+    <span class="sec-label">The A0&#8594;A4 Self-Scorer</span>
+    <h2 class="sec-title">Place your program on the ladder</h2>
+    <div class="scorer" id="scorerBox" role="group" aria-label="Autonomy Ladder self-scorer">
       <!-- Questions injected by JS; static fallback below for no-JS -->
     </div>
     <noscript>
@@ -253,7 +283,9 @@
   </section>
 
   <section id="ladder">
-    <p class="sec-label">The Ladder</p>
+    <span class="sec-label">The Ladder</span>
+    <h2 class="sec-title">Five maturity tiers, A0 to A4</h2>
+    <p class="plain">Think of it as a driver&#8217;s license for AI. At <b>A0</b> it only gives directions &#8212; a human drives. At <b>A2</b> it drives inside a fenced lot while you spot-check. At <b>A4</b> it drives itself on approved routes, with a brake it can&#8217;t switch off and a recorder of every turn.</p>
     <div class="ladder">
       <div class="rung" data-op="0">
         <div class="lvl">A0</div>
@@ -280,11 +312,12 @@
   </section>
 
   <section>
-    <p class="sec-label">Why Now</p>
+    <span class="sec-label">Why Now</span>
+    <h2 class="sec-title">The compliance deadlines are real</h2>
     <div class="urgency">
       <div class="u">
         <p class="ud">Colorado SB 26-189</p>
-        <p>Compliance horizon January 1, 2027. The first U.S. cross-sector AI duty-of-care law a regulated operator has to answer to, covering risk management, disclosure, and a documented override path.</p>
+        <p>Effective August 12, 2026; compliance horizon January 1, 2027. The first U.S. cross-sector AI duty-of-care law a regulated operator has to answer to, covering risk management, disclosure, and a documented override path.</p>
       </div>
       <div class="u">
         <p class="ud">EU AI Act, Article 14</p>
@@ -299,12 +332,13 @@
   </section>
 
   <section>
-    <p class="sec-label">The Open-Source Patterns</p>
-    <p class="demo" style="margin:0 0 18px">Six MIT-licensed pattern libraries &#8212; five DOI-archived on Zenodo, the sixth (payments) published with its DOI pending. These are the same governance primitives the diagnostic scores you against: public, free, and yours to read before any conversation. This is demonstration, not a gate.</p>
+    <span class="sec-label">The Open-Source Patterns</span>
+    <h2 class="sec-title">The patterns the diagnostic scores you against</h2>
+    <p class="demo" style="margin:0 0 18px">Six permissively licensed pattern libraries &#8212; five DOI-archived on Zenodo, the sixth (payments) with DOI archival in progress. These are the same governance primitives the diagnostic scores you against: public, free, and yours to read before any conversation. This is demonstration, not a gate.</p>
     <div class="kit">
       <div class="k">
         <a class="repo" href="https://github.com/linus10x/finserv-agent-audit">github.com/linus10x/finserv-agent-audit</a><span class="badge">LIVE</span>
-        <p>Governance patterns for AI agents in regulated finance &#8212; DEFCON state machine, sovereign veto, hash-chain audit, the autonomy ladder, EU AI Act mapping, shadow mode.</p>
+        <p>Governance patterns for AI agents in regulated finance &#8212; DEFCON-style readiness state machine, sovereign veto, hash-chain audit, the autonomy ladder, EU AI Act mapping, shadow mode.</p>
       </div>
       <div class="k">
         <a class="repo" href="https://github.com/linus10x/private-capital-agent-audit">github.com/linus10x/private-capital-agent-audit</a><span class="badge">LIVE</span>
@@ -330,11 +364,13 @@
   </section>
 
   <section id="brief">
-    <p class="sec-label">Your Benchmark + The Board-Ready Brief</p>
+    <span class="sec-label">Your Benchmark + The Board-Ready Brief</span>
+    <h2 class="sec-title">Your tier benchmark and the board-ready brief</h2>
     <div class="capture">
       <h3>Get your tier benchmark and the board-ready brief</h3>
       <p class="sub">The repos above are public. This is the part they aren&#8217;t: where your scored tier sits against the peer band for your firm type, plus a one-page brief written for the board. It covers the override question, the audit-chain question, and the deadline that applies to you. I send it to whatever inbox you use.</p>
-      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post" target="_blank" rel="noopener">
+      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post">
+        <input type="hidden" name="success_url" value="https://autonomy-ladder.io/thank-you?subscribed=1">
         <div class="cap-field full">
           <label for="cap-email">Email</label>
           <input type="email" id="cap-email" name="email_address" placeholder="you@anywhere.com" autocomplete="email" inputmode="email" required>
@@ -397,6 +433,8 @@
       <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note &#8212; no spam, no sharing, no selling, unsubscribe in one click. Any inbox is fine; personal email is welcome.</p>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <p>Built by Kunjar Bhaduri &#8212; 25+ years of regulated-industry technology leadership across Private Capital, banking, capital markets, payments, and healthcare-payer technology. I architected the platform behind a $750M wealth-management contract, and rebuilt a company on Azure during an active ransomware investigation: 12 days hard-down, 50-day rebuild. Author of the Autonomy Ladder (A0&#8594;A4) framework and the six open-source pattern libraries above.</p>
@@ -587,12 +625,16 @@
                  .filter(function(x){return x.v<4;});
     if(ranked.length){
       var lead=document.createElement("li");
+      lead.className="vlead";
       lead.innerHTML="<b style='color:var(--navy)'>The rungs holding you down:</b>";
-      lead.style.listStyle="none"; lead.style.paddingLeft="0";
       gaps.appendChild(lead);
-      ranked.forEach(function(r){
+      var T1=[" — a floor on your whole program"," — this caps every tier above it"," — the weakest link, and it governs"];
+      var T2=[" — partial, and an examiner will probe it"," — half-built; the gap shows under scrutiny"," — started, not yet defensible"];
+      var T3=[" — close, worth hardening"," — nearly there; harden it before you claim it"," — one step from defensible"];
+      ranked.forEach(function(r,idx){
         var li=document.createElement("li");
-        li.textContent=r.dim+(r.v<=1?" — this is a floor on your whole program":r.v===2?" — partial, and an examiner will probe it":" — close, worth hardening");
+        var suf=r.v<=1?T1[idx%3]:(r.v===2?T2[idx%3]:T3[idx%3]);
+        li.textContent=r.dim+suf;
         gaps.appendChild(li);
       });
     }

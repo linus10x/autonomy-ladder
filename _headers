@@ -1,8 +1,14 @@
 /*
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action https://app.kit.com; frame-ancestors 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'sha256-FVkLzYx8Fve8WgbAuNf8Eof+Cu9Jxs/x6zzVCAystu0=' 'sha256-RiXQpUXNIhANpYvl1BWzDLOBsXt5bbDgtxHdtdcSVbA=' 'sha256-aVg7e6Ru1ONZfjLO/63WEx5rogK7ohNdV76WI+nthiI=' 'sha256-p+eNjppH7DnxlRl534tspG58Si95/yA3bNy1710JvLI=' https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
+  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Permissions-Policy: accelerometer=(), autoplay=(), bluetooth=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
 
 /assets/*
   Cache-Control: public, max-age=86400
+  Cross-Origin-Resource-Policy: same-origin
+  X-Content-Type-Options: nosniff

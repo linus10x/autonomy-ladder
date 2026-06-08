@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autonomy Ladder™ — Regulated-Operations AI Governance</title>
-<meta name="description" content="A0→A4 governance for AI agents that have to hold under audit. Five maturity tiers, six open-source patterns, three CRE-native gates. Private Capital and Commercial Real Estate.">
+<meta name="description" content="A0→A4 governance for AI agents that have to hold under audit. Five maturity tiers, six open-source pattern libraries, three CRE-native gates. Private Capital and Commercial Real Estate.">
 <link rel="canonical" href="https://autonomy-ladder.io/">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 
@@ -23,14 +23,17 @@
 <meta name="twitter:title" content="Autonomy Ladder™ — A0→A4 governance for AI in regulated operations">
 <meta name="twitter:description" content="Five maturity tiers, human-only to production-autonomous. Framework, open-source patterns, self-score demo.">
 <meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta name="twitter:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance framework">
 
 <style>
   :root{
-    --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b;
+    --navy:#0f2440; --navy-2:#14253f; --gold:#b8893b; --gold-soft:#c9a24b; --gold-ink:#8a6420;
     --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
     --bg:#faf8f3; --card:#ffffff; --pc:#f1eef8; --cre:#eef3f1;
   }
   *{box-sizing:border-box}
+  .skip{position:absolute; top:-48px; left:8px; z-index:100; background:var(--navy); color:#fff; padding:9px 14px; border-radius:6px; font-weight:600; font-size:14px; border:0; transition:top .15s}
+  .skip:focus{top:8px}
   html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--ink);
@@ -40,25 +43,35 @@
   .wrap{max-width:880px; margin:0 auto; padding:0 24px}
   h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700}
   a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(184,137,59,.5)}
-  a:hover{border-bottom-color:var(--gold)}
+  a:hover{border-bottom-color:var(--gold-ink)}
 
-  header.bar{padding:26px 0 0}
+  header.bar{padding:26px 0 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
   .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0}
+  .nav{font-size:14px; color:var(--muted)}
+  .nav a{border:0; color:var(--muted); margin-left:18px}
+  .nav a:hover{color:var(--navy)}
+  @media (max-width:680px){ .nav a{margin-left:0; margin-right:16px} }
   .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block}
 
   .hero{padding:38px 0 30px; border-bottom:1px solid var(--line)}
-  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 14px}
+  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 14px}
   h1{font-size:clamp(30px,5vw,48px); margin:0 0 18px}
   .lede{font-size:19px; color:#33415a; max-width:48ch; margin:0 0 14px}
-  .casestudies{font-style:italic; color:var(--muted); font-size:16px; margin:0}
+  .casestudies{font-style:italic; color:var(--muted); font-size:16px; margin:16px 0 0}
+  .proof{display:flex; flex-wrap:wrap; gap:6px 18px; margin:14px 0 0; padding:0; list-style:none}
+  .proof li{font-size:13.5px; font-weight:600; color:#43536b; display:inline-flex; align-items:center; gap:8px}
+  .proof li::before{content:""; width:6px; height:6px; border-radius:2px; background:var(--gold); flex:none}
+  .proof b{color:var(--navy)}
+  @media (max-width:680px){ .proof{flex-direction:column; gap:8px} }
 
   section{padding:40px 0; border-bottom:1px solid var(--line)}
-  .sec-label{font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 22px}
+  .sec-label{display:block; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 8px; font-family:inherit; line-height:1.4}
+  .sec-title{font-size:clamp(21px,3vw,27px); color:var(--navy); margin:0 0 18px; line-height:1.2}
 
   .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   .card{border:1px solid var(--line); border-radius:14px; padding:22px}
   .card.pc{background:var(--pc)} .card.cre{background:var(--cre)}
-  .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .card .tag{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
   .card h3{font-size:21px; margin:6px 0 10px}
   .card p{margin:0; font-size:15px; color:#39455c}
 
@@ -69,21 +82,27 @@
   .rung .lvl{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy)}
   .rung .name{font-weight:700; color:var(--navy); display:block; margin-bottom:3px}
   .rung .desc{font-size:14.5px; color:#46536c}
+  .rung[data-op="0"]{border-left-color:#e0d9c5}
   .rung[data-op="1"]{border-left-color:#d8c08a}
   .rung[data-op="2"]{border-left-color:#cdb070}
   .rung[data-op="3"]{border-left-color:#c2a157}
   .rung[data-op="4"]{border-left-color:#b8893b}
   .note{margin:18px 0 0; font-size:14px; color:var(--muted)}
   .note b{color:var(--navy)}
+  .plain{font-size:16px; color:#39455c; max-width:62ch; margin:0 0 22px}
+  .plain b{color:var(--navy); font-weight:700}
 
-  .kit{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-  .kit .k{border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--card)}
-  .k .repo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px; word-break:break-all}
-  .badge{display:inline-block; font-size:11px; font-weight:700; letter-spacing:1px; padding:2px 8px; border-radius:20px; background:#e7efe9; color:#1f6b43; margin-left:8px; vertical-align:middle}
-  .k p{font-size:14.5px; color:#39455c; margin:10px 0 0}
+  .lib-intro{font-size:16px; color:#39455c; max-width:62ch; margin:0 0 22px}
+  .libgrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px}
+  .lib{border:1px solid var(--line); border-radius:12px; padding:16px; background:var(--card); display:flex; flex-direction:column; gap:7px; min-height:178px}
+  .lib .tag{font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
+  .lib .repo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; word-break:break-all; line-height:1.3}
+  .lib p{margin:0; font-size:13px; color:#46536c; line-height:1.45}
+  .lib .doi{font-size:11.5px; color:var(--muted); margin-top:auto; padding-top:6px}
+  .lib .doi a{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--muted); border-bottom-color:rgba(91,107,126,.4)}
+  .lib .doi.pending{color:#5b6b7e; font-style:italic; border:0}
 
   .demo p{font-size:16px; color:#39455c; max-width:60ch}
-  .demo .soon{display:inline-block; margin-top:8px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-weight:700}
 
   .capture{margin-top:30px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; padding:24px; background:var(--card); max-width:620px}
   .capture h3{font-size:21px; margin:0 0 8px}
@@ -93,60 +112,76 @@
   .cap-field.full{grid-column:1 / -1}
   .cap-field label{font-size:11.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--navy)}
   .cap-form input,.cap-form select{width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; font-size:15px; color:var(--ink); background:#fff}
-  .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold)}
+  .cap-form input:focus,.cap-form select:focus{outline:2px solid var(--gold-soft); outline-offset:1px; border-color:var(--gold-ink)}
   .cap-other{margin-top:8px}
   .cap-other[hidden]{display:none}
   .cap-error{font-size:12.5px; color:#b3261e; font-weight:600; margin:6px 0 0}
   .cap-error[hidden]{display:none}
   .cap-form button{grid-column:1 / -1; padding:12px 20px; border:1px solid var(--navy); border-radius:8px; background:var(--navy); color:#fff; font-weight:600; font-size:15px; cursor:pointer; margin-top:2px}
   .cap-form button:hover{background:#0c1d34}
-  .capture .privacy{font-size:12.5px; color:#8a93a3; margin:14px 0 0; max-width:58ch}
+  .capture .privacy{font-size:12.5px; color:#5b6b7e; margin:14px 0 0; max-width:58ch}
   @media (max-width:680px){ .cap-form{grid-template-columns:1fr} }
 
   footer{padding:44px 0 60px}
   footer p{color:#39455c; max-width:62ch}
   .cta a{display:inline-block; margin-top:14px; margin-right:10px; padding:11px 20px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
   .cta a.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
-  .fineprint{margin-top:26px; font-size:12.5px; color:#8a93a3}
+  .fineprint{margin-top:26px; font-size:12.5px; color:#5b6b7e}
 
+  @media (max-width:780px){ .libgrid{grid-template-columns:1fr 1fr} }
   @media (max-width:680px){
-    .cards,.kit{grid-template-columns:1fr}
+    .cards,.libgrid{grid-template-columns:1fr}
     .lede{font-size:17px}
   }
 </style>
 </head>
 <body>
+<a class="skip" href="#main-content">Skip to content</a>
 <div class="wrap">
 
   <header class="bar">
     <span class="brand"><span class="tick"></span> autonomy-ladder.io</span>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/diagnostic">Diagnostic</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+      <a href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 min</a>
+    </nav>
   </header>
 
+  <main id="main-content">
   <div class="hero">
     <p class="kicker">Regulated-Operations AI Governance</p>
     <h1>One discipline, two verticals.</h1>
-    <p class="lede">A framework for AI agents that have to hold under audit. Five maturity tiers. Six open-source patterns. Three CRE-native gates on top.</p>
-    <p class="casestudies">Case studies in Private Capital and Commercial Real Estate.</p>
+    <p class="lede">When an examiner, an investor, or an acquirer asks who can override your AI and where the record sits — this is the framework that answers.</p>
+    <ul class="proof">
+      <li><b>$750M</b> deal architect</li>
+      <li><b>Ransomware-to-cloud</b>: 50-day MVP, not 6 months</li>
+      <li><b>6 open libraries</b>, 5 DOI-archived</li>
+    </ul>
+    <p class="casestudies">Built by Kunjar Bhaduri — I build the governance, then the system that lives under it.</p>
   </div>
 
   <section>
-    <p class="sec-label">The Verticals</p>
+    <span class="sec-label">The Verticals</span>
+    <h2 class="sec-title">Two regulated verticals, one governance backbone</h2>
     <div class="cards">
       <div class="card pc">
         <span class="tag">Private Capital</span>
-        <h3>Wealth · Alts · UHNW · Buy-Side AI</h3>
-        <p>Sovereign veto for autonomous allocators. Mandate, risk-limit, and fiduciary-reasonableness gates. SEC predictive-analytics rulemaking mapped. Buy-side adversarial gates informed by ongoing work with Marcos López de Prado.</p>
+        <h3>Allocators · Alts · UHNW · Family Offices · Buy-Side AI</h3>
+        <p>Sovereign veto for autonomous allocators. Mandate, risk-limit, and fiduciary-reasonableness gates mapped to the Advisers Act &sect;206 fiduciary duty.</p>
       </div>
       <div class="card cre">
         <span class="tag">Commercial Real Estate</span>
-        <h3>PE-Backed Operators · Property Tech</h3>
-        <p>Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII data-residency partitioning. Colorado AI Act mapped. Post-SafeRent governance posture.</p>
+        <h3>PE-Backed CRE Operators</h3>
+        <p>Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII data-residency partitioning. Colorado SB 26-189 mapped.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <p class="sec-label">The Ladder</p>
+    <span class="sec-label">The Ladder</span>
+    <h2 class="sec-title">Five maturity tiers, A0 to A4</h2>
+    <p class="plain">Think of it as a driver&#8217;s license for AI. At <b>A0</b> it only gives directions &#8212; a human drives. At <b>A2</b> it drives inside a fenced lot while you spot-check. At <b>A4</b> it drives itself on approved routes, with a brake it can&#8217;t switch off and a recorder of every turn. Most firms believe they sit a rung higher than they can prove.</p>
     <div class="ladder">
       <div class="rung" data-op="0">
         <div class="lvl">A0</div>
@@ -173,32 +208,66 @@
   </section>
 
   <section>
-    <p class="sec-label">The Open-Source Kits</p>
-    <div class="kit">
-      <div class="k">
-        <a class="repo" href="https://github.com/linus10x/finserv-agent-audit">github.com/linus10x/finserv-agent-audit</a><span class="badge">LIVE</span>
-        <p>Six governance patterns for AI agents in regulated finance — DEFCON state machine, sovereign veto, hash-chain audit, autonomy ladder, EU AI Act mapping, shadow mode. MIT-licensed.</p>
+    <span class="sec-label">The Open-Source Libraries</span>
+    <h2 class="sec-title">Six pattern libraries, public and citable</h2>
+    <p class="lib-intro">The same A0&#8594;A4 ladder, <b>sovereign veto</b> (a stop the AI can&#8217;t switch off), and <b>hash-chain audit</b> (a tamper-proof record of every decision), hardened for six regulated sectors. Every library is public and permissively licensed; five are DOI-archived on Zenodo, one with archival in progress. Open reference implementations — read and run them before any conversation.</p>
+    <div class="libgrid">
+      <div class="lib">
+        <span class="tag">Private Capital</span>
+        <a class="repo" href="https://github.com/linus10x/private-capital-agent-audit">linus10x/private-capital-agent-audit</a>
+        <p>SEC-registered investment advisers &#8212; Advisers Act &sect;206 fiduciary controls, mandate and risk-limit gates.</p>
+        <p class="doi">DOI&nbsp;&middot;&nbsp;<a href="https://doi.org/10.5281/zenodo.20564496">10.5281/zenodo.20564496</a></p>
       </div>
-      <div class="k">
-        <a class="repo" href="https://github.com/linus10x/cre-agent-audit">github.com/linus10x/cre-agent-audit</a><span class="badge">LIVE</span>
-        <p>Sibling repo for commercial real estate. Same six patterns plus three CRE-native gates — lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency. MIT-licensed.</p>
+      <div class="lib">
+        <span class="tag">Commercial Real Estate</span>
+        <a class="repo" href="https://github.com/linus10x/cre-agent-audit">linus10x/cre-agent-audit</a>
+        <p>Lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency &#8212; three CRE-native gates.</p>
+        <p class="doi">DOI&nbsp;&middot;&nbsp;<a href="https://doi.org/10.5281/zenodo.20437081">10.5281/zenodo.20437081</a></p>
+      </div>
+      <div class="lib">
+        <span class="tag">Financial Services</span>
+        <a class="repo" href="https://github.com/linus10x/finserv-agent-audit">linus10x/finserv-agent-audit</a>
+        <p>Regulated finance — DEFCON-style readiness state machine, sovereign veto, hash-chain audit, EU AI Act mapping, shadow mode.</p>
+        <p class="doi">DOI&nbsp;&middot;&nbsp;<a href="https://doi.org/10.5281/zenodo.20434570">10.5281/zenodo.20434570</a></p>
+      </div>
+      <div class="lib">
+        <span class="tag">Banking</span>
+        <a class="repo" href="https://github.com/linus10x/banking-agent-audit">linus10x/banking-agent-audit</a>
+        <p>Model-risk effective-challenge, ECOA&nbsp;/&nbsp;Reg&nbsp;B adverse-action gate, OFAC reference workflow.</p>
+        <p class="doi">DOI&nbsp;&middot;&nbsp;<a href="https://doi.org/10.5281/zenodo.20564584">10.5281/zenodo.20564584</a></p>
+      </div>
+      <div class="lib">
+        <span class="tag">Payments</span>
+        <a class="repo" href="https://github.com/linus10x/payments-agent-audit">linus10x/payments-agent-audit</a>
+        <p>OFAC screening, BSA&nbsp;/&nbsp;AML, Reg&nbsp;E &#8212; plus a rail-finality gate for transfers that can&#8217;t be clawed back.</p>
+        <p class="doi pending">DOI archival in progress</p>
+      </div>
+      <div class="lib">
+        <span class="tag">Healthcare Payer</span>
+        <a class="repo" href="https://github.com/linus10x/payer-agent-audit">linus10x/payer-agent-audit</a>
+        <p>Coverage-determination and utilization-management governance for health-insurance payers.</p>
+        <p class="doi">DOI&nbsp;&middot;&nbsp;<a href="https://doi.org/10.5281/zenodo.20564377">10.5281/zenodo.20564377</a></p>
       </div>
     </div>
   </section>
 
   <section class="demo">
-    <p class="sec-label">The Self-Score Demo</p>
-    <p>Score your AI program on the ladder — twelve questions across six dimensions, one board-ready page. The interactive version lands July 2026.</p>
-    <span class="soon">Demo · July 2026</span>
+    <span class="sec-label">Score Your Program</span>
+    <h2 class="sec-title">Where does your AI program sit on the ladder?</h2>
+    <p>Score your AI program on the A0&#8594;A4 ladder — seven questions, two minutes, a tier read you can hand to a board. It runs in your browser; nothing you enter leaves the page.</p>
+    <div class="cta">
+      <a class="primary" href="https://autonomy-ladder.io/diagnostic">Run the diagnostic</a>
+      <a href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes</a>
+    </div>
 
     <div class="capture">
       <h3>Get the governance brief now</h3>
-      <p class="sub">The A0&#8594;A4 framework and the six open-source patterns, in one brief you can hand to a board. Subscribe and I&#8217;ll send your self-score and your tier benchmark the day the demo goes live.</p>
-      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post" target="_blank" rel="noopener">
+      <p class="sub">The A0&#8594;A4 framework and the six open-source pattern libraries, in one brief you can hand to a board. Enter your email and I&#8217;ll send the full board-ready write-up &#8212; then run the diagnostic for your tier.</p>
+      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post">
+        <input type="hidden" name="success_url" value="https://autonomy-ladder.io/thank-you?subscribed=1">
         <div class="cap-field full">
-          <label for="cap-email">Work email</label>
-          <input type="email" id="cap-email" name="email_address" placeholder="you@company.com" autocomplete="email" inputmode="email" required aria-describedby="cap-email-err">
-          <p class="cap-error" id="cap-email-err" role="alert" hidden>Please use your work email &#8212; it lets me route this to the right place. Personal inboxes (Gmail, Outlook, iCloud&#8230;) aren&#8217;t accepted here.</p>
+          <label for="cap-email">Email</label>
+          <input type="email" id="cap-email" name="email_address" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
         </div>
         <div class="cap-field">
           <label for="cap-role">Your role</label>
@@ -232,12 +301,7 @@
       <script>
         (function(){
           var form=document.getElementById("capForm");
-          var email=document.getElementById("cap-email");
-          var err=document.getElementById("cap-email-err");
           var pairs=[["cap-role","cap-role-other","Other","role"],["cap-firm","cap-firm-other","Other regulated","firm_type"]];
-          var FREE=["gmail.com","googlemail.com","yahoo.com","yahoo.co.uk","ymail.com","rocketmail.com","hotmail.com","hotmail.co.uk","outlook.com","live.com","msn.com","aol.com","icloud.com","me.com","mac.com","proton.me","protonmail.com","pm.me","gmx.com","gmx.net","mail.com","yandex.com","yandex.ru","zoho.com","hey.com","mailinator.com","guerrillamail.com","10minutemail.com","tempmail.com","temp-mail.org","trashmail.com","getnada.com","dispostable.com","sharklasers.com","yopmail.com","throwawaymail.com"];
-          function clearErr(){err.hidden=true; email.removeAttribute("aria-invalid"); email.style.borderColor="";}
-          email.addEventListener("input",clearErr);
           pairs.forEach(function(p){
             var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
             sel.addEventListener("change",function(){
@@ -246,19 +310,7 @@
               if(!isOther){oth.value="";}
             });
           });
-          form.addEventListener("submit",function(e){
-            var v=(email.value||"").trim().toLowerCase();
-            var at=v.lastIndexOf("@");
-            var dom=at>-1?v.slice(at+1):"";
-            if(dom && FREE.indexOf(dom)>-1){
-              e.preventDefault();
-              err.hidden=false;
-              email.setAttribute("aria-invalid","true");
-              email.style.borderColor="#b3261e";
-              email.focus();
-              return;
-            }
-            clearErr();
+          form.addEventListener("submit",function(){
             pairs.forEach(function(p){
               var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
               if(sel.value===p[2] && oth.value.trim()){
@@ -271,15 +323,20 @@
           });
         })();
       </script>
-      <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note &#8212; no spam, no sharing, no selling, unsubscribe in one click.</p>
+      <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note &#8212; no spam, no sharing, no selling, unsubscribe in one click. Any inbox is fine.</p>
     </div>
   </section>
 
+  </main>
+
   <footer>
     <p>Built by Kunjar Bhaduri — 25+ years of regulated-industry technology leadership across private capital, banking, capital markets, payments, and healthcare payer technology.</p>
-    <p>I take calls from PE operating partners and CTOs at regulated firms.</p>
+    <p>Bring me one AI decision your agents make today — I&#8217;ll place it on the A0&#8594;A4 ladder and show you the gap an examiner finds first. PE operating partners and CTOs at regulated firms, that&#8217;s the door.</p>
     <div class="cta">
-      <a class="primary" href="https://www.linkedin.com/in/kunjarbhaduri/">DM on LinkedIn</a>
+      <a class="primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes</a>
+      <a href="https://autonomy-ladder.io/diagnostic">Run the diagnostic</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+      <a href="https://www.linkedin.com/in/kunjarbhaduri/">DM on LinkedIn</a>
       <a href="https://github.com/linus10x">GitHub</a>
     </div>
     <p class="fineprint">Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.</p>
