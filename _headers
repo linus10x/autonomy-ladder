@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action https://app.kit.com; frame-ancestors 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'sha256-FVkLzYx8Fve8WgbAuNf8Eof+Cu9Jxs/x6zzVCAystu0=' 'sha256-RiXQpUXNIhANpYvl1BWzDLOBsXt5bbDgtxHdtdcSVbA=' 'sha256-aVg7e6Ru1ONZfjLO/63WEx5rogK7ohNdV76WI+nthiI=' 'sha256-p+eNjppH7DnxlRl534tspG58Si95/yA3bNy1710JvLI=' https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action https://app.kit.com; frame-ancestors 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
