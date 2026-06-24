@@ -305,7 +305,7 @@
       <div class="pillar">
         <span class="tag">Verifier Independence</span>
         <h3>The check that doesn&#8217;t share the failure</h3>
-        <p>The thing that approves an agent&#8217;s write cannot be the same model, the same vendor, or the same training data that produced it. Independent verification is what turns &#8220;we tested it&#8221; into &#8220;we can defend it&#8221; &#8212; what a model-risk function calls effective challenge, in a form an examiner will accept.</p>
+        <p>The thing that approves an agent&#8217;s write cannot be the same model, the same vendor, or the same training data that produced it. Independent verification is what turns &#8220;we tested it&#8221; into &#8220;we can defend it,&#8221; and it produces the evidence a model-risk function needs for effective challenge, in a form an examiner will accept.</p>
       </div>
     </div>
     <p class="note"><b>The framework is open. The judgment is not.</b> Six permissively licensed pattern libraries, all DOI-archived, ship the building blocks publicly; the engagement decides what to build, what to refuse, and what a regulator will accept.</p>
@@ -538,6 +538,10 @@
         <p class="rverdict" id="rVerdict"></p>
         <p class="rpeer" id="rPeer"></p>
         <p class="rnext" id="rNext"></p>
+        <div class="hero-cta" style="margin-top:18px">
+          <a class="btn btn-primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 minutes</a>
+          <a class="btn btn-secondary" href="https://app.autonomy-ladder.io/assess">Take the full 15-question assessment</a>
+        </div>
       </div>
     </div>
 
@@ -625,7 +629,7 @@
           document.getElementById("rName").textContent=TIER_NAME[r.tier];
           document.getElementById("rVerdict").textContent=VERDICT[r.tier];
           document.getElementById("rPeer").textContent=PEER[r.tier];
-          document.getElementById("rNext").textContent=NEXT[r.tier]+" That verdict is yours to keep — no email, computed here. If you want it written up for a risk committee, the optional brief below adds the full A0→A4 write-up and your vertical benchmark.";
+          document.getElementById("rNext").textContent=NEXT[r.tier]+" That verdict is yours to keep — no email, computed here. The fastest next step is fifteen minutes to pressure-test it with me; if you would rather have it written up for a risk committee first, the optional brief below adds the full A0→A4 write-up and your vertical benchmark.";
           var res=document.getElementById("scoreResult");
           res.hidden=false;
           res.scrollIntoView({behavior:"smooth",block:"nearest"});
