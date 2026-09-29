@@ -1,0 +1,9 @@
+{
+	"name": "autonomy-ladder",
+	// Assets only. No Worker script, so no "main" and no assets.binding.
+	// compatibility_date is the date this config was added.
+	"compatibility_date": "2026-09-29",
+	"assets": {
+		"directory": "."
+	}
+}

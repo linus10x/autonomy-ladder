@@ -1,0 +1,11 @@
+# assets.directory is the repo root. Workers uploads that tree and, unlike
+# Pages, does not skip .git, node_modules, or .DS_Store. _headers is not
+# listed here: Workers reads it as header config and does not serve it.
+.git
+.wrangler
+**/.DS_Store
+node_modules
+README.md
+.gitignore
+.assetsignore
+wrangler.jsonc
