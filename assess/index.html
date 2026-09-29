@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Autonomy Ladder assessment: where your program sits on A0 to A4</title>
+<meta name="description" content="Twelve questions place your AI program on A0 to A4 by the weakest control. Scored in the browser. Nothing is stored or sent.">
+<link rel="canonical" href="https://autonomy-ladder.io/assess">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="The Autonomy Ladder assessment: where your program sits on A0 to A4">
+<meta property="og:description" content="Twelve questions place your AI program on A0 to A4 by the weakest control. Scored in the browser. Nothing is stored or sent.">
+<meta property="og:url" content="https://autonomy-ladder.io/assess">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance framework">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Autonomy Ladder assessment: where your program sits on A0 to A4">
+<meta name="twitter:description" content="Twelve questions place your AI program on A0 to A4 by the weakest control. Scored in the browser. Nothing is stored or sent.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta name="twitter:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance framework">
+
+<style>
+  :root{
+    --navy:#0f2440; --gold:#b8893b; --gold-soft:#c9a24b; --gold-ink:#8a6420;
+    --ink:#1b2536; --muted:#5b6b7e; --line:#e4e0d6;
+    --bg:#faf8f3; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  .skip{position:absolute; top:-48px; left:8px; z-index:100; background:var(--navy); color:#fff; padding:9px 14px; border-radius:6px; font-weight:600; font-size:14px; border:0; transition:top .15s}
+  .skip:focus{top:8px}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px}
+  h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; color:var(--navy); line-height:1.15; font-weight:700}
+  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(184,137,59,.5)}
+  a:hover{border-bottom-color:var(--gold-ink)}
+
+  header.bar{padding:26px 0 0; display:flex; align-items:center; justify-content:space-between; gap:12px 16px; flex-wrap:wrap}
+  .brand{display:inline-flex; align-items:center; gap:10px; font-family:Georgia,serif; font-weight:700; font-size:18px; color:var(--navy); border:0}
+  .brand .tick{width:5px; height:22px; background:var(--gold); border-radius:2px; display:inline-block}
+  .nav{font-size:14px; color:var(--muted); display:flex; flex-wrap:wrap; gap:6px 16px}
+  .nav a{border:0; color:var(--muted)}
+  .nav a:hover{color:var(--navy)}
+
+  .hero{padding:38px 0 30px; border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 14px}
+  h1{font-size:clamp(30px,5vw,48px); margin:0 0 18px}
+  .lede{font-size:19px; color:#33415a; max-width:48ch; margin:0}
+  .hook{font-family:Georgia,serif; font-size:clamp(19px,2.6vw,23px); line-height:1.4; color:var(--navy); font-weight:700; margin:0 0 16px; padding-left:16px; border-left:4px solid var(--gold); max-width:34ch}
+
+  section{padding:40px 0; border-bottom:1px solid var(--line)}
+  .sec-label{display:block; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 8px; font-family:inherit; line-height:1.4}
+  .sec-title{font-size:clamp(21px,3vw,27px); color:var(--navy); margin:0 0 18px; line-height:1.2}
+  .plain{font-size:16px; color:#39455c; max-width:62ch; margin:0 0 22px}
+  .plain b{color:var(--navy); font-weight:700}
+  .note{margin:18px 0 0; font-size:14px; color:var(--muted)}
+  .note b{color:var(--navy)}
+
+  .ladder{display:flex; flex-direction:column; gap:10px}
+  .rung{display:grid; grid-template-columns:84px 1fr; gap:18px; align-items:start;
+        border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:10px;
+        padding:16px 18px; background:var(--card)}
+  .rung .lvl{font-family:Georgia,serif; font-weight:700; font-size:30px; color:var(--navy)}
+  .rung .name{font-weight:700; color:var(--navy); display:block; margin-bottom:3px}
+  .rung .desc{font-size:14.5px; color:#46536c}
+  .rung[data-op="0"]{border-left-color:#e0d9c5}
+  .rung[data-op="1"]{border-left-color:#d8c08a}
+  .rung[data-op="2"]{border-left-color:#cdb070}
+  .rung[data-op="3"]{border-left-color:#c2a157}
+  .rung[data-op="4"]{border-left-color:#b8893b}
+
+  footer{padding:44px 0 60px}
+  .cta a,.hero-cta a{display:inline-flex; align-items:center; justify-content:center; min-height:46px; margin-top:8px; margin-right:10px; padding:11px 22px; border:1px solid var(--navy); border-radius:8px; font-weight:600; color:var(--navy)}
+  .cta a.primary,.hero-cta a.primary{background:#0f2440; color:#fff; border-color:#0f2440; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .fineprint{margin-top:26px; font-size:12.5px; color:#5b6b7e}
+
+  .progress{position:sticky; top:0; z-index:5; background:#faf8f3; border-bottom:1px solid var(--line); padding:13px 22px 12px}
+  .progress .ptop{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin:0 0 8px}
+  .progress .pcount{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-ink); font-weight:700}
+  .progress .pleft{font-size:12.5px; color:var(--muted)}
+  .pbar{display:flex; gap:4px}
+  .pbar i{flex:1; height:6px; border-radius:3px; background:var(--line)}
+  .pbar i.on{background:var(--gold)}
+
+  .scorer{border:1px solid var(--line); border-radius:14px; background:var(--card); padding:0}
+  .q{border-bottom:1px solid var(--line); padding:20px 22px}
+  .q .qnum{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin:0 0 6px}
+  .q .qtext{font-family:Georgia,serif; font-weight:700; color:var(--navy); font-size:18px; margin:0 0 14px; line-height:1.3}
+  .opts{display:flex; flex-direction:column; gap:9px}
+  .opt{display:flex; gap:11px; align-items:flex-start; min-height:48px; border:1px solid var(--line); border-radius:9px; padding:11px 14px; cursor:pointer; background:#fff}
+  .opt:hover{border-color:var(--gold-soft)}
+  .opt input{margin:3px 0 0; accent-color:var(--gold-ink); flex:0 0 auto}
+  .opt span{font-size:14.5px; color:#39455c}
+  .opt.sel{border-color:var(--gold-ink); background:#fcf8ef}
+  .score-actions{position:sticky; bottom:0; z-index:5; padding:16px 22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; background:#ffffff; border-top:1px solid var(--line); border-radius:0 0 14px 14px}
+  .score-actions button{display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:12px 24px; border:1px solid #0f2440; border-radius:8px; background:#0f2440; color:#fff; font-weight:600; font-size:15px; cursor:pointer; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .score-actions button:hover{background:#0c1d34}
+  .score-actions button:disabled{background:#d7d2c6; border-color:#d7d2c6; color:#fff; cursor:not-allowed}
+  .score-actions .hint{font-size:13px; color:var(--muted)}
+
+  .verdict{margin-top:24px; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:14px; background:#fcfaf5; padding:26px 24px}
+  .verdict[hidden]{display:none}
+  .verdict .vtier{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  .verdict .vtier .big{font-family:Georgia,serif; font-weight:700; font-size:46px; color:var(--navy); line-height:1}
+  .verdict .vtier .vname{font-family:Georgia,serif; font-weight:700; font-size:22px; color:var(--navy)}
+  .verdict .vread{font-size:16px; color:#33415a; margin:16px 0 0; max-width:60ch}
+  .verdict .vpeer{font-size:14.5px; color:var(--muted); margin:14px 0 0; max-width:60ch}
+  .verdict .vpeer b{color:var(--navy)}
+  .verdict .vgaps{margin:16px 0 0; padding:0; list-style:none}
+  .verdict .vgaps li{font-size:14.5px; color:#39455c; padding:7px 0 7px 22px; position:relative}
+  .verdict .vgaps li::before{content:"\203A"; position:absolute; left:4px; color:var(--gold-ink); font-weight:700}
+  .verdict .vgaps li.vlead{padding-left:0}
+  .verdict .vgaps li.vlead::before{content:none}
+  .meter{display:flex; gap:5px; margin:18px 0 0}
+  .meter .seg{flex:1; height:8px; border-radius:4px; background:var(--line)}
+  .meter .seg.on{background:var(--gold)}
+
+  @media (max-width:680px){
+    .lede{font-size:17px}
+    .kicker{letter-spacing:2px}
+    .rung{grid-template-columns:64px 1fr; gap:12px; padding:14px}
+    .rung .lvl{font-size:26px}
+    .hero-cta a, .cta a{width:100%; margin-right:0}
+    .score-actions button{flex:1 1 auto}
+    .q .qtext{font-size:17px}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="wrap">
+
+  <header class="bar">
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/whitepaper">Whitepaper</a>
+      <a href="https://autonomy-ladder.io/diagnostic">Diagnostic</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+      <a href="https://calendly.com/kunjarbhaduri/new-meeting-1">Book 15 min</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+  <div class="hero">
+    <p class="kicker">The assessment</p>
+    <h1>Where does your program sit on the ladder?</h1>
+    <p class="hook">Many programs claim a higher rung than they can prove.</p>
+    <p class="lede">Twelve questions. Your weakest control sets a ceiling on the level, however strong the other answers are. Scored in this browser. Nothing you enter is stored or sent.</p>
+  </div>
+
+  <section id="scorer">
+    <span class="sec-label">A0 to A4 self-check</span>
+    <h2 class="sec-title">Place your program on the ladder</h2>
+    <div class="scorer" id="scorerBox" role="group" aria-label="Autonomy Ladder self-check">
+      <div class="progress">
+        <div class="ptop">
+          <span class="pcount" id="pCount">0 of 12 answered</span>
+          <span class="pleft" id="pLeft">12 questions</span>
+        </div>
+        <div class="pbar" id="pBar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <!-- Q1–Q7 are the diagnostic scorer, unchanged. Q8–Q12 are new, from the level definitions already on the site. -->
+      <div class="q" data-dim="Model inventory">
+        <p class="qnum">Q1: Model inventory</p>
+        <p class="qtext" id="q1label">Do you have a current, written inventory of every AI/agent system that can touch capital, clients, counterparties, or compliance?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q1label">
+          <label class="opt"><input type="radio" name="q1" value="0"><span>No inventory &#8212; we&#8217;d have to go ask around to list them.</span></label>
+          <label class="opt"><input type="radio" name="q1" value="1"><span>An informal list lives in someone&#8217;s head or a slide.</span></label>
+          <label class="opt"><input type="radio" name="q1" value="2"><span>A maintained inventory exists but isn&#8217;t tied to risk tiers.</span></label>
+          <label class="opt"><input type="radio" name="q1" value="4"><span>Versioned inventory mapped to decision classes and risk tiers, reviewed on a cadence.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Write authority">
+        <p class="qnum">Q2: Write authority</p>
+        <p class="qtext" id="q2label">What can your agents actually do without a human in the loop?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q2label">
+          <label class="opt"><input type="radio" name="q2" value="0"><span>Read and recommend only &#8212; no write authority anywhere.</span></label>
+          <label class="opt"><input type="radio" name="q2" value="1"><span>They draft; a human approves every write.</span></label>
+          <label class="opt"><input type="radio" name="q2" value="2"><span>They write inside a defined envelope; out-of-envelope goes to a human.</span></label>
+          <label class="opt"><input type="radio" name="q2" value="3"><span>They write autonomously for an in-scope decision class, with a hard veto layer.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Verifier independence">
+        <p class="qnum">Q3: Verifier independence</p>
+        <p class="qtext" id="q3label">When an agent makes a consequential call, what checks it before it lands?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q3label">
+          <label class="opt"><input type="radio" name="q3" value="0"><span>Nothing deterministic &#8212; we trust the model&#8217;s own output.</span></label>
+          <label class="opt"><input type="radio" name="q3" value="1"><span>A human eyeballs it; no independent automated check.</span></label>
+          <label class="opt"><input type="radio" name="q3" value="2"><span>Rule-based checks, but they share code or prompts with the agent.</span></label>
+          <label class="opt"><input type="radio" name="q3" value="4"><span>An independent deterministic verifier the agent cannot edit or talk its way past.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Sovereign veto / human authority">
+        <p class="qnum">Q4: Sovereign veto / human authority</p>
+        <p class="qtext" id="q4label">Can a human stop or override an agent decision, and is that override impossible for the agent to suppress?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q4label">
+          <label class="opt"><input type="radio" name="q4" value="0"><span>There&#8217;s no defined override path.</span></label>
+          <label class="opt"><input type="radio" name="q4" value="1"><span>A human can intervene, but only if they happen to be watching.</span></label>
+          <label class="opt"><input type="radio" name="q4" value="2"><span>A documented override exists; whether the agent can route around it is unclear.</span></label>
+          <label class="opt"><input type="radio" name="q4" value="4"><span>A non-overridable veto layer sits outside the agent and is tested.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Audit chain">
+        <p class="qnum">Q5: Audit chain</p>
+        <p class="qtext" id="q5label">If an examiner asked you to reconstruct exactly why an agent made a specific decision six months ago, could you?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q5label">
+          <label class="opt"><input type="radio" name="q5" value="0"><span>No &#8212; the reasoning isn&#8217;t captured.</span></label>
+          <label class="opt"><input type="radio" name="q5" value="1"><span>We have logs, but they&#8217;re scattered and not tamper-evident.</span></label>
+          <label class="opt"><input type="radio" name="q5" value="2"><span>Decisions are logged centrally but the chain can be edited after the fact.</span></label>
+          <label class="opt"><input type="radio" name="q5" value="4"><span>A tamper-evident, hash-chained ledger reconstructs any decision end to end.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Escalation design">
+        <p class="qnum">Q6: Escalation design</p>
+        <p class="qtext" id="q6label">How are exceptions and edge cases handled when an agent hits the limit of its envelope?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q6label">
+          <label class="opt"><input type="radio" name="q6" value="0"><span>Undefined &#8212; edge cases are handled ad hoc when noticed.</span></label>
+          <label class="opt"><input type="radio" name="q6" value="1"><span>Edge cases get flagged to a human inbox with no SLA.</span></label>
+          <label class="opt"><input type="radio" name="q6" value="3"><span>Automatic escalation on out-of-envelope events, with a defined owner.</span></label>
+          <label class="opt"><input type="radio" name="q6" value="4"><span>Automatic escalation plus operator-validated paths and de-escalation discipline.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Regulatory mapping">
+        <p class="qnum">Q7: Regulatory mapping</p>
+        <p class="qtext" id="q7label">Have you mapped your AI program to the obligations that actually apply to you (e.g. Colorado SB 26-189, EU AI Act Art. 14, model-risk supervision)?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q7label">
+          <label class="opt"><input type="radio" name="q7" value="0"><span>We haven&#8217;t looked at which apply to us.</span></label>
+          <label class="opt"><input type="radio" name="q7" value="1"><span>We&#8217;re aware of them but haven&#8217;t mapped controls to them.</span></label>
+          <label class="opt"><input type="radio" name="q7" value="2"><span>Partial mapping for one framework.</span></label>
+          <label class="opt"><input type="radio" name="q7" value="4"><span>Controls mapped to each applicable obligation with named owners and dates.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Demotion">
+        <p class="qnum">Q8: Demotion</p>
+        <p class="qtext" id="q8label">When the evidence for a level no longer holds, can that level be pulled back, and is the revocation on the record?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q8label">
+          <label class="opt"><input type="radio" name="q8" value="0"><span>There is no defined way to pull a level back.</span></label>
+          <label class="opt"><input type="radio" name="q8" value="1"><span>Someone can turn it off by hand. That change is not recorded.</span></label>
+          <label class="opt"><input type="radio" name="q8" value="2"><span>A demotion path is documented. Whether it runs without someone remembering is unclear.</span></label>
+          <label class="opt"><input type="radio" name="q8" value="4"><span>A mechanical demotion drops the rung when assurance degrades, and the revocation is recorded.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Sampled review">
+        <p class="qnum">Q9: Sampled review</p>
+        <p class="qtext" id="q9label">For writes that stay inside the envelope, does a human review a sampled subset?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q9label">
+          <label class="opt"><input type="radio" name="q9" value="0"><span>In-envelope writes are not reviewed.</span></label>
+          <label class="opt"><input type="radio" name="q9" value="1"><span>Someone looks when they have time. There is no sample rule.</span></label>
+          <label class="opt"><input type="radio" name="q9" value="2"><span>A defined sample is reviewed. The sample and the findings are not kept.</span></label>
+          <label class="opt"><input type="radio" name="q9" value="4"><span>A defined sample is reviewed on a cadence, and the findings stay with the decision record.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Evidence for the level">
+        <p class="qnum">Q10: Evidence for the level</p>
+        <p class="qtext" id="q10label">How does an agent earn the level it runs at?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q10label">
+          <label class="opt"><input type="radio" name="q10" value="0"><span>The level is whatever the team says it is.</span></label>
+          <label class="opt"><input type="radio" name="q10" value="1"><span>There is a write-up. It is not checked against the controls.</span></label>
+          <label class="opt"><input type="radio" name="q10" value="2"><span>The controls are listed. The level can be granted before they are shown to work.</span></label>
+          <label class="opt"><input type="radio" name="q10" value="4"><span>The level is granted only after the controls for that rung are shown, and the grant is recorded.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Decision-class scope">
+        <p class="qnum">Q11: Decision-class scope</p>
+        <p class="qtext" id="q11label">Is write authority limited to a named decision class?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q11label">
+          <label class="opt"><input type="radio" name="q11" value="0"><span>There is no named scope. An agent with write access can write to anything it can reach.</span></label>
+          <label class="opt"><input type="radio" name="q11" value="1"><span>Scope is described in a slide or a prompt. It is not enforced.</span></label>
+          <label class="opt"><input type="radio" name="q11" value="2"><span>Scope is written down. Staying inside it depends on the agent.</span></label>
+          <label class="opt"><input type="radio" name="q11" value="4"><span>Scope is enforced outside the agent. An out-of-scope write does not land.</span></label>
+        </div>
+      </div>
+
+      <div class="q" data-dim="Inter-agent orchestration">
+        <p class="qnum">Q12: Inter-agent orchestration</p>
+        <p class="qtext" id="q12label">When more than one agent can act on the same decision, what coordinates them?</p>
+        <div class="opts" role="radiogroup" aria-labelledby="q12label">
+          <label class="opt"><input type="radio" name="q12" value="0"><span>Several agents can write on the same decision, and nothing coordinates them.</span></label>
+          <label class="opt"><input type="radio" name="q12" value="1"><span>They hand work to each other. The path is informal.</span></label>
+          <label class="opt"><input type="radio" name="q12" value="2" data-gap="single-agent"><span>Each decision class has one writing agent. There is no inter-agent write.</span></label>
+          <label class="opt"><input type="radio" name="q12" value="4"><span>Inter-agent handoffs follow operator-validated paths, and each handoff is on the record.</span></label>
+        </div>
+      </div>
+
+      <div class="score-actions">
+        <button id="scoreBtn" type="button" disabled>See my tier</button>
+        <span class="hint" id="scoreHint">Answer all 12 to see your tier.</span>
+      </div>
+    </div>
+    <noscript>
+      <p class="note">The interactive scorer needs JavaScript. The same five maturity tiers are described in <a href="#ladder">The Ladder</a> below &#8212; read them and place your program by hand, then <a href="https://calendly.com/kunjarbhaduri/new-meeting-1">book a 15-minute read of a live workflow</a>.</p>
+    </noscript>
+
+    <div class="verdict" id="verdict" hidden tabindex="-1" aria-live="polite">
+      <div class="vtier">
+        <span class="big" id="vTierCode">A0</span>
+        <span class="vname" id="vTierName">Informational</span>
+      </div>
+      <div class="meter" id="vMeter" aria-hidden="true"></div>
+      <p class="vread" id="vRead"></p>
+      <p class="vpeer" id="vPeer"></p>
+      <ul class="vgaps" id="vGaps"></ul>
+      <div class="hero-cta">
+        <a class="primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">A 15-minute read of one of your live agent workflows, no pitch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ladder">
+    <span class="sec-label">The Ladder</span>
+    <h2 class="sec-title">Five maturity tiers, A0 to A4</h2>
+    <p class="plain">Think of it as a driver&#8217;s license for AI. At <b>A0</b> it only gives directions &#8212; a human drives. At <b>A2</b> it drives inside a fenced lot while you spot-check. At <b>A4</b> it drives itself on approved routes, with a brake it can&#8217;t switch off and a recorder of every turn.</p>
+    <div class="ladder">
+      <div class="rung" data-op="0">
+        <div class="lvl">A0</div>
+        <div><span class="name">Informational</span><span class="desc">Agent reads and recommends. No write authority.</span></div>
+      </div>
+      <div class="rung" data-op="1">
+        <div class="lvl">A1</div>
+        <div><span class="name">Assisted</span><span class="desc">Agent drafts. Human approves every write.</span></div>
+      </div>
+      <div class="rung" data-op="2">
+        <div class="lvl">A2</div>
+        <div><span class="name">Delegated</span><span class="desc">Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.</span></div>
+      </div>
+      <div class="rung" data-op="3">
+        <div class="lvl">A3</div>
+        <div><span class="name">Supervised Autonomous</span><span class="desc">Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.</span></div>
+      </div>
+      <div class="rung" data-op="4">
+        <div class="lvl">A4</div>
+        <div><span class="name">Production Autonomous</span><span class="desc">A3 plus inter-agent orchestration and operator-validated escalation paths.</span></div>
+      </div>
+    </div>
+    <p class="note"><b>A2 &#8594; A3 is the regulator-visible boundary.</b> Escalation is automatic; de-escalation is deliberate. Most firms running agents in production believe they sit a rung higher than the audit chain can prove.</p>
+  </section>
+  </main>
+
+  <footer>
+    <div class="cta">
+      <a class="primary" href="https://calendly.com/kunjarbhaduri/new-meeting-1">A 15-minute read of a live agent workflow, no pitch</a>
+      <a href="https://autonomy-ladder.io/">The framework</a>
+      <a href="https://github.com/linus10x">GitHub</a>
+    </div>
+    <p class="fineprint">Autonomy Ladder&#8482; is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. Regulatory dates are summarized for orientation; confirm against primary sources for your jurisdiction. &copy; 2026.</p>
+  </footer>
+
+</div>
+
+<script>
+/* Same rule as /diagnostic: the weakest control caps the tier. Nothing is stored or sent. */
+(function(){
+  var TIERS=[
+    {code:"A0", name:"Informational",
+     read:"Your agents read and recommend, but the governance scaffolding around autonomy isn&#8217;t built yet. That&#8217;s a defensible place to be today &#8212; it stops being defensible the moment a write decision goes live without a verifier and a ledger underneath it.",
+     peer:"Most firms that have started experimenting but haven&#8217;t put an agent in front of a real decision land here. Peers in regulated operations are moving off A0 fast; the gap to watch is the first production write."},
+    {code:"A1", name:"Assisted",
+     read:"A human approves every write, which keeps you safe by keeping a person in the loop. The exposure is that this model doesn&#8217;t scale &#8212; and the controls that would let it scale (independent verifier, tamper-evident audit) aren&#8217;t in place yet, so the day you remove the human you fall, not climb.",
+     peer:"This is the most common honest answer from founder-led firms running real workflows. The peers pulling ahead are the ones building the verifier and the ledger <b>before</b> they widen the envelope, not after."},
+    {code:"A2", name:"Delegated",
+     read:"Your agents write inside an envelope &#8212; real autonomy with a boundary. You&#8217;re sitting on the regulator-visible line. The question an examiner asks next is whether your verifier is genuinely independent and whether the audit chain can be edited after the fact. If either answer is soft, your effective tier is lower than it feels.",
+     peer:"A2 is where exposure concentrates: enough autonomy to matter, not always enough proof to hold. <b>Most firms here believe they&#8217;re at A3.</b> The A2&#8594;A3 boundary is exactly what an examination, an acquirer&#8217;s tech team, or an LP&#8217;s diligence probes first &#8212; and the gap that quietly becomes a supervisory finding, discounts a valuation, or stalls a raise."},
+    {code:"A3", name:"Supervised Autonomous",
+     read:"You have autonomy with a non-overridable veto and a live audit ledger &#8212; the architecture regulators are converging toward. The remaining work is hardening: proving the verifier&#8217;s independence under adversarial conditions, and making escalation paths operator-validated rather than assumed.",
+     peer:"Few regulated firms genuinely hold A3 today. If your evidence backs this score, you&#8217;re ahead of SB 26-189 and the AI supervision still taking shape &#8212; and you can turn that into a diligence asset rather than a question to dodge. The conversation worth having is how to prove it, not whether to build it."},
+    {code:"A4", name:"Production Autonomous",
+     read:"This is the top of the ladder &#8212; inter-agent orchestration on validated escalation paths, with everything below it intact. If your evidence truly supports A4, you&#8217;re an outlier, and the valuable work is independent confirmation that the audit chain and veto layer hold when someone tries to break them.",
+     peer:"Almost no regulated operator can defend A4 under adversarial review. A self-score of A4 is worth pressure-testing hardest; the failure mode here is believing the architecture is complete when one untested path makes it A2 under examination."}
+  ];
+
+  var box=document.getElementById("scorerBox");
+  var questions=Array.prototype.slice.call(box.querySelectorAll(".q"));
+  var total=questions.length;
+  var answers=new Array(total).fill(null);
+  var btn=document.getElementById("scoreBtn");
+  var hint=document.getElementById("scoreHint");
+  var pCount=document.getElementById("pCount");
+  var pLeft=document.getElementById("pLeft");
+  var pBarSegs=document.querySelectorAll("#pBar i");
+  var verdict=document.getElementById("verdict");
+
+  function tierFromScore(vals){
+    var min=Math.min.apply(null, vals);
+    var avg=vals.reduce(function(a,b){return a+b;},0)/vals.length;
+    var tier=Math.min(Math.round(avg), min+1, 4);
+    if(tier<0) tier=0;
+    return tier;
+  }
+
+  box.addEventListener("change", function(e){
+    var t=e.target;
+    if(!t || t.type!=="radio") return;
+    var q=t.closest(".q");
+    var qi=questions.indexOf(q);
+    if(qi<0) return;
+    answers[qi]=parseInt(t.value,10);
+    Array.prototype.forEach.call(q.querySelectorAll(".opt"), function(l){ l.classList.remove("sel"); });
+    t.closest(".opt").classList.add("sel");
+    var done=answers.filter(function(a){return a!==null;}).length;
+    hint.textContent = done<total ? (total-done)+" question"+((total-done)===1?"":"s")+" left." : "Ready. See your tier.";
+    btn.disabled = done<total;
+    for(var k=0;k<pBarSegs.length;k++){
+      if(answers[k]!==null) pBarSegs[k].classList.add("on");
+      else pBarSegs[k].classList.remove("on");
+    }
+    pCount.textContent = done+" of "+total+" answered";
+    pLeft.textContent = done<total ? (total-done)+" left" : "All answered. See your tier.";
+    verdict.hidden = true;
+  });
+
+  btn.addEventListener("click", function(){
+    if(answers.indexOf(null)>-1) return;
+    var tier=tierFromScore(answers);
+    var T=TIERS[tier];
+    document.getElementById("vTierCode").textContent=T.code;
+    document.getElementById("vTierName").textContent=T.name;
+    document.getElementById("vRead").innerHTML=T.read;
+    document.getElementById("vPeer").innerHTML=T.peer;
+
+    var meter=document.getElementById("vMeter");
+    meter.innerHTML="";
+    for(var i=0;i<5;i++){
+      var s=document.createElement("div");
+      s.className="seg"+(i<=tier?" on":"");
+      meter.appendChild(s);
+    }
+
+    var gaps=document.getElementById("vGaps");
+    gaps.innerHTML="";
+    var ranked=questions.map(function(item,i){
+      var checked=item.querySelector("input:checked");
+      return {dim:item.getAttribute("data-dim"), v:answers[i], single:checked && checked.getAttribute("data-gap")==="single-agent"};
+    }).sort(function(a,b){return a.v-b.v;})
+      .slice(0,3)
+      .filter(function(x){return x.v<4;});
+    if(ranked.length){
+      var lead=document.createElement("li");
+      lead.className="vlead";
+      lead.innerHTML="<b style='color:var(--navy)'>The rungs holding you down:</b>";
+      gaps.appendChild(lead);
+      var T1=["a floor on your whole program","this caps every tier above it","the weakest link, and it governs"];
+      var T2=["partial, and an examiner will probe it","half-built; the gap shows under scrutiny","started, not yet defensible"];
+      var T3=["close, worth hardening","nearly there; harden it before you claim it","one step from defensible"];
+      ranked.forEach(function(r,idx){
+        var li=document.createElement("li");
+        if(r.single){
+          li.textContent="Inter-agent orchestration: not in use yet, which is fine below A4. A4 needs it.";
+        }else{
+          var phrase=r.v<=1?T1[idx%3]:(r.v===2?T2[idx%3]:T3[idx%3]);
+          li.textContent=r.dim+": "+phrase;
+        }
+        gaps.appendChild(li);
+      });
+    }
+
+    verdict.hidden=false;
+    verdict.focus();
+    verdict.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+})();
+</script>
+</body>
+</html>
