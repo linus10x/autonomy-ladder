@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Autonomy Ladder assessment — where your program sits on A0 to A4</title>
+<title>The Autonomy Ladder assessment: where your program sits on A0 to A4</title>
 <meta name="description" content="Twelve questions place your AI program on A0 to A4 by the weakest control. Scored in the browser. Nothing is stored or sent.">
 <link rel="canonical" href="https://autonomy-ladder.io/assess">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Autonomy Ladder">
-<meta property="og:title" content="The Autonomy Ladder assessment — where your program sits on A0 to A4">
+<meta property="og:title" content="The Autonomy Ladder assessment: where your program sits on A0 to A4">
 <meta property="og:description" content="Twelve questions place your AI program on A0 to A4 by the weakest control. Scored in the browser. Nothing is stored or sent.">
 <meta property="og:url" content="https://autonomy-ladder.io/assess">
 <meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
@@ -18,7 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance framework">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Autonomy Ladder assessment — where your program sits on A0 to A4">
+<meta name="twitter:title" content="The Autonomy Ladder assessment: where your program sits on A0 to A4">
 <meta name="twitter:description" content="Twelve questions place your AI program on A0 to A4 by the weakest control. Scored in the browser. Nothing is stored or sent.">
 <meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
 <meta name="twitter:image:alt" content="Autonomy Ladder — A0 to A4 regulated-operations AI governance framework">
@@ -152,12 +152,12 @@
   <div class="hero">
     <p class="kicker">The assessment</p>
     <h1>Where does your program sit on the ladder?</h1>
-    <p class="hook">Most firms believe they sit a rung higher than they can prove.</p>
-    <p class="lede">Twelve questions. The level is your weakest control, not an average. Scored in this browser. Nothing you enter is stored or sent.</p>
+    <p class="hook">Many programs claim a higher rung than they can prove.</p>
+    <p class="lede">Twelve questions. Your weakest control sets a ceiling on the level, however strong the other answers are. Scored in this browser. Nothing you enter is stored or sent.</p>
   </div>
 
   <section id="scorer">
-    <span class="sec-label">A0&#8594;A4 self-check</span>
+    <span class="sec-label">A0 to A4 self-check</span>
     <h2 class="sec-title">Place your program on the ladder</h2>
     <div class="scorer" id="scorerBox" role="group" aria-label="Autonomy Ladder self-check">
       <div class="progress">
@@ -283,7 +283,7 @@
         <p class="qnum">Q11 &middot; Decision-class scope</p>
         <p class="qtext" id="q11label">Is write authority limited to a named decision class?</p>
         <div class="opts" role="radiogroup" aria-labelledby="q11label">
-          <label class="opt"><input type="radio" name="q11" value="0"><span>There is no named scope. An agent that can write can write.</span></label>
+          <label class="opt"><input type="radio" name="q11" value="0"><span>There is no named scope. An agent with write access can write to anything it can reach.</span></label>
           <label class="opt"><input type="radio" name="q11" value="1"><span>Scope is described in a slide or a prompt. It is not enforced.</span></label>
           <label class="opt"><input type="radio" name="q11" value="2"><span>Scope is written down. Staying inside it depends on the agent.</span></label>
           <label class="opt"><input type="radio" name="q11" value="4"><span>Scope is enforced outside the agent. An out-of-scope write does not land.</span></label>
@@ -296,7 +296,7 @@
         <div class="opts" role="radiogroup" aria-labelledby="q12label">
           <label class="opt"><input type="radio" name="q12" value="0"><span>Several agents can write on the same decision, and nothing coordinates them.</span></label>
           <label class="opt"><input type="radio" name="q12" value="1"><span>They hand work to each other. The path is informal.</span></label>
-          <label class="opt"><input type="radio" name="q12" value="2"><span>Each decision class has one writing agent. There is no inter-agent write.</span></label>
+          <label class="opt"><input type="radio" name="q12" value="2" data-gap="single-agent"><span>Each decision class has one writing agent. There is no inter-agent write.</span></label>
           <label class="opt"><input type="radio" name="q12" value="4"><span>Inter-agent handoffs follow operator-validated paths, and each handoff is on the record.</span></label>
         </div>
       </div>
@@ -416,14 +416,14 @@
     Array.prototype.forEach.call(q.querySelectorAll(".opt"), function(l){ l.classList.remove("sel"); });
     t.closest(".opt").classList.add("sel");
     var done=answers.filter(function(a){return a!==null;}).length;
-    hint.textContent = done<total ? (total-done)+" question"+((total-done)===1?"":"s")+" left." : "Ready — see your verdict.";
+    hint.textContent = done<total ? (total-done)+" question"+((total-done)===1?"":"s")+" left." : "Ready. See your verdict.";
     btn.disabled = done<total;
     for(var k=0;k<pBarSegs.length;k++){
       if(answers[k]!==null) pBarSegs[k].classList.add("on");
       else pBarSegs[k].classList.remove("on");
     }
     pCount.textContent = done+" of "+total+" answered";
-    pLeft.textContent = done<total ? (total-done)+" left" : "All answered — see your tier";
+    pLeft.textContent = done<total ? (total-done)+" left" : "All answered. See your tier.";
     verdict.hidden = true;
   });
 
@@ -446,8 +446,10 @@
 
     var gaps=document.getElementById("vGaps");
     gaps.innerHTML="";
-    var ranked=questions.map(function(item,i){return {dim:item.getAttribute("data-dim"), v:answers[i]};})
-      .sort(function(a,b){return a.v-b.v;})
+    var ranked=questions.map(function(item,i){
+      var checked=item.querySelector("input:checked");
+      return {dim:item.getAttribute("data-dim"), v:answers[i], single:checked && checked.getAttribute("data-gap")==="single-agent"};
+    }).sort(function(a,b){return a.v-b.v;})
       .slice(0,3)
       .filter(function(x){return x.v<4;});
     if(ranked.length){
@@ -455,13 +457,17 @@
       lead.className="vlead";
       lead.innerHTML="<b style='color:var(--navy)'>The rungs holding you down:</b>";
       gaps.appendChild(lead);
-      var T1=[" — a floor on your whole program"," — this caps every tier above it"," — the weakest link, and it governs"];
-      var T2=[" — partial, and an examiner will probe it"," — half-built; the gap shows under scrutiny"," — started, not yet defensible"];
-      var T3=[" — close, worth hardening"," — nearly there; harden it before you claim it"," — one step from defensible"];
+      var T1=["a floor on your whole program","this caps every tier above it","the weakest link, and it governs"];
+      var T2=["partial, and an examiner will probe it","half-built; the gap shows under scrutiny","started, not yet defensible"];
+      var T3=["close, worth hardening","nearly there; harden it before you claim it","one step from defensible"];
       ranked.forEach(function(r,idx){
         var li=document.createElement("li");
-        var suf=r.v<=1?T1[idx%3]:(r.v===2?T2[idx%3]:T3[idx%3]);
-        li.textContent=r.dim+suf;
+        if(r.single){
+          li.textContent="Inter-agent orchestration: not in use yet, which is fine below A4. A4 needs it.";
+        }else{
+          var phrase=r.v<=1?T1[idx%3]:(r.v===2?T2[idx%3]:T3[idx%3]);
+          li.textContent=r.dim+": "+phrase;
+        }
         gaps.appendChild(li);
       });
     }
