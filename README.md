@@ -42,6 +42,7 @@ permissively licensed, and DOI-archived on Zenodo.
 index.html             Home — the six co-equal verticals, the ladder, positioning
 services/index.html    /services — engagement model, per-vertical rule cites, libraries
 diagnostic/index.html  /diagnostic — self-scoring readiness tool + Kit lead-capture forms
+assess/index.html      /assess — twelve-question self-check, scored in the browser
 thank-you.html         /thank-you — post-submit confirmation
 assets/og.png          1200×630 social card (og:image / twitter:image)
 assets/og.svg          Editable source for the social card

@@ -4,6 +4,9 @@
 	// compatibility_date is the date this config was added.
 	"compatibility_date": "2026-09-29",
 	"assets": {
-		"directory": "."
+		"directory": ".",
+		// Canonicals are unslashed (/assess, /diagnostic, /services, /whitepaper).
+		// auto-trailing-slash would 307 /assess to /assess/ instead of returning 200.
+		"html_handling": "drop-trailing-slash"
 	}
 }
