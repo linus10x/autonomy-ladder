@@ -1,0 +1,9 @@
+# DRAFT. Not a published policy. The human page is noindex until Kunjar approves.
+# Vulnerability mailbox: [TBD — Kunjar/counsel]
+# Proposed until K3, not approved: mailto:support@autonomy-ladder.io
+# Expires below is a draft date only: [TBD — Kunjar/counsel]
+Contact: https://autonomy-ladder.io/security
+Expires: 2027-01-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://autonomy-ladder.io/.well-known/security.txt
+Policy: https://autonomy-ladder.io/security

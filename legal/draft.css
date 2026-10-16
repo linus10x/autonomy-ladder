@@ -1,0 +1,31 @@
+.draft-banner{
+  background:#0f2440;
+  color:#fff;
+  border-bottom:4px solid #b8893b;
+  padding:14px 24px;
+  text-align:center;
+}
+.draft-banner strong{
+  display:block;
+  letter-spacing:.2em;
+  font-size:13px;
+  font-weight:700;
+}
+.draft-banner p{
+  margin:6px auto 0;
+  max-width:62ch;
+  font-size:14.5px;
+  line-height:1.45;
+  color:#faf8f3;
+  font-weight:500;
+}
+.legal-list{margin:0 0 16px; padding-left:1.2em; max-width:64ch; color:#39455c}
+.legal-list li{margin:0 0 8px}
+.verbatim{
+  border-left:4px solid #b8893b;
+  margin:0 0 16px;
+  padding:10px 14px;
+  background:#fff;
+  max-width:64ch;
+  color:#1b2536;
+}
