@@ -12,7 +12,8 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 - [Home](https://autonomy-ladder.io/): the six verticals and the A0 to A4 ladder.
 - [Product](https://autonomy-ladder.io/product): what is live (self-score and libraries) and what is not (no account, no card).
 - [Pricing](https://autonomy-ladder.io/pricing): free self-score and open libraries at $0; Builder and Operator marked Plan.
-- [Diagnostic](https://autonomy-ladder.io/diagnostic): seven-question self-score. The tier is the lower of the rounded average and one step above the weakest answer, capped at A4.
+- [Assessment](https://autonomy-ladder.io/assessment): seven-question self-score. The tier is the lower of the rounded average and one step above the weakest answer, capped at A4. /diagnostic and /assess redirect here.
+- [Libraries](https://autonomy-ladder.io/libraries): six open libraries and four tools. Reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 - [Docs](https://autonomy-ladder.io/docs): level definitions, scoring rule, library list, FAQ.
 - [Waitlist](https://autonomy-ladder.io/waitlist): email capture on Kit form 9506738, the same form the home page uses.
 - [Services](https://autonomy-ladder.io/services): the methodology page already on the site.
