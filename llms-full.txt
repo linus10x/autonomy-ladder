@@ -969,3 +969,63 @@ AI agent readiness assessment. Seven questions, about two minutes, A0 to A4, sco
 ## https://autonomy-ladder.io/libraries
 
 Every library is reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
+
+## https://autonomy-ladder.io/libraries/finserv-agent-audit
+
+finserv-agent-audit library
+finserv-agent-audit
+The README describes audit-trail, kill-switch, and model-risk governance for autonomous AI agents in regulated financial services, with zero runtime dependencies.
+
+## https://autonomy-ladder.io/libraries/banking-agent-audit
+
+banking-agent-audit library
+banking-agent-audit
+The README describes governance patterns for autonomous AI agents in regulated banking: model-risk effective-challenge, ECOA / Reg B adverse-action controls, and a sanctions workflow that ships no list.
+
+## https://autonomy-ladder.io/libraries/payments-agent-audit
+
+payments-agent-audit library
+payments-agent-audit
+The README describes a governance library for autonomous AI agents in regulated payments, where rail finality, OFAC strict liability, and Reg E meet deployment authority.
+
+## https://autonomy-ladder.io/libraries/payer-agent-audit
+
+payer-agent-audit library
+payer-agent-audit
+The README describes the audit record for a utilization-management, prior-auth, or claims/appeals decision when an AI agent touches it. It says the library makes no medical-necessity call.
+
+## https://autonomy-ladder.io/libraries/private-capital-agent-audit
+
+private-capital-agent-audit library
+private-capital-agent-audit
+The README describes an Advisers Act section 206 control layer that makes an AI agent's orders, marketing, and valuation marks auditable.
+
+## https://autonomy-ladder.io/libraries/cre-agent-audit
+
+cre-agent-audit library
+cre-agent-audit
+The README describes nine MIT-licensed governance patterns for AI agents in commercial real estate operations: tenant screening, lease abstraction, and pricing, with a hash-chained audit trail.
+
+## https://autonomy-ladder.io/libraries/agent-funds-gate
+
+agent-funds-gate tool
+agent-funds-gate
+The README describes a fail-closed control: a value-moving agent action is denied unless a version-pinned OFAC SDN screen completed before the transfer executed.
+
+## https://autonomy-ladder.io/libraries/agent-eval-gate
+
+agent-eval-gate tool
+agent-eval-gate
+The README describes an MCP server over stdio. An MCP client calls authorize_funds_transfer and gets a structured verdict from a version-pinned OFAC screen-before-transfer control.
+
+## https://autonomy-ladder.io/libraries/agent-audit-packet
+
+agent-audit-packet tool
+agent-audit-packet
+The README describes a forwardable OFAC audit packet. One command shows an under-governed payments agent failing a screen-before-transfer control and a governed agent passing it.
+
+## https://autonomy-ladder.io/libraries/agent-evidence-ledger
+
+agent-evidence-ledger tool
+agent-evidence-ledger
+The README describes an append-only, tamper-evident ledger of decisions an autonomous agent made. verify() names which of five forgery classes was detected, and at which index.

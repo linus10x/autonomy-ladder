@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>agent-eval-gate tool</title>
+<meta name="description" content="MCP server that exposes one OFAC screen-before-transfer control. Stdio, no install. MIT for the wrapper. Reuses agent-funds-gate.">
+<link rel="canonical" href="https://autonomy-ladder.io/libraries/agent-eval-gate">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="agent-eval-gate tool">
+<meta property="og:description" content="MCP server that exposes one OFAC screen-before-transfer control. Stdio, no install. MIT for the wrapper. Reuses agent-funds-gate.">
+<meta property="og:url" content="https://autonomy-ladder.io/libraries/agent-eval-gate">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="agent-eval-gate tool">
+<meta name="twitter:description" content="MCP server that exposes one OFAC screen-before-transfer control. Stdio, no install. MIT for the wrapper. Reuses agent-funds-gate.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "agent-eval-gate",
+      "description": "The README describes an MCP server over stdio. An MCP client calls authorize_funds_transfer and gets a structured verdict from a version-pinned OFAC screen-before-transfer control.",
+      "codeRepository": "https://github.com/linus10x/agent-eval-gate",
+      "url": "https://autonomy-ladder.io/libraries/agent-eval-gate",
+      "programmingLanguage": "Python",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@type": "Person",
+        "name": "Kunjar Bhaduri",
+        "url": "https://github.com/linus10x"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/product">Product</a>
+      <a href="https://autonomy-ladder.io/pricing">Pricing</a>
+      <a href="https://autonomy-ladder.io/diagnostic">Diagnostic</a>
+      <a href="https://autonomy-ladder.io/docs">Docs</a>
+      <a href="https://autonomy-ladder.io/libraries">Libraries</a>
+      <a href="https://autonomy-ladder.io/waitlist">Waitlist</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="hero">
+      <p class="kicker">Runnable tool</p>
+      <h1>agent-eval-gate</h1>
+      <p class="lede">The README describes an MCP server over stdio. An MCP client calls authorize_funds_transfer and gets a structured verdict from a version-pinned OFAC screen-before-transfer control.</p>
+    </div>
+    <section>
+      <span class="sec-label">Scope</span>
+      <h2 class="sec-title">What the README says</h2>
+      <ul>
+        <li>It wraps agent-funds-gate, vendored under vendor/. The README says it is not a new control.</li>
+        <li>Run path: <code>./serve.sh</code> to serve, <code>./demo.sh</code> for the acceptance demo. No install and no network.</li>
+        <li>The README says a caller cannot request a deadline above 90 seconds, and an exception inside evaluation becomes a DENY.</li>
+        <li>License: MIT for the wrapper. The vendored control stays under its upstream MIT license.</li>
+      </ul>
+    </section>
+    <section>
+      <span class="sec-label">Cite it</span>
+      <h2 class="sec-title">Repository and license</h2>
+      <ul>
+        <li>GitHub: <a href="https://github.com/linus10x/agent-eval-gate">linus10x/agent-eval-gate</a></li>
+        <li>License: MIT for the wrapper (LICENSE). Vendored control under its upstream MIT license.</li>
+        <li>No DOI is stated in the README.</li>
+      </ul>
+      <p class="plain"><a href="https://autonomy-ladder.io/libraries">All libraries</a></p>
+    </section>
+
+  </main>
+  <footer>
+    <p class="fineprint">Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance. The license, DOI, and scope lines on this page are taken from that repository README. &copy; 2026.</p>
+  </footer>
+</div>
+</body>
+</html>
