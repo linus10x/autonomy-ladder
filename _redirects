@@ -1,0 +1,7 @@
+# Canonical diagnostic URL is /assessment.
+# /diagnostic is the previous self-score. /assess is the twelve-question URL from this PR.
+# Static asset redirects (no Worker script). 301 so the old URLs pass to one indexable page.
+/diagnostic /assessment 301
+/diagnostic/ /assessment 301
+/assess /assessment 301
+/assess/ /assessment 301

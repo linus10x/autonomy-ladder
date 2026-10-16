@@ -961,3 +961,7 @@ Run the diagnostic
 Book 15 minutes
 DM on LinkedIn
 Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.
+
+## https://autonomy-ladder.io/assessment
+
+AI agent readiness assessment. Seven questions, about two minutes, A0 to A4, scored in the browser. /diagnostic and /assess redirect here with HTTP 301. Kit form 9506738 records diagnostic_started, diagnostic_completed, the level claimed, and the level scored.
