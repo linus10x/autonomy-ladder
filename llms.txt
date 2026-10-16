@@ -1,0 +1,29 @@
+# Autonomy Ladder
+
+> The control surface that makes a claimed AI autonomy level provable under audit: authority granted only against evidence, revocable by design, cleared by an independent verifier, on a hash-chained record. Six open, DOI-archived libraries across six regulated verticals.
+
+Public site: https://autonomy-ladder.io/
+Built by Kunjar Bhaduri. The lines below repeat only what the live pages already say.
+
+## Pages
+
+- [Home](https://autonomy-ladder.io/): A0 to A4 governance for AI in regulated operations. Make every grant of AI authority provable.
+- [Services](https://autonomy-ladder.io/services): the methodology that makes a claimed autonomy level hold up under audit.
+- [Diagnostic](https://autonomy-ladder.io/diagnostic): a short preview of where an AI program sits on A0 to A4, read by the weakest control.
+- [Whitepaper](https://autonomy-ladder.io/whitepaper): the A0 to A4 framework, sovereign veto, and a hash-chain audit record.
+
+## Open libraries
+
+Every library is public, permissively licensed, and DOI-archived on Zenodo. Names, repos and DOIs are the ones on the home page.
+
+- [Private Capital](https://github.com/linus10x/private-capital-agent-audit): SEC-registered investment advisers, Advisers Act section 206 fiduciary controls, mandate and risk-limit gates. DOI 10.5281/zenodo.20564496
+- [Commercial Real Estate](https://github.com/linus10x/cre-agent-audit): lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency. DOI 10.5281/zenodo.20437081
+- [Financial Services](https://github.com/linus10x/finserv-agent-audit): regulated finance, readiness state machine, sovereign veto, hash-chain audit, EU AI Act mapping, shadow mode. DOI 10.5281/zenodo.20434570
+- [Banking](https://github.com/linus10x/banking-agent-audit): model-risk effective challenge, ECOA / Reg B adverse-action gate, OFAC reference workflow. DOI 10.5281/zenodo.20564584
+- [Payments](https://github.com/linus10x/payments-agent-audit): OFAC screening, BSA / AML, Reg E, plus a rail-finality gate for transfers that cannot be clawed back. DOI 10.5281/zenodo.20592773
+- [Healthcare Payer](https://github.com/linus10x/payer-agent-audit): coverage-determination and utilization-management governance for health-insurance payers. DOI 10.5281/zenodo.20564377
+
+## Next step
+
+- [Run the diagnostic](https://autonomy-ladder.io/diagnostic): the self-check linked from the home page.
+- [Book a conversation](https://calendly.com/kunjarbhaduri/new-meeting-1): the scheduling link already on the home page.
