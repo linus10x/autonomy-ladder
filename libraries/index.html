@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every library is reference code to adopt and inspect</title>
+<meta name="description" content="None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.">
+<link rel="canonical" href="https://autonomy-ladder.io/libraries">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="Every library is reference code to adopt and inspect">
+<meta property="og:description" content="None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.">
+<meta property="og:url" content="https://autonomy-ladder.io/libraries">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Every library is reference code to adopt and inspect">
+<meta name="twitter:description" content="None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta name="twitter:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
+<style>
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em}
+  .hero h1{font-size:clamp(22px,3vw,28px); max-width:34em}
+  .lib h2{font-size:clamp(22px,3vw,28px)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Every library is reference code to adopt and inspect",
+  "url": "https://autonomy-ladder.io/libraries",
+  "description": "Every library is reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance."
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/assessment">Assessment</a>
+      <a href="https://autonomy-ladder.io/libraries" aria-current="page">Libraries</a>
+      <a href="https://autonomy-ladder.io/product">Product</a>
+      <a href="https://autonomy-ladder.io/pricing">Pricing</a>
+      <a href="https://autonomy-ladder.io/docs">Docs</a>
+      <a href="https://autonomy-ladder.io/waitlist">Waitlist</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+      <a href="https://autonomy-ladder.io/whitepaper">Whitepaper</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="hero">
+      <h1>Every library is reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.</h1>
+    </div>
+
+    <section class="lib" id="finserv-agent-audit">
+      <h2>Financial services: <a href="https://github.com/linus10x/finserv-agent-audit">finserv-agent-audit</a></h2>
+      <p class="plain"><strong>What it does:</strong> A risk-state machine, a veto the agent can't override, a tamper-detecting audit chain and an A0 to A4 autonomy gate, plus FSI controls mapped to primary sources. It sits on top of the agent runtime you already use.</p>
+      <p class="plain"><strong>Who it's for:</strong> An FSI model-risk or compliance lead who has to produce a per-decision trail on demand.</p>
+      <p class="plain"><strong>Next step:</strong> Clone it and run <code>./demo.sh</code>. It grants an agent A3, revokes it to A1 with the reason recorded, then shows four attacks being caught. No install, no network.</p>
+    </section>
+
+    <section class="lib" id="banking-agent-audit">
+      <h2>Banking: <a href="https://github.com/linus10x/banking-agent-audit">banking-agent-audit</a></h2>
+      <p class="plain"><strong>What it does:</strong> Tested ECOA / Reg B adverse-action and model-risk effective-challenge controls, plus a sanctions workflow that ships no list.</p>
+      <p class="plain"><strong>Who it's for:</strong> A bank's model-risk, fair-lending or compliance lead standing up agentic decisioning.</p>
+      <p class="plain"><strong>Next step:</strong> Read and run <code>tests/test_adverse_action_gate.py</code>.</p>
+    </section>
+
+    <section class="lib" id="payments-agent-audit">
+      <h2>Payments: <a href="https://github.com/linus10x/payments-agent-audit">payments-agent-audit</a></h2>
+      <p class="plain"><strong>What it does:</strong> Treats rail finality as an input. If an agent can move money on an instant rail, a control that fires after authorization is too late, so the gate checks first. Includes an OFAC screen with a human disposition step.</p>
+      <p class="plain"><strong>Who it's for:</strong> A payments or fintech compliance or risk lead deciding how far to trust an agent on FedNow, RTP, ACH or card rails.</p>
+      <p class="plain"><strong>Next step:</strong> Run <code>python examples/instant_rail_promotion_refusal.py</code>.</p>
+    </section>
+
+    <section class="lib" id="payer-agent-audit">
+      <h2>Healthcare payer: <a href="https://github.com/linus10x/payer-agent-audit">payer-agent-audit</a></h2>
+      <p class="plain"><strong>What it does:</strong> Records whether a clinician was present and attested, whether a UM, prior-auth or claims decision was timely under the rule for that plan's funding type, and whether appeal rights were given. It makes no medical-necessity call.</p>
+      <p class="plain"><strong>Who it's for:</strong> A health plan's compliance, model-risk or engineering lead putting agents into UM, prior-auth or claims work.</p>
+      <p class="plain"><strong>Next step:</strong> Clone the repo and start with the funding-type obligation routing example listed in the library hub.</p>
+    </section>
+
+    <section class="lib" id="private-capital-agent-audit">
+      <h2>Private capital: <a href="https://github.com/linus10x/private-capital-agent-audit">private-capital-agent-audit</a></h2>
+      <p class="plain"><strong>What it does:</strong> An Advisers Act §206 control layer that makes an agent's orders, marketing and valuation marks auditable, with every flag written to a tamper-evident ledger.</p>
+      <p class="plain"><strong>Who it's for:</strong> An RIA or allocator compliance lead, or a buy-side AI lead.</p>
+      <p class="plain"><strong>Next step:</strong> Install it and run <code>private-capital-audit obligations buy_side_quant</code>.</p>
+    </section>
+
+    <section class="lib" id="cre-agent-audit">
+      <h2>Commercial real estate: <a href="https://github.com/linus10x/cre-agent-audit">cre-agent-audit</a></h2>
+      <p class="plain"><strong>What it does:</strong> Governance patterns for tenant screening, lease abstraction and pricing, including a Fair-Housing Pre-Flight Gate that vetoes a screening decision that reaches for a housing-voucher feature.</p>
+      <p class="plain"><strong>Who it's for:</strong> A CRE owner or operator, or a proptech screening or compliance lead.</p>
+      <p class="plain"><strong>Next step:</strong> Run <code>python examples/worked_example_fair_housing_preflight.py</code>.</p>
+    </section>
+
+    <section class="lib" id="agent-funds-gate">
+      <h2>Tool: <a href="https://github.com/linus10x/agent-funds-gate">agent-funds-gate</a></h2>
+      <p class="plain"><strong>What it does:</strong> Denies a value-moving agent action unless a version-pinned OFAC SDN screen completed before the transfer executed. A naive check that only asks whether a screen ran lets a $250,000 transfer through in the demo; this gate denies it. You wire in your own SDN list.</p>
+      <p class="plain"><strong>Who it's for:</strong> Anyone letting an agent move money.</p>
+      <p class="plain"><strong>Next step:</strong> Run <code>python demo/demo.py</code>.</p>
+    </section>
+
+    <section class="lib" id="agent-eval-gate">
+      <h2>Tool: <a href="https://github.com/linus10x/agent-eval-gate">agent-eval-gate</a></h2>
+      <p class="plain"><strong>What it does:</strong> Exposes the funds gate as one MCP tool, <code>authorize_funds_transfer</code>, with a deadline that can't be extended past 90 seconds and any error turned into a deny.</p>
+      <p class="plain"><strong>Who it's for:</strong> An AI engineer wiring an agent through MCP.</p>
+      <p class="plain"><strong>Next step:</strong> Run <code>./demo.sh</code>, then <code>./serve.sh</code>.</p>
+    </section>
+
+    <section class="lib" id="agent-audit-packet">
+      <h2>Tool: <a href="https://github.com/linus10x/agent-audit-packet">agent-audit-packet</a></h2>
+      <p class="plain"><strong>What it does:</strong> One command shows an under-governed payments agent failing the OFAC ordering control and the governed one passing, then writes a forwardable <code>evidence.json</code> with a CI exit code.</p>
+      <p class="plain"><strong>Who it's for:</strong> A reviewer or engineer who needs evidence they can forward.</p>
+      <p class="plain"><strong>Next step:</strong> Run <code>./verify.sh</code>.</p>
+    </section>
+
+    <section class="lib" id="agent-evidence-ledger">
+      <h2>Tool: <a href="https://github.com/linus10x/agent-evidence-ledger">agent-evidence-ledger</a></h2>
+      <p class="plain"><strong>What it does:</strong> An append-only, tamper-evident ledger of agent decisions. Verification names which of five forgery types happened (edit, delete, reorder, bypass, truncation) and where.</p>
+      <p class="plain"><strong>Who it's for:</strong> Engineers who need a decision record an auditor can check.</p>
+      <p class="plain"><strong>Next step:</strong> Run <code>./demo.sh</code>.</p>
+    </section>
+
+    <section id="bank-cro">
+      <h2>Bank CRO</h2>
+      <p class="plain"><strong>Job to be done:</strong> Show that an agent touching credit decisions gives a correct adverse-action notice and that model risk gets real effective challenge.</p>
+      <p class="plain"><strong>Fit:</strong> <a href="#banking-agent-audit">banking-agent-audit</a></p>
+      <p class="plain"><strong>Next step:</strong> <a href="https://autonomy-ladder.io/assessment">Run the free self-score</a>, then <code>tests/test_adverse_action_gate.py</code>.</p>
+      <p class="plain"><strong>Why now:</strong> The library maps to the 2026 revised interagency model risk guidance (OCC Bulletin 2026-13).</p>
+    </section>
+
+    <section id="payments-compliance-lead">
+      <h2>Payments compliance lead</h2>
+      <p class="plain"><strong>Job to be done:</strong> Make sure an agent can't send money before the sanctions screen finishes.</p>
+      <p class="plain"><strong>Fit:</strong> <a href="#agent-funds-gate">agent-funds-gate</a>, <a href="#payments-agent-audit">payments-agent-audit</a></p>
+      <p class="plain"><strong>Next step:</strong> Run the funds gate demo (<code>python demo/demo.py</code>).</p>
+      <p class="plain"><strong>Why now:</strong> On an instant rail the money is gone once it moves, and OFAC liability is strict.</p>
+    </section>
+
+    <section id="payer-um-lead">
+      <h2>Payer UM lead</h2>
+      <p class="plain"><strong>Job to be done:</strong> Keep a record that a clinician attested, the decision met its deadline, and appeal rights were given, without the tool making the medical call.</p>
+      <p class="plain"><strong>Fit:</strong> <a href="#payer-agent-audit">payer-agent-audit</a></p>
+      <p class="plain"><strong>Next step:</strong> <a href="https://autonomy-ladder.io/assessment">Run the free self-score</a>, then clone the library.</p>
+      <p class="plain"><strong>Why now:</strong> The same denial can fall under CMS-0057-F, ERISA or a state clock depending on who funds the plan, and the library routes it.</p>
+    </section>
+
+    <section id="ria-cco">
+      <h2>RIA CCO</h2>
+      <p class="plain"><strong>Job to be done:</strong> Make an agent's orders, marketing and marks auditable under Advisers Act §206.</p>
+      <p class="plain"><strong>Fit:</strong> <a href="#private-capital-agent-audit">private-capital-agent-audit</a></p>
+      <p class="plain"><strong>Next step:</strong> <code>private-capital-audit obligations buy_side_quant</code></p>
+      <p class="plain"><strong>Why now:</strong> If an agent is already placing orders or sending marketing, each of those is a fiduciary act that needs a record.</p>
+    </section>
+
+    <section id="cre-operator">
+      <h2>CRE operator</h2>
+      <p class="plain"><strong>Job to be done:</strong> Stop a tenant-screening agent from using a feature fair-housing rules forbid.</p>
+      <p class="plain"><strong>Fit:</strong> <a href="#cre-agent-audit">cre-agent-audit</a></p>
+      <p class="plain"><strong>Next step:</strong> Run the Fair-Housing Pre-Flight example.</p>
+      <p class="plain"><strong>Why now:</strong> The vetoed pattern is the one named in the Louis v. SafeRent settlement.</p>
+    </section>
+
+    <section id="ai-engineer">
+      <h2>AI engineer at a fintech</h2>
+      <p class="plain"><strong>Job to be done:</strong> Put a gate and a tamper-evident record in front of an agent's money moves without adding dependencies.</p>
+      <p class="plain"><strong>Fit:</strong> <a href="#agent-eval-gate">agent-eval-gate</a>, <a href="#agent-evidence-ledger">agent-evidence-ledger</a>, <a href="#agent-audit-packet">agent-audit-packet</a></p>
+      <p class="plain"><strong>Next step:</strong> Run <code>./verify.sh</code> in agent-audit-packet and forward the <code>evidence.json</code> to your compliance team.</p>
+      <p class="plain"><strong>Why now:</strong> It exits non-zero if the control doesn't hold, so it can go straight into CI.</p>
+      <p class="plain">Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="fineprint">Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. © 2026.</p>
+  </footer>
+</div>
+</body>
+</html>

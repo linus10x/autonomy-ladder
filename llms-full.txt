@@ -965,3 +965,7 @@ Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, 
 ## https://autonomy-ladder.io/assessment
 
 AI agent readiness assessment. Seven questions, about two minutes, A0 to A4, scored in the browser. /diagnostic and /assess redirect here with HTTP 301. Kit form 9506738 records diagnostic_started, diagnostic_completed, the level claimed, and the level scored.
+
+## https://autonomy-ladder.io/libraries
+
+Every library is reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.

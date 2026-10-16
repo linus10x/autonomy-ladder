@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Let your AI agents act, and still prove who was allowed to do what</title>
-<meta name="description" content="Free A0 to A4 self-score and six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital, and CRE.">
+<meta name="description" content="Six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital and commercial real estate. Start in your browser.">
 <link rel="canonical" href="https://autonomy-ladder.io/">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Autonomy Ladder">
 <meta property="og:title" content="Let your AI agents act, and still prove who was allowed to do what">
-<meta property="og:description" content="Free A0 to A4 self-score and six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital, and CRE.">
+<meta property="og:description" content="Six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital and commercial real estate. Start in your browser.">
 <meta property="og:url" content="https://autonomy-ladder.io/">
 <meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -19,16 +19,12 @@
 <meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Let your AI agents act, and still prove who was allowed to do what">
-<meta name="twitter:description" content="Free A0 to A4 self-score and six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital, and CRE.">
+<meta name="twitter:description" content="Six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital and commercial real estate. Start in your browser.">
 <meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
 <meta name="twitter:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
 <style>
-  .points{margin:0 0 18px; padding:0; list-style:none; max-width:64ch}
-  .points li{margin:0 0 12px; padding-left:16px; position:relative; color:#39455c; font-size:16px}
-  .points li::before{content:""; position:absolute; left:0; top:.55em; width:6px; height:6px; border-radius:2px; background:var(--gold)}
-  .cap-other[hidden]{display:none}
-  .cap-other{margin-top:8px}
-  .privacy{font-size:12.5px; color:#5b6b7e; margin:14px 0 0; max-width:62ch}
+  .points{margin:0 0 18px; padding:0 0 0 1.2em; max-width:64ch}
+  .points li{margin:0 0 12px; color:#39455c; font-size:16px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Autonomy Ladder","url":"https://autonomy-ladder.io/","logo":"https://autonomy-ladder.io/assets/favicon.svg","email":"contact@autonomy-ladder.io","founder":{"@type":"Person","name":"Kunjar Bhaduri","url":"https://github.com/linus10x"},"sameAs":["https://github.com/linus10x"]}
@@ -44,6 +40,7 @@
     <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
     <nav class="nav" aria-label="Primary">
       <a href="https://autonomy-ladder.io/assessment">Assessment</a>
+      <a href="https://autonomy-ladder.io/libraries">Libraries</a>
       <a href="https://autonomy-ladder.io/product">Product</a>
       <a href="https://autonomy-ladder.io/pricing">Pricing</a>
       <a href="https://autonomy-ladder.io/docs">Docs</a>
@@ -55,25 +52,22 @@
 
   <main id="main-content">
     <div class="hero">
-      <p class="kicker">Autonomy Ladder</p>
       <h1>Let your AI agents act, and still prove who was allowed to do what.</h1>
       <p class="lede">Autonomy Ladder is a free A0 to A4 self-score and six open governance libraries for AI agents in banking, payments, financial services, healthcare payer, private capital and commercial real estate. Start in your browser. No account and no card.</p>
       <div class="cta">
         <a class="primary" href="https://autonomy-ladder.io/assessment">Run the free self-score</a>
-        <a href="#waitlist">Join the waitlist</a>
+        <a href="https://autonomy-ladder.io/waitlist">Join the waitlist for paid plans</a>
       </div>
     </div>
 
     <section>
-      <span class="sec-label">Why</span>
-      <h2 class="sec-title">Someone will ask what the agent was allowed to do.</h2>
+      <h2 class="sec-title">Why</h2>
       <p class="plain">If an agent can move money, deny a claim or place an order, someone will eventually ask what it was allowed to do, who granted that, and how you take it back. "The model decided" isn't an answer an examiner accepts.</p>
       <p class="plain">We think regulated firms should be able to run autonomous agents without giving up accountability, the audit record, or a person's final say. That's the reason this work exists.</p>
     </section>
 
     <section>
-      <span class="sec-label">How</span>
-      <h2 class="sec-title">A0 to A4, earned one step at a time.</h2>
+      <h2 class="sec-title">How</h2>
       <p class="plain">The ladder runs from A0, where the agent only reads and recommends, to A4, where it runs in production with a veto it can't switch off. Each step up has to be earned.</p>
       <ul class="points">
         <li>Authority is granted only against evidence, and it can be revoked. The revocation is recorded too.</li>
@@ -81,116 +75,27 @@
         <li>Every decision is written to a hash-chained record, so tampering shows up.</li>
         <li>The check that clears a write is independent of the agent, so it doesn't share the agent's failure modes.</li>
       </ul>
-      <div class="ladder">
-        <div class="rung"><div class="lvl">A0</div><div><span class="name">Informational</span><span class="desc">Agent reads and recommends. No write authority.</span></div></div>
-        <div class="rung"><div class="lvl">A1</div><div><span class="name">Assisted</span><span class="desc">Agent drafts. Human approves every write.</span></div></div>
-        <div class="rung"><div class="lvl">A2</div><div><span class="name">Delegated</span><span class="desc">Agent writes inside a hard envelope; sampled and out-of-envelope review.</span></div></div>
-        <div class="rung"><div class="lvl">A3</div><div><span class="name">Supervised Autonomous</span><span class="desc">In-scope autonomous writes, a non-overridable sovereign veto, and a live audit ledger.</span></div></div>
-        <div class="rung"><div class="lvl">A4</div><div><span class="name">Production Autonomous</span><span class="desc">A3 plus inter-agent orchestration and operator-validated escalation.</span></div></div>
-      </div>
-      <p class="plain" style="margin-top:18px">The self-score reads your program by its weakest control, not its best one. Seven questions, about two minutes, and the result stays in your browser unless you choose to email yourself the brief.</p>
+      <p class="plain">The self-score reads your program by its weakest control, not its best one. Seven questions, about two minutes, and the result stays in your browser unless you choose to email yourself the brief.</p>
     </section>
 
     <section>
-      <span class="sec-label">What</span>
-      <h2 class="sec-title">A score, six libraries, and controls you can run.</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Free self-score</h3>
-          <p>Seven questions, a tier from A0 to A4. It stays in the browser unless you use the email form. No account and no card.</p>
-        </article>
-        <article class="card">
-          <h3>Six open libraries</h3>
-          <p>One per regulated vertical, public, permissively licensed, and archived with a Zenodo DOI.</p>
-        </article>
-        <article class="card">
-          <h3>Runnable controls</h3>
-          <p>A funds gate that denies a transfer unless the sanctions screen finished first, a tamper-evident decision ledger, and a forwardable audit packet you can wire into CI.</p>
-        </article>
-      </div>
-      <p class="plain" style="margin-top:18px">These are reference implementations you can read, run and adapt. They aren't a control running in any institution's production today, and they aren't legal advice.</p>
+      <h2 class="sec-title">What</h2>
+      <ul class="points">
+        <li><strong>Free self-score.</strong> Seven questions, a tier from A0 to A4.</li>
+        <li><strong>Six open libraries.</strong> One per regulated vertical, public, permissively licensed and archived with a Zenodo DOI.</li>
+        <li><strong>Runnable controls.</strong> A funds gate that denies a transfer unless the sanctions screen finished first, a tamper-evident decision ledger, and a forwardable audit packet you can wire into CI.</li>
+      </ul>
+      <p class="plain">These are reference implementations you can read, run and adapt. They aren't a control running in any institution's production today. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.</p>
       <div class="cta">
         <a class="primary" href="https://autonomy-ladder.io/assessment">Run the free self-score</a>
-        <a href="https://autonomy-ladder.io/docs#libraries">Browse the libraries</a>
-        <a href="#waitlist">Join the waitlist</a>
+        <a href="https://autonomy-ladder.io/libraries">Browse the libraries</a>
+        <a href="https://autonomy-ladder.io/waitlist">Join the waitlist</a>
       </div>
-    </section>
-
-    <section id="waitlist">
-      <span class="sec-label">Waitlist</span>
-      <h2 class="sec-title">Join the waitlist.</h2>
-      <p class="plain">This form posts to Kit form 9506738, the same list as the <a href="https://autonomy-ladder.io/waitlist">waitlist page</a>. Double opt-in. No account and no card.</p>
-      <form class="cap-form" id="capForm" action="https://app.kit.com/forms/9506738/subscriptions" method="post">
-        <input type="hidden" name="success_url" value="https://autonomy-ladder.io/thank-you?subscribed=1">
-        <input type="hidden" name="fields[source]" value="home">
-        <div class="cap-field full">
-          <label for="cap-email">Email</label>
-          <input type="email" id="cap-email" name="email_address" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
-        </div>
-        <div class="cap-field">
-          <label for="cap-role">Your role</label>
-          <select id="cap-role" name="fields[role]" required>
-            <option value="" disabled selected>Select</option>
-            <option>CTO / CIO</option>
-            <option>Chief AI Officer</option>
-            <option>CCO / Chief Risk / General Counsel</option>
-            <option>PE Operating Partner / Investor</option>
-            <option>Founder / CEO</option>
-            <option>Board member / Advisor</option>
-            <option value="Other">Other</option>
-          </select>
-          <input class="cap-other" type="text" id="cap-role-other" placeholder="Please specify your role" aria-label="Specify your role" hidden>
-        </div>
-        <div class="cap-field">
-          <label for="cap-firm">Firm type</label>
-          <select id="cap-firm" name="fields[firm_type]" required>
-            <option value="" disabled selected>Select</option>
-            <option>Bank / capital markets</option>
-            <option>Asset / wealth manager</option>
-            <option>PE / VC firm</option>
-            <option>Payments / fintech</option>
-            <option>CRE operator</option>
-            <option>Insurer / health payer</option>
-            <option value="Other regulated">Other regulated</option>
-          </select>
-          <input class="cap-other" type="text" id="cap-firm-other" placeholder="Please specify your firm type" aria-label="Specify your firm type" hidden>
-        </div>
-        <button type="submit">Join the waitlist</button>
-      </form>
-      <script>
-        (function(){
-          var form=document.getElementById("capForm");
-          var pairs=[["cap-role","cap-role-other","Other","role"],["cap-firm","cap-firm-other","Other regulated","firm_type"]];
-          pairs.forEach(function(p){
-            var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
-            sel.addEventListener("change",function(){
-              var isOther=sel.value===p[2];
-              oth.hidden=!isOther;
-              oth.required=isOther;
-              if(!isOther){oth.value="";}
-            });
-          });
-          form.addEventListener("submit",function(){
-            pairs.forEach(function(p){
-              var sel=document.getElementById(p[0]), oth=document.getElementById(p[1]);
-              if(sel.value===p[2] && oth.value.trim()){
-                sel.removeAttribute("name");
-                var h=document.createElement("input");
-                h.type="hidden";
-                h.name="fields["+p[3]+"]";
-                h.value=oth.value.trim();
-                form.appendChild(h);
-              }
-            });
-          });
-        })();
-      </script>
-      <p class="privacy">Double opt-in: one email to confirm. After that, the occasional governance note. Unsubscribe in one click.</p>
     </section>
   </main>
 
   <footer>
-    <p class="fineprint">Built by Kunjar Bhaduri. Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.</p>
+    <p class="fineprint">Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. © 2026.</p>
   </footer>
 </div>
 </body>
