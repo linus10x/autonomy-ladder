@@ -44,6 +44,7 @@ product/index.html     /product: what is live (self-score, libraries) and what i
 pricing/index.html     /pricing: free tier at $0; Builder and Operator marked Plan
 diagnostic/index.html  /diagnostic: self-scoring readiness tool + Kit lead-capture forms
 docs/index.html        /docs: A0 to A4 definitions, scoring rule, library DOIs, FAQ
+libraries/index.html   /libraries: six libraries and four runnable tools, from each README
 waitlist/index.html    /waitlist: Kit form 9506738, same endpoint as the home form
 services/index.html    /services: engagement model, per-vertical rule cites, libraries
 whitepaper/index.html  /whitepaper
