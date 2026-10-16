@@ -1,0 +1,963 @@
+# Autonomy Ladder
+
+> Full visible text of the public pages. Lines that restate biography figures are left on the pages and are not copied here. No street address. Builder and Operator have no paid price.
+
+## https://autonomy-ladder.io/diagnostic
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Whitepaper
+Regulated-Operations AI Governance · The Diagnostic
+Can you prove what your AI agents are allowed to do?
+Most firms running agents in production believe they sit
+a rung higher
+than their audit chain can prove. Find out where yours actually sits — in two minutes.
+It is the gap an examiner, an acquirer’s tech team, or your own model-risk function probes first: who can override the model, and where the record sits. Usually invisible — until a pilot is ready for production and no one can defend the authority it would need.
+Principal
+Your agents touch capital, mandates, or client decisions — and you carry the downside.
+CTO / CCO
+You’ll be the one asked who can override the model, and to show the audit trail.
+PE Operating Partner
+You’re carrying this same risk across a portfolio of companies, mostly unmeasured.
+Run the two-minute preview below: seven questions, a tier read by your weakest control, not a grade. The A0→A4 ladder is the familiar part; whether your claimed level holds under audit is what this measures.
+deal architect
+: 50-day MVP, not 6 months
+6 open libraries
+, all DOI-archived
+What you get — sample verdict
+A2
+Delegated
+“Most firms here believe they’re at A3. The A2→A3 boundary is exactly what an examination tests first.”
+A 15-minute read of a live agent workflow, no pitch
+Run the 2-minute preview
+The Contribution
+What makes a claimed level hold up under audit
+The A0→A4 ladder is a familiar idea. The part that isn’t is making a claimed level
+provable
+. Four properties do that.
+Granted
+Authority only against evidence
+An agent earns a level by showing the controls for it, never by assertion.
+Revocable
+A level can be pulled back
+And the revocation is recorded, so the change in authority is itself on the record.
+Independent
+The check doesn’t share the failure
+The verifier that clears a write is independent of the agent, so it does not share the agent’s failure modes.
+Recorded
+Hash-chained, tamper-evident
+The whole record is hash-chained, so an examiner reads a chain of custody, not a reconstruction.
+The ladder is the known part.
+The contribution is making a claimed place on it falsifiable under audit.
+The A0→A4 Preview
+Place your program on the ladder
+The interactive scorer needs JavaScript. The same five maturity tiers are described in
+The Ladder
+below — read them and place your program by hand, then
+book a 15-minute read of a live workflow
+.
+A0
+Informational
+A 15-minute read of one of your live agent workflows, no pitch
+Get the board-ready brief
+The Ladder
+Five maturity tiers, A0 to A4
+Think of it as a driver’s license for AI. At
+A0
+it only gives directions — a human drives. At
+A2
+it drives inside a fenced lot while you spot-check. At
+A4
+it drives itself on approved routes, with a brake it can’t switch off and a recorder of every turn.
+A0
+Informational
+Agent reads and recommends. No write authority.
+A1
+Assisted
+Agent drafts. Human approves every write.
+A2
+Delegated
+Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.
+A3
+Supervised Autonomous
+Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.
+A4
+Production Autonomous
+A3 plus inter-agent orchestration and operator-validated escalation paths.
+A2 → A3 is the regulator-visible boundary.
+Escalation is automatic; de-escalation is deliberate. Most firms running agents in production believe they sit a rung higher than the audit chain can prove.
+Why Now
+The compliance deadlines are real
+Colorado SB 26-189
+Colorado’s 2026 AI law applies to AI used in consequential decisions about people, with obligations starting January 1, 2027.
+EU AI Act, Article 14
+Human oversight is a named obligation for high-risk systems. If you serve EU clients or data, "the model decided" is not a defensible audit answer.
+Model-risk supervision
+The April 2026 interagency model-risk guidance leaves generative and agentic AI outside its scope for now, so those systems fall under a bank’s general risk-management and governance practices while regulators work out what comes next. That leaves each firm to show, from its own record, who can override an agent and how its behavior is challenged. Build that evidence before the rules arrive, not after.
+These are deadlines, not talking points. The work to answer them takes longer than the gap between now and the dates above.
+The Open-Source Patterns
+The patterns the diagnostic scores you against
+Six permissively licensed pattern libraries — all six DOI-archived on Zenodo. These are the same governance primitives the diagnostic scores you against: public, free, and yours to read before any conversation. This is demonstration, not a gate.
+github.com/linus10x/finserv-agent-audit
+LIVE
+Governance patterns for AI agents in regulated finance — DEFCON-style readiness state machine, sovereign veto, hash-chain audit, the autonomy ladder, EU AI Act mapping, shadow mode.
+github.com/linus10x/private-capital-agent-audit
+LIVE
+Standalone investment-adviser library — five primitives plus seven adviser controls mapped to the Advisers Act fiduciary duty. For buy-side and allocator AI.
+github.com/linus10x/cre-agent-audit
+LIVE
+Commercial real estate sibling — the same patterns plus three CRE-native gates: lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency.
+github.com/linus10x/banking-agent-audit
+LIVE
+Banking primitives with model-risk effective-challenge, an ECOA / Reg B adverse-action gate, and an OFAC reference workflow wired by the deployer.
+github.com/linus10x/payer-agent-audit
+LIVE
+Healthcare-payer library — utilization and claims-adjacent governance for agents operating where coverage decisions and member PII meet regulation.
+github.com/linus10x/payments-agent-audit
+LIVE
+Payments library — real OFAC screening, BSA/AML and Reg E gates, plus a rail-finality / irreversibility check for actions that cannot be undone.
+Your Benchmark + The Board-Ready Brief
+Your tier benchmark and the board-ready brief
+Get your tier benchmark and the board-ready brief
+The repos above are public. This is the part they aren’t: where your scored tier sits against the peer band for your firm type, plus a one-page brief written for the board. It covers the override question, the audit-chain question, and the deadline that applies to you. I send it to whatever inbox you use.
+Email
+Your role
+Select…
+CTO / CIO
+Chief AI Officer
+CCO / Chief Risk / General Counsel
+PE Operating Partner / Investor
+Founder / CEO / Principal
+Board member / Advisor
+Other
+Firm type
+Select…
+Private Capital — wealth / alts / buy-side
+PE / VC firm
+Bank / capital markets
+Payments / fintech
+CRE operator
+Insurer / payer
+Other regulated
+Send my benchmark + brief
+Double opt-in: one email to confirm. After that, the occasional governance note — no spam, no sharing, no selling, unsubscribe in one click. Any inbox is fine; personal email is welcome.
+The diagnostic is free. The engagements that follow run from a fixed-scope read of one program to a standing governance retainer, outcome first, scope agreed before any number. I take calls from PE operating partners, founder-principals, and CTOs at regulated firms.
+A 15-minute read of a live agent workflow, no pitch
+The framework
+GitHub
+Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. Regulatory dates are summarized for orientation; confirm against primary sources for your jurisdiction. © 2026.
+
+## https://autonomy-ladder.io/docs
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Docs
+The ladder, the score, the libraries.
+These definitions are the ones already on the home page. The rung names are A0 Informational, A1 Assisted, A2 Delegated, A3 Supervised Autonomous, A4 Production Autonomous.
+Levels
+A0 to A4
+A0
+Informational
+Agent reads and recommends. No write authority.
+A1
+Assisted
+Agent drafts. Human approves every write.
+A2
+Delegated
+Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.
+A3
+Supervised Autonomous
+Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.
+A4
+Production Autonomous
+A3 plus inter-agent orchestration and operator-validated escalation paths.
+The home page states that A2 to A3 is the regulator-visible boundary. This page does not add a legal conclusion to that line.
+Self-score
+How the diagnostic picks a tier
+The diagnostic has seven questions. Each answer is a number from 0 to 4. The tier is the lower of the rounded average and one step above the weakest answer, capped at 4. A high average does not erase a low answer.
+That rule is the one in the diagnostic page script. It is a self-score, not an examination and not a certification.
+Run the diagnostic
+Libraries
+Six public repos
+Names, repos, and DOIs match the home page. Each library is public and DOI-archived on Zenodo.
+Private capital
+linus10x/private-capital-agent-audit
+DOI
+10.5281/zenodo.20564496
+Commercial real estate
+linus10x/cre-agent-audit
+DOI
+10.5281/zenodo.20437081
+Financial services
+linus10x/finserv-agent-audit
+DOI
+10.5281/zenodo.20434570
+Banking
+linus10x/banking-agent-audit
+DOI
+10.5281/zenodo.20564584
+Payments
+linus10x/payments-agent-audit
+DOI
+10.5281/zenodo.20592773
+Healthcare payer
+linus10x/payer-agent-audit
+DOI
+10.5281/zenodo.20564377
+FAQ
+Short answers
+What do A0 through A4 mean?
+A0 is informational, no write authority. A1 is assisted, a human approves every write. A2 is delegated, writes stay inside a hard envelope. A3 is supervised autonomous, with a non-overridable veto and a live audit ledger. A4 is production autonomous: A3 plus inter-agent orchestration and operator-validated escalation.
+Does the self-score cost money?
+No. It is the free tier.
+Pricing
+marks Builder and Operator as plans.
+How is the tier chosen?
+Lower of the rounded average and one step above the weakest answer, never above A4.
+Can I buy a paid plan on this site today?
+No. There is no checkout. The
+waitlist
+uses the same Kit form as the home page.
+Reference framework, not legal advice. No postal address. © 2026.
+
+## https://autonomy-ladder.io/
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Whitepaper
+Regulated-Operations AI Governance
+Make every grant of AI authority provable.
+One discipline, six regulated verticals.
+When an examiner or an acquirer asks what your agent was allowed to do, who granted it, and how you pull it back, “the model decided” is not an answer. This is the control surface that makes the answer falsifiable:
+Authority is granted only
+against evidence
+.
+A granted level is
+revocable
+, and the revocation is recorded.
+The check that clears it is
+independent
+of the agent, so it does not share the agent’s failure modes.
+The whole record is
+hash-chained
+and tamper-evident.
+The A0→A4 levels are a familiar idea. Making a claimed level hold up under audit is the part that isn’t. Read and run the six open, DOI-archived libraries before any conversation.
+Read the whitepaper
+Run the diagnostic
+The Verticals
+One governance backbone, six regulated verticals
+One discipline: the A0→A4 ladder, sovereign veto, and hash-chain audit, hardened separately for the six regulated sectors where an autonomous agent can move money, deny a person, or bind a fiduciary. Each has its own regulator, its own rule cite, its own open library.
+Private Capital
+Allocators, alts & family offices
+Mandate, risk-limit, and fiduciary-reasonableness gates mapped to the Advisers Act §206 fiduciary duty.
+Commercial Real Estate
+PE-backed CRE operators
+Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII residency. Colorado SB 26-189 mapped.
+Financial Services
+Capital markets & trading desks
+EU AI Act mapping for cross-border desks, plus a DEFCON-style readiness state machine, sovereign veto, and hash-chain audit for market-facing AI.
+Banking
+Bank model-risk & lending
+Model-risk effective-challenge, ECOA / Reg B adverse-action gate, OFAC reference workflow.
+Payments
+Payment & transfer operators
+OFAC screening, BSA / AML, Reg E, plus a rail-finality gate for transfers that can’t be clawed back.
+Healthcare Payer
+Health-insurance payers
+Coverage-determination and utilization-management governance for health-insurance payers.
+The Ladder
+Five maturity tiers, A0 to A4
+Think of it as a driver’s license for AI. At
+A0
+it only gives directions — a human drives. At
+A2
+it drives inside a fenced lot while you spot-check. At
+A4
+it drives itself on approved routes, with a brake it can’t switch off and a recorder of every turn. Most firms believe they sit a rung higher than they can prove.
+A0
+Informational
+Agent reads and recommends. No write authority.
+A1
+Assisted
+Agent drafts. Human approves every write.
+A2
+Delegated
+Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.
+A3
+Supervised Autonomous
+Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.
+A4
+Production Autonomous
+A3 plus inter-agent orchestration and operator-validated escalation paths.
+A2 → A3 is the regulator-visible boundary.
+Escalation is automatic; de-escalation is deliberate.
+The Open-Source Libraries
+Six pattern libraries, public and citable
+The same A0→A4 ladder,
+sovereign veto
+(a stop the AI can’t switch off), and
+hash-chain audit
+(a tamper-evident record of every decision), hardened for six regulated sectors. Every library is public, permissively licensed, and DOI-archived on Zenodo. Open reference implementations — read and run them before any conversation.
+Private Capital
+linus10x/private-capital-agent-audit
+SEC-registered investment advisers — Advisers Act §206 fiduciary controls, mandate and risk-limit gates.
+DOI ·
+10.5281/zenodo.20564496
+Commercial Real Estate
+linus10x/cre-agent-audit
+Lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency — three CRE-native gates.
+DOI ·
+10.5281/zenodo.20437081
+Financial Services
+linus10x/finserv-agent-audit
+Regulated finance — DEFCON-style readiness state machine, sovereign veto, hash-chain audit, EU AI Act mapping, shadow mode.
+DOI ·
+10.5281/zenodo.20434570
+Banking
+linus10x/banking-agent-audit
+Model-risk effective-challenge, ECOA / Reg B adverse-action gate, OFAC reference workflow.
+DOI ·
+10.5281/zenodo.20564584
+Payments
+linus10x/payments-agent-audit
+OFAC screening, BSA / AML, Reg E, plus a rail-finality gate for transfers that can’t be clawed back.
+DOI ·
+10.5281/zenodo.20592773
+Healthcare Payer
+linus10x/payer-agent-audit
+Coverage-determination and utilization-management governance for health-insurance payers.
+DOI ·
+10.5281/zenodo.20564377
+Score Your Program
+Where does your AI program sit on the ladder?
+Score your AI program on the A0→A4 ladder — seven questions, two minutes, a tier read you can hand to a board. It runs in your browser; nothing you enter leaves the page.
+Run the diagnostic
+Pricing
+Book 15 minutes
+Get the governance brief now
+The A0→A4 framework and the six open-source pattern libraries, in one brief you can hand to a board. Enter your email and I’ll send the full board-ready write-up — then run the diagnostic for your tier.
+Email
+Your role
+Select…
+CTO / CIO
+Chief AI Officer
+CCO / Chief Risk / General Counsel
+PE Operating Partner / Investor
+Founder / CEO
+Board member / Advisor
+Other
+Firm type
+Select…
+Bank / capital markets
+Asset / wealth manager
+PE / VC firm
+Payments / fintech
+CRE operator
+Insurer / health payer
+Other regulated
+Email me the brief
+Double opt-in: one email to confirm. After that, the occasional governance note — no spam, no sharing, no selling, unsubscribe in one click. Any inbox is fine.
+Bring me one AI decision your agents make today — I’ll place it on the A0→A4 ladder and show you the gap an examiner finds first. PE operating partners and CTOs at regulated firms, that’s the door.
+Run the diagnostic
+Product
+Pricing
+Docs
+Services
+DM on LinkedIn
+GitHub
+Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.
+
+## https://autonomy-ladder.io/pricing
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Pricing
+Free is live. Paid rows are plans.
+Two rows you can use today cost nothing. Two rows are marked Plan so they are not mistaken for a checkout. This page does not name a paid price.
+Free tier, available now
+Self-score
+$0.
+Seven questions on the diagnostic. The result stays in the browser unless you submit the email form on that page.
+Run it
+Free tier, available now
+Open libraries
+$0.
+Six public repos, one per regulated vertical, with the Zenodo DOIs listed in the docs. Read and run them on GitHub.
+The six repos
+Plan, not on sale
+Builder
+A plan for someone who wants the board brief that the diagnostic form already describes, packaged as a paid tier later.
+No price is listed. There is no buy button.
+Waitlist, and name Builder
+Plan, not on sale
+Operator
+A plan for a firm that wants a scored tier read against one of the six verticals, beyond the self-score.
+No price is listed. There is no buy button.
+Waitlist, and name Operator
+Services on the services page are a separate conversation. They are not these plans, and this page does not turn them into a subscription.
+Reference framework, not legal advice. No postal address. © 2026.
+
+## https://autonomy-ladder.io/product
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Product
+A score you can point at, and the code behind it.
+The live product is the self-score. Seven questions, in the browser, read against the A0 to A4 ladder already published on this site. The six libraries are public. Paid rows on the pricing page are plans, not a cart.
+Run the free self-score
+See the plans
+What is live
+Two things you can use today
+Available now
+Self-score
+The diagnostic asks seven questions and returns a tier from A0 to A4. Nothing you type is sent until you choose to email yourself the brief. The page says the score stays in the browser.
+Open the diagnostic
+Available now
+Six open libraries
+One library per vertical: private capital, commercial real estate, financial services, banking, payments, and healthcare payer. Each repo is public and DOI-archived. The list and the DOIs are on the home page and in the docs.
+Library list
+What is not live
+No account, no card, no paid checkout
+There is no login on this site. There is no Stripe checkout on this site. Builder and Operator are named on the pricing page so the shape of the offer is visible, and each one is marked Plan. A price is not listed because none is published here.
+If you want a note when a paid plan is actually for sale, the waitlist posts to the same Kit form the home page and the diagnostic already use.
+Join the waitlist
+Read the docs
+Whitepaper
+Autonomy Ladder is a common-law mark of Kunjar Bhaduri, as stated on the home page. Reference framework, not legal advice. No postal address. © 2026.
+
+## https://autonomy-ladder.io/services
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Whitepaper
+Services & Methodology
+For
+Founder-led Private Capital principals
+CTOs & CCOs at regulated firms
+PE operating partners
+Where complexity meets regulation.
+When an examiner, an acquirer, or your own model-risk function asks who can override your AI and where the record sits, the answer has to be a record, not a reassurance.
+The A0→A4 ladder is the familiar part. The work is making a claimed level hold up under audit: authority granted only against evidence, revocable by design, cleared by a verifier independent of the agent, on a hash-chained record. The framework is public on purpose; putting it into production so it survives examination is the engagement.
+I work with teams standing up AI agents that
+write
+— allocate, abstract, screen, price, decide — across private capital, banking, payments, CRE, and healthcare payer. Usually the agent works in the demo and the pilot stalls, because no one can show a supervisor what it is allowed to do and how you take that authority back. That is the gap I close.
+deal architect
+: 50-day MVP, not 6 months
+6 open libraries
+, all DOI-archived
+Book 15 minutes
+Score your program
+A0→A4 methodology · sovereign veto · hash-chain audit · a ladder of engagements in outcome terms.
+The Methodology
+What an engagement actually builds.
+Read the repositories and you have the patterns.
+The methodology is the order you apply them in, the boundary you defend, and the evidence you leave behind. These four load-bearing parts are what an engagement actually builds.
+A0 → A4
+The maturity ladder
+Five tiers, human-only to production-autonomous. Each decision class earns its rung; nothing is granted write authority it cannot survive an audit at. The A2→A3 line is the regulator-visible boundary.
+Sovereign Veto
+The non-overridable gate
+A deterministic check sits between the agent and anything that touches capital, customers, or compliance. It is not a prompt and not a model — it cannot be argued out of a refusal, and the agent cannot route around it.
+Audit Chain
+The hash-linked ledger
+Every decision, input, and gate outcome is written to a tamper-evident, hash-chained ledger. When someone asks how the agent reached a decision eighteen months ago, the answer is a record, not a reconstruction.
+Verifier Independence
+The check that doesn’t share the failure
+The thing that approves an agent’s write cannot be the same model, the same vendor, or the same training data that produced it. Independent verification is what turns “we tested it” into “we can defend it,” and it produces the evidence a model-risk function needs for effective challenge.
+The framework is open. The judgment is not.
+Six permissively licensed pattern libraries, all DOI-archived, ship the building blocks publicly; the engagement decides what to build, what to refuse, and what a regulator will accept.
+The Verticals
+Six regulated verticals, one governance backbone.
+Each sector has its own regulator, its own rule cite, and its own open library
+— so whether you are a CIO under the Advisers Act, a bank CCO under ECOA, or a payments CTO under BSA/AML, you are reading the right page.
+Private Capital
+Allocators, alts & family offices
+Mandate, risk-limit, and fiduciary-reasonableness gates mapped to the Advisers Act §206 fiduciary duty.
+Commercial Real Estate
+PE-backed CRE operators
+Lease-abstraction provenance, fair-housing pre-flight gate, tenant-PII residency. Colorado SB 26-189 mapped.
+Financial Services
+Capital markets & trading desks
+EU AI Act mapping for cross-border desks, plus a DEFCON-style readiness state machine, sovereign veto, and hash-chain audit for market-facing AI.
+Banking
+Bank model-risk & lending
+Model-risk effective-challenge, ECOA / Reg B adverse-action gate, OFAC reference workflow.
+Payments
+Payment & transfer operators
+OFAC screening, BSA / AML, Reg E — plus a rail-finality gate for transfers that can’t be clawed back.
+Healthcare Payer
+Health-insurance payers
+Coverage-determination and utilization-management governance for health-insurance payers.
+The framework is open across all six; the judgment is not.
+Each library ships the building blocks publicly — the engagement decides what to build, what to refuse, and what an examiner will accept.
+The Ladder
+How far up the ladder can you defend?
+Think of it as a driver’s license for AI. At
+A0
+it only gives directions — a human drives. At
+A2
+it drives inside a fenced lot while you spot-check. At
+A4
+it drives itself on approved routes, with a brake it can’t switch off and a recorder of every turn.
+A0
+Informational
+Agent reads and recommends. No write authority.
+A1
+Assisted
+Agent drafts. Human approves every write.
+A2
+Delegated
+Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.
+A3
+Supervised Autonomous
+Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.
+A4
+Production Autonomous
+A3 plus inter-agent orchestration and operator-validated escalation paths.
+A2 → A3 is the regulator-visible boundary.
+Escalation is automatic; de-escalation is deliberate.
+The Engagements
+Three ways to work. You leave each with something concrete.
+Where you start depends on what your program can defend today
+— the self-scorer below puts a number on it. Scope and price are set in the conversation, not on a page.
+Step 1
+Diagnostic
+Where you stand
+Outcome:
+a board-ready read of where each AI decision class sits on A0→A4, where the regulator-visible boundary is being crossed without the gates to back it, and the two or three exposures to close first. A short, fixed-scope engagement.
+You leave with:
+a risk-committee-ready exposure map across your decision classes.
+Step 2
+Audit
+Build the evidence
+Outcome:
+the sovereign-veto gate, the independent verifier, and the hash-chained audit ledger built and wired into a live decision class — the difference between “we tested it” and “we can defend it.” Mapped to the specific regulation your vertical answers to.
+You leave with:
+a working gate, verifier, and audit ledger on one live decision class.
+Step 3
+Retainer
+Hold the line
+Outcome:
+standing governance as the program moves up the ladder and the regulatory ground shifts under it. New decision classes earn their rung; gates and ledgers stay current with the rules. The governance lead a regulated firm needs but isn’t yet ready to hire full-time.
+You leave with:
+a standing governance lead without a full-time hire.
+No standard list price. Each engagement is scoped to one program, one vertical, one regulator.
+Price is set in the conversation.
+The Operator
+The framework is public. The operator is the scarce part.
+Anyone can clone the repositories. Far fewer people have shipped this kind of governance into production under real regulatory and operational fire. I build the governance, then I build the system that lives under it.
+Architected the platform behind one of the largest such contracts in years — the kind of fiduciary-grade, audit-bound system the Autonomy Ladder is built to govern.
+Twelve days hard-down, no disaster recovery, a 50-day rebuild — security and compliance certified in the same window. Governance that holds when everything is on fire, not just in the demo.
+Author of the Autonomy Ladder (A0→A4) framework.
+Six permissively licensed open-source pattern libraries — all DOI-archived — for regulated finance, commercial real estate, healthcare payer, private capital, banking, and payments, published on purpose, so the methodology is inspectable before you ever take a call.
+Private capital, banking, capital markets, payments, and healthcare payer technology — two decades of scar tissue across the exact domains where AI write authority is the hard problem.
+Every chapter is rare on its own. The combination is the part that doesn’t reproduce.
+Why Now
+The compliance horizon carries real dates.
+The deadline reason to act is no longer hypothetical.
+The regulations that govern AI write authority in these verticals carry real dates and real conduct standards. In banking, the 2026 model-risk guidance leaves agentic AI outside its scope for now, so the burden falls on each institution’s own risk governance, and the largest banks carry a formal three-lines-of-defense obligation on top of it.
+Jan 1, 2027
+Colorado’s 2026 AI law applies to AI used in consequential decisions about people, with obligations starting January 1, 2027.
+EU AI Act
+Article 14 human-oversight obligations apply to high-risk systems on a staged timeline. The Autonomy Ladder’s A2→A3 boundary maps directly onto what “human oversight” has to mean in practice.
+Advisers Act
+For buy-side and allocation agents, the Investment Advisers Act fiduciary and adviser-conduct standards already apply — an agent that allocates capital answers to them today. The adviser-conduct gates map directly to the obligations the Act imposes.
+Reference framework, not legal advice. The deadlines are real; the right posture for your firm is a counsel-and-engineering conversation, not a checkbox.
+The Self-Scorer
+A two-minute read on where you stand.
+This is a quick preview, not the full instrument.
+Seven questions place your program on A0→A4 the way a supervisor reads it: by your weakest control, not your best slide. It runs in your browser and nothing you enter leaves the page. To pressure-test the result with me,
+book fifteen minutes
+.
+A0 → A4 Self-Scorer
+No email required to see your tier. Nothing you enter leaves your browser — the score is computed on this page.
+0 of 7 answered — answer all 7 to see your verdict
+01
+Does an AI agent in your program write — allocate, abstract, screen, price, decide — without a human approving each action?
+No — agents recommend only; a human approves every write.
+A human approves each write, but the agent drafts the decision end to end.
+Agents write inside a defined envelope; humans sample-review the rest.
+Agents write autonomously for a whole decision class; humans handle exceptions.
+Multiple agents write and coordinate autonomously with validated escalation paths.
+02
+Do you have a current inventory of every AI decision and the write authority attached to it?
+No central inventory — it lives in people’s heads and a few repos.
+A partial list exists, but write authority isn’t mapped per decision.
+Every decision class is inventoried with its authority level, kept current.
+Inventoried, version-controlled, and tied to the gate that enforces each level.
+03
+Is there a deterministic gate between the agent and the action that the agent cannot route around or argue out of a refusal?
+No — the model’s own judgment is the last line before the write.
+A prompt or guardrail asks the model to check itself, but it’s not enforced.
+A deterministic gate blocks out-of-policy writes and cannot be overridden by the agent.
+A non-overridable sovereign veto, tested adversarially against route-arounds.
+04
+Whatever approves an agent’s write — is it independent of the agent that produced it?
+The same model checks its own work.
+A second call to the same model or vendor reviews it.
+A separate model or rules engine, different vendor or training data, verifies it.
+Independent verifier with no shared failure mode, validated by an outside party.
+05
+If a regulator asked how an agent reached a specific decision eighteen months ago, could you answer from a record?
+No — we’d reconstruct it from logs and memory.
+We log outputs, but not the inputs and gate outcomes behind each decision.
+Every decision, input, and gate outcome is recorded and retrievable.
+Recorded in a tamper-evident, hash-chained ledger — the record is the answer.
+06
+When the agent hits something outside its envelope, what happens?
+It proceeds — there’s no defined envelope to fall outside of.
+It usually flags it, but escalation depends on the model deciding to.
+Out-of-envelope cases escalate automatically to a named human authority.
+Automatic escalation with operator-validated paths; de-escalation is deliberate.
+07
+Is your AI write authority mapped to the specific regulation your firm answers to — Colorado SB 26-189, EU AI Act, the Advisers Act, fair-housing law?
+Not yet — we know it’s coming but haven’t mapped it.
+We’ve identified the relevant rules but not mapped them to our gates.
+Each gate is mapped to the obligation it satisfies, reviewed with counsel.
+Mapped, counsel-reviewed, and re-checked as the rules change.
+Answer all 7 to see your tier
+0 of 7 answered
+A0
+Informational
+Book 15 minutes
+Get your tier benchmark and the board-ready brief
+The self-scorer gives you a tier in your browser. Subscribe and I’ll send the full A0→A4 brief written for a risk committee, plus a benchmark of where firms in your vertical actually land — the part a public repository can’t give you.
+Email
+Your role
+Select…
+CTO / CIO
+Chief AI Officer
+CCO / Chief Risk / General Counsel
+PE Operating Partner / Investor
+Founder / CEO
+Board member / Advisor
+Other
+Firm type
+Select…
+Bank / capital markets
+Asset / wealth manager
+PE / VC firm
+Payments / fintech
+CRE operator
+Insurer / health payer
+Other regulated
+Send me the brief and benchmark
+Double opt-in: one email to confirm. After that, the occasional governance note — no spam, no sharing, no selling, unsubscribe in one click.
+The Open-Source Libraries
+Inspect the methodology before you take a call.
+Six permissively licensed pattern libraries
+— one per vertical, each with the same governance spine, all DOI-archived on Zenodo. These are reference implementations to inspect before any conversation — not drop-in production controls; the production track record is the career work above.
+github.com/linus10x/finserv-agent-audit
+LIVE
+Governance patterns for AI agents in regulated finance — DEFCON-style readiness state machine, sovereign veto, hash-chain audit, autonomy ladder, EU AI Act mapping, shadow mode.
+github.com/linus10x/cre-agent-audit
+LIVE
+Commercial real estate sibling. The same spine plus three CRE-native gates — lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency.
+github.com/linus10x/payer-agent-audit
+LIVE
+Healthcare payer governance — coverage, prior-authorization, and appeals decision classes under the rules a health plan answers to.
+github.com/linus10x/private-capital-agent-audit
+LIVE
+Standalone investment-adviser library — adviser-conduct controls mapped to the Advisers Act for buy-side and allocation agents.
+github.com/linus10x/banking-agent-audit
+LIVE
+Banking governance — model-risk effective-challenge, ECOA / Reg B adverse-action gating, and an OFAC reference workflow wired by the deployer.
+github.com/linus10x/payments-agent-audit
+LIVE
+Payments governance — OFAC screening, BSA/AML and Reg E controls, and a rail-finality / irreversibility gate for agents that move money.
+The fastest way to find out whether this fits your program is a fifteen-minute conversation. PE operating partners and CTOs at regulated firms, that’s the door.
+Book 15 minutes
+Score your program
+GitHub
+Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.
+
+## https://autonomy-ladder.io/thank-you
+
+Skip to content
+Autonomy Ladder™
+Check your inbox to confirm.
+I just sent a one-click confirmation to your email. Confirm it and your governance brief is yours — the A0→A4 framework and the six open-source patterns, in one page you can hand to a board.
+If you’re weighing an AI-governance decision right now, the fastest path is a short conversation. Grab fifteen minutes whenever it suits you.
+Run the diagnostic
+Product
+Back to autonomy-ladder.io
+Didn’t get the email? Check spam, or write
+contact@autonomy-ladder.io
+. © 2026 · Reference framework, not legal advice.
+
+## https://autonomy-ladder.io/waitlist
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Waitlist
+Leave an email. That is the signup.
+This form posts to Kit form 9506738, the same endpoint as the forms on the home page and the diagnostic. Kit sends a confirm link. There is no account to create and no card to enter.
+Email
+Your role
+Select
+CTO / CIO
+Chief AI Officer
+CCO / Chief Risk / General Counsel
+PE Operating Partner / Investor
+Founder / CEO
+Board member / Advisor
+Other
+Which row
+Select
+Free self-score
+Builder plan
+Operator plan
+Firm type
+Select
+Bank / capital markets
+Asset / wealth manager
+PE / VC firm
+Payments / fintech
+CRE operator
+Insurer / health payer
+Other regulated
+Join the waitlist
+Double opt-in: one email to confirm. The home page says the list is not sold. If the mail does not arrive, the thank-you page points at contact@autonomy-ladder.io.
+Or skip the list and run the self-score.
+Reference framework, not legal advice. No postal address. © 2026.
+
+## https://autonomy-ladder.io/whitepaper
+
+Skip to content
+autonomy-ladder.io
+Product
+Pricing
+Diagnostic
+Docs
+Waitlist
+Services
+Whitepaper
+Whitepaper
+The Autonomy Ladder™
+In any high-stakes autonomous system, the failure that hurts is rarely that the model couldn’t do the task. It’s authority granted before it was earned — with no record of who decided it was ready, or what would pull it back. This is the framework that fixes the order.
+A0→A4
+, every rung demotable
+Sovereign veto
++ hash-chain audit ledger
+Six open libraries
+, with a runnable proof below
+Read the full whitepaper (PDF)
+Get the libraries
+By Kunjar Bhaduri — I build the governance, then the system that lives under it.
+The Reorder
+Prove the evidence, then grant the rung — and keep a control you can’t switch off
+Most teams have the deployment sequence backwards: grant broad authority, then bolt on controls when something breaks. The Autonomy Ladder reverses it. Five explicit levels, each with its own evidence bar, its own inspectable control surface, and the standing ability to be
+demoted
+. You climb one rung at a time, only on evidence, never skipping.
+A0
+Informational
+Agent reads and recommends. No write authority.
+A1
+Assisted
+Agent drafts. Human approves every write.
+A2
+Delegated
+Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.
+A3
+Supervised Autonomous
+Agent writes for the in-scope decision class, under a non-overridable sovereign veto and a live audit ledger. Humans supervise by exception.
+A4
+Production Autonomous
+A3 plus inter-agent orchestration and operator-validated escalation paths.
+Three controls make it a control, not a slide:
+a sovereign veto the agent can’t clear on its own, a tamper-evident hash-chained audit ledger, and a mechanical demotion that drops a rung the moment assurance degrades.
+The Proof
+The three controls, running — in under a minute
+This is not a diagram. The three controls run end-to-end against the open
+banking-agent-audit
+library. Every import path and call signature is the real published API — nothing here is pseudocode. Paste it and run it.
+# pip install "git+https://github.com/linus10x/banking-agent-audit@v0.1.3" (Python 3.12+)
+from
+banking_agent_audit.governance
+import
+(
+AdverseActionGate, AuditChain, SovereignVeto, VetoReason,
+DEFCONMachine, RiskMetrics,
+)
+from
+banking_agent_audit.governance.adverse_action_gate
+import
+(
+AdverseActionDecision, AdverseActionType,
+)
+# One tamper-evident, hash-chained ledger underwrites every action below.
+ledger = AuditChain(deployer_id=
+"example-bank"
+, mode=
+"advisory"
+)
+gate = AdverseActionGate(audit_chain=ledger)
+veto = SovereignVeto(agent_id=
+"adverse-action-agent"
+, audit_chain=ledger)
+defcon = DEFCONMachine(audit_chain=ledger)
+def
+notice(applicant, reason):
+# stand-in for the agent assembling a Reg B notice
+return
+AdverseActionDecision(
+applicant_id=applicant, action_type=AdverseActionType.DENIAL,
+principal_reasons=(reason,), notice_provided=
+True
+, days_to_notice=9,
+used_consumer_report=
+True
+, cra_name_provided=
+True
+,
+credit_score_disclosed=
+True
+, applicant_rights_disclosed=
+True
+,
+)
+# A3: the agent drafts adverse-action notices autonomously — under a veto it cannot clear.
+print
+(
+"agent may act:"
+, veto.allow_execution(),
+"| DEFCON:"
+, defcon.current_level().name)
+# In-envelope: a specific, accurate basis. The gate passes it; the ledger records it.
+ok = gate.evaluate(notice(
+"app-1001"
+,
+"debt-to-income ratio 0.62 exceeds the 0.43 product limit"
+))
+print
+(
+"in-envelope notice compliant:"
+, ok.compliant)
+# Out-of-envelope: the generic reason CFPB Circular 2022-03 forbids. Drift is detected,
+# and it mechanically trips the sovereign veto and escalates the demotion machine.
+drift = gate.evaluate(notice(
+"app-1002"
+,
+"score too low"
+))
+if
+drift.warnings:
+veto.trigger(VetoReason.MODEL_DRIFT, triggered_by=
+"monitor:reason-code-drift"
+,
+description=
+"generic adverse-action reason breached the envelope"
+)
+defcon.evaluate(RiskMetrics(consecutive_losses=8))
+# The agent is now demoted out of autonomous drafting — and cannot self-clear.
+print
+(
+"agent may act:"
+, veto.allow_execution(),
+"| DEFCON:"
+, defcon.current_level().name)
+# Only a human clears the veto. Then the entire trail proves tamper-evident.
+veto.clear(
+"reviewed; reason corrected to a specific basis"
+, operator_id=
+"fair-lending-lead"
+)
+print
+(
+"after human review, agent may act:"
+, veto.allow_execution())
+print
+(
+"ledger events:"
+, len(ledger),
+"| tamper-evident verify:"
+, ledger.verify())
+It prints the safety case in five lines:
+agent may act: True | DEFCON: NORMAL
+# granted authority at A3
+in-envelope notice compliant: True
+# a specific, accurate basis passes the gate
+agent may act: False | DEFCON: HALT
+# a generic reason trips the veto and demotes — mechanically
+after human review, agent may act: True
+# only a human clears it; the agent cannot self-clear
+ledger events: 5 | tamper-evident verify: True
+# the whole trail is hash-chained and verifiable
+The decision class here is fair-lending; swap it for a tool call in an agent swarm or a perception-to-execution handoff in a robot fleet and the same three controls hold. A fully non-financial agent-swarm version ships at
+finserv-agent-audit/examples/agent_coordination/
+.
+The Libraries
+Six open, DOI-archived reference libraries
+Reference implementations, not deployed controls — published openly so the framework can be examined, criticized, and adapted rather than taken on faith. Each ships an installable Python package, a runnable test suite, and decision-class templates.
+Financial Services
+linus10x/finserv-agent-audit
+Cross-vertical FS — readiness state machine, sovereign veto, hash-chain audit, agent-coordination demo.
+MIT OR Apache-2.0
+Banking
+linus10x/banking-agent-audit
+Model-risk effective-challenge, ECOA / Reg B adverse-action gate, OFAC reference workflow.
+MIT OR Apache-2.0
+Payments
+linus10x/payments-agent-audit
+OFAC screening, BSA / AML, Reg E, and a rail-finality gate for transfers that can’t be clawed back.
+MIT
+Healthcare Payer
+linus10x/payer-agent-audit
+Coverage-determination and utilization-management governance for health-insurance payers.
+MIT OR Apache-2.0
+Private Capital
+linus10x/private-capital-agent-audit
+SEC-registered investment advisers — Advisers Act §206 fiduciary controls and risk-limit gates.
+MIT OR Apache-2.0
+Commercial Real Estate
+linus10x/cre-agent-audit
+Lease-abstraction provenance, fair-housing pre-flight, tenant-PII residency.
+MIT
+The full whitepaper covers the regulatory map (SOC 2 Type 2, ISO/IEC 27001, FINRA, model-risk guidance, NIST AI RMF, EU AI Act) and how the ladder sits alongside the frontier-lab capability frameworks: ASL and CCL grade what a model is permitted to be, while the ladder grades what a deployed agent is permitted to do in a regulated decision class. Complementary layers, not competitors.
+Read the full whitepaper (PDF)
+Run the diagnostic
+Book 15 minutes
+DM on LinkedIn
+Autonomy Ladder™ is a common-law mark of Kunjar Bhaduri. Reference framework, not legal advice. © 2026.

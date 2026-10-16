@@ -39,12 +39,20 @@ permissively licensed, and DOI-archived on Zenodo.
 ## Page inventory
 
 ```
-index.html             Home — the six co-equal verticals, the ladder, positioning
-services/index.html    /services — engagement model, per-vertical rule cites, libraries
-diagnostic/index.html  /diagnostic — self-scoring readiness tool + Kit lead-capture forms
-assess/index.html      /assess — twelve-question self-check, scored in the browser
-thank-you.html         /thank-you — post-submit confirmation
-assets/og.png          1200×630 social card (og:image / twitter:image)
+index.html             Home: the six co-equal verticals, the ladder, positioning
+product/index.html     /product: what is live (self-score, libraries) and what is not
+pricing/index.html     /pricing: free tier at $0; Builder and Operator marked Plan
+diagnostic/index.html  /diagnostic: self-scoring readiness tool + Kit lead-capture forms
+docs/index.html        /docs: A0 to A4 definitions, scoring rule, library DOIs, FAQ
+waitlist/index.html    /waitlist: Kit form 9506738, same endpoint as the home form
+services/index.html    /services: engagement model, per-vertical rule cites, libraries
+whitepaper/index.html  /whitepaper
+thank-you.html         /thank-you: post-submit confirmation (noindex)
+robots.txt             crawler rules, including AI crawlers, plus the sitemap URL
+sitemap.xml
+llms.txt
+assets/site.css        shared stylesheet for the product, pricing, docs, and waitlist pages
+assets/og.png          1200x630 social card (og:image / twitter:image)
 assets/og.svg          Editable source for the social card
 assets/favicon.svg
 _headers               Cloudflare Pages cache + security headers (see note below)

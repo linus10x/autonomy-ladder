@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomy Ladder docs: A0 to A4 and the six libraries</title>
+<meta name="description" content="Definitions for Autonomy Ladder levels A0 to A4, how the self-score is read, and links to the six open libraries.">
+<link rel="canonical" href="https://autonomy-ladder.io/docs">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="Autonomy Ladder docs: A0 to A4 and the six libraries">
+<meta property="og:description" content="Level definitions, how the self-score is read, and the six open libraries with DOIs.">
+<meta property="og:url" content="https://autonomy-ladder.io/docs">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Autonomy Ladder docs: A0 to A4 and the six libraries">
+<meta name="twitter:description" content="Level definitions, how the self-score is read, and the six open libraries with DOIs.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://autonomy-ladder.io/docs",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do A0 through A4 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A0 Informational: the agent reads and recommends and has no write authority. A1 Assisted: the agent drafts and a human approves every write. A2 Delegated: the agent writes inside a hard envelope, with sampled review and review of every out-of-envelope decision. A3 Supervised Autonomous: in-scope writes, a non-overridable sovereign veto, and a live audit ledger. A4 Production Autonomous: A3 plus inter-agent orchestration and operator-validated escalation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the self-score cost money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The diagnostic is the free tier. It runs in the browser. A paid price is not charged on that page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the tier chosen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The diagnostic takes the lower of the rounded average and one step above the weakest answer, and it does not go above A4. A single low answer holds the tier down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I buy a paid plan on this site today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Builder and Operator are marked Plan. No price is listed and there is no checkout. The waitlist uses the same Kit form as the rest of the site."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/product">Product</a>
+      <a href="https://autonomy-ladder.io/pricing">Pricing</a>
+      <a href="https://autonomy-ladder.io/diagnostic">Diagnostic</a>
+      <a href="https://autonomy-ladder.io/docs" aria-current="page">Docs</a>
+      <a href="https://autonomy-ladder.io/waitlist">Waitlist</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="hero">
+      <p class="kicker">Docs</p>
+      <h1>The ladder, the score, the libraries.</h1>
+      <p class="lede">These definitions are the ones already on the home page. The rung names are A0 Informational, A1 Assisted, A2 Delegated, A3 Supervised Autonomous, A4 Production Autonomous.</p>
+    </div>
+
+    <section id="levels">
+      <span class="sec-label">Levels</span>
+      <h2 class="sec-title">A0 to A4</h2>
+      <div class="ladder">
+        <div class="rung"><div class="lvl">A0</div><div><span class="name">Informational</span><span class="desc">Agent reads and recommends. No write authority.</span></div></div>
+        <div class="rung"><div class="lvl">A1</div><div><span class="name">Assisted</span><span class="desc">Agent drafts. Human approves every write.</span></div></div>
+        <div class="rung"><div class="lvl">A2</div><div><span class="name">Delegated</span><span class="desc">Agent writes inside a hard envelope. Human reviews a sampled subset and every out-of-envelope decision.</span></div></div>
+        <div class="rung"><div class="lvl">A3</div><div><span class="name">Supervised Autonomous</span><span class="desc">Agent writes for the in-scope decision class. Sovereign-veto layer is non-overridable, audit ledger is live. Humans supervise by exception.</span></div></div>
+        <div class="rung"><div class="lvl">A4</div><div><span class="name">Production Autonomous</span><span class="desc">A3 plus inter-agent orchestration and operator-validated escalation paths.</span></div></div>
+      </div>
+      <p class="note" style="margin-top:14px">The home page states that A2 to A3 is the regulator-visible boundary. This page does not add a legal conclusion to that line.</p>
+    </section>
+
+    <section id="score">
+      <span class="sec-label">Self-score</span>
+      <h2 class="sec-title">How the diagnostic picks a tier</h2>
+      <p class="plain">The diagnostic has seven questions. Each answer is a number from 0 to 4. The tier is the lower of the rounded average and one step above the weakest answer, capped at 4. A high average does not erase a low answer.</p>
+      <p class="plain">That rule is the one in the diagnostic page script. It is a self-score, not an examination and not a certification.</p>
+      <p><a href="https://autonomy-ladder.io/diagnostic">Run the diagnostic</a></p>
+    </section>
+
+    <section id="libraries">
+      <span class="sec-label">Libraries</span>
+      <h2 class="sec-title">Six public repos</h2>
+      <p class="plain">Names, repos, and DOIs match the home page. Each library is public and DOI-archived on Zenodo.</p>
+      <div class="cards">
+        <article class="card"><h3>Private capital</h3><p><a href="https://github.com/linus10x/private-capital-agent-audit">linus10x/private-capital-agent-audit</a></p><p>DOI <a href="https://doi.org/10.5281/zenodo.20564496">10.5281/zenodo.20564496</a></p></article>
+        <article class="card"><h3>Commercial real estate</h3><p><a href="https://github.com/linus10x/cre-agent-audit">linus10x/cre-agent-audit</a></p><p>DOI <a href="https://doi.org/10.5281/zenodo.20437081">10.5281/zenodo.20437081</a></p></article>
+        <article class="card"><h3>Financial services</h3><p><a href="https://github.com/linus10x/finserv-agent-audit">linus10x/finserv-agent-audit</a></p><p>DOI <a href="https://doi.org/10.5281/zenodo.20434570">10.5281/zenodo.20434570</a></p></article>
+        <article class="card"><h3>Banking</h3><p><a href="https://github.com/linus10x/banking-agent-audit">linus10x/banking-agent-audit</a></p><p>DOI <a href="https://doi.org/10.5281/zenodo.20564584">10.5281/zenodo.20564584</a></p></article>
+        <article class="card"><h3>Payments</h3><p><a href="https://github.com/linus10x/payments-agent-audit">linus10x/payments-agent-audit</a></p><p>DOI <a href="https://doi.org/10.5281/zenodo.20592773">10.5281/zenodo.20592773</a></p></article>
+        <article class="card"><h3>Healthcare payer</h3><p><a href="https://github.com/linus10x/payer-agent-audit">linus10x/payer-agent-audit</a></p><p>DOI <a href="https://doi.org/10.5281/zenodo.20564377">10.5281/zenodo.20564377</a></p></article>
+      </div>
+    </section>
+
+    <section id="faq">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">Short answers</h2>
+      <details open>
+        <summary>What do A0 through A4 mean?</summary>
+        <p>A0 is informational, no write authority. A1 is assisted, a human approves every write. A2 is delegated, writes stay inside a hard envelope. A3 is supervised autonomous, with a non-overridable veto and a live audit ledger. A4 is production autonomous: A3 plus inter-agent orchestration and operator-validated escalation.</p>
+      </details>
+      <details>
+        <summary>Does the self-score cost money?</summary>
+        <p>No. It is the free tier. <a href="https://autonomy-ladder.io/pricing">Pricing</a> marks Builder and Operator as plans.</p>
+      </details>
+      <details>
+        <summary>How is the tier chosen?</summary>
+        <p>Lower of the rounded average and one step above the weakest answer, never above A4.</p>
+      </details>
+      <details>
+        <summary>Can I buy a paid plan on this site today?</summary>
+        <p>No. There is no checkout. The <a href="https://autonomy-ladder.io/waitlist">waitlist</a> uses the same Kit form as the home page.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <p class="fineprint">Reference framework, not legal advice. No postal address. © 2026.</p>
+  </footer>
+</div>
+</body>
+</html>
