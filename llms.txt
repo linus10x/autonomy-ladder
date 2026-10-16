@@ -36,6 +36,20 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 - [Payments](https://github.com/linus10x/payments-agent-audit): DOI 10.5281/zenodo.20592773
 - [Healthcare payer](https://github.com/linus10x/payer-agent-audit): DOI 10.5281/zenodo.20564377
 
+## Library pages
+
+- [Libraries](https://autonomy-ladder.io/libraries): six DOI-archived libraries and four runnable tools, with license and DOI from each README.
+- [finserv-agent-audit](https://autonomy-ladder.io/libraries/finserv-agent-audit): Financial services. DOI 10.5281/zenodo.20434570.
+- [banking-agent-audit](https://autonomy-ladder.io/libraries/banking-agent-audit): Banking. DOI 10.5281/zenodo.20564584.
+- [payments-agent-audit](https://autonomy-ladder.io/libraries/payments-agent-audit): Payments. DOI 10.5281/zenodo.20592773.
+- [payer-agent-audit](https://autonomy-ladder.io/libraries/payer-agent-audit): Healthcare payer. DOI 10.5281/zenodo.20564377.
+- [private-capital-agent-audit](https://autonomy-ladder.io/libraries/private-capital-agent-audit): Private capital. DOI 10.5281/zenodo.20564496.
+- [cre-agent-audit](https://autonomy-ladder.io/libraries/cre-agent-audit): Commercial real estate. DOI 10.5281/zenodo.20437081.
+- [agent-funds-gate](https://autonomy-ladder.io/libraries/agent-funds-gate): runnable tool. No DOI in the README.
+- [agent-eval-gate](https://autonomy-ladder.io/libraries/agent-eval-gate): runnable tool. No DOI in the README.
+- [agent-audit-packet](https://autonomy-ladder.io/libraries/agent-audit-packet): runnable tool. No DOI in the README.
+- [agent-evidence-ledger](https://autonomy-ladder.io/libraries/agent-evidence-ledger): runnable tool. No DOI in the README.
+
 ## Not on this site
 
 - No customer names, no testimonials, and no usage counts.

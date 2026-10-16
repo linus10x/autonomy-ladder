@@ -46,6 +46,7 @@ assessment/index.html /assessment: canonical seven-question self-score; /diagnos
 libraries/index.html   /libraries: six open libraries and four tools, reference code only
 _redirects             301 /diagnostic and /assess to /assessment (Workers static assets, no Worker script)
 docs/index.html        /docs: A0 to A4 definitions, scoring rule, library DOIs, FAQ
+libraries/<name>/index.html  one page per library and runnable tool, license and DOI from that README
 waitlist/index.html    /waitlist: Kit form 9506738, same endpoint as the home form
 services/index.html    /services: engagement model, per-vertical rule cites, libraries
 whitepaper/index.html  /whitepaper
