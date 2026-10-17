@@ -59,8 +59,19 @@ class Page(HTMLParser):
             self._buf += data
 
 
+def is_gsc_file(path):
+    """Search Console HTML-file check. Google requires this exact body, so it is not a page."""
+    if not re.fullmatch(r"google[0-9a-f]+\.html", path.name):
+        return False
+    body = path.read_text(encoding="utf-8").strip()
+    return body == f"google-site-verification: {path.name}"
+
+
 def main():
-    pages = sorted(p for p in ROOT.rglob("*.html") if ".git" not in p.parts and "tools" not in p.parts)
+    pages = sorted(
+        p for p in ROOT.rglob("*.html")
+        if ".git" not in p.parts and "tools" not in p.parts and not is_gsc_file(p)
+    )
     titles = {}
     locs = set()
     for f in pages:
