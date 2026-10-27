@@ -1029,3 +1029,7 @@ The README describes a forwardable OFAC audit packet. One command shows an under
 agent-evidence-ledger tool
 agent-evidence-ledger
 The README describes an append-only, tamper-evident ledger of decisions an autonomous agent made. verify() names which of five forgery classes was detected, and at which index.
+
+## Lead capture
+
+https://autonomy-ladder.io/leads stores a follow-up request at /api/leads when Cloudflare storage is bound. No automatic email from that form.

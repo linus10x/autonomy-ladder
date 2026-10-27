@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a follow-up | Autonomy Ladder</title>
+<meta name="description" content="Store a follow-up request in the Autonomy Ladder lead database. No automatic email is sent from this form. Prefer Kit double opt-in? Use the waitlist.">
+<link rel="canonical" href="https://autonomy-ladder.io/leads">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="Request a follow-up | Autonomy Ladder">
+<meta property="og:description" content="Store a follow-up request. No automatic email from this form.">
+<meta property="og:url" content="https://autonomy-ladder.io/leads">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Request a follow-up | Autonomy Ladder">
+<meta name="twitter:description" content="Store a follow-up request. No automatic email from this form.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/assessment">Assessment</a>
+      <a href="https://autonomy-ladder.io/pricing">Pricing</a>
+      <a href="https://autonomy-ladder.io/waitlist">Waitlist</a>
+      <a href="https://autonomy-ladder.io/leads" aria-current="page">Leads</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="hero">
+      <p class="kicker">Lead capture</p>
+      <h1>Request a follow-up. No auto-email.</h1>
+      <p class="lede">This form posts to /api/leads and stores the request when Cloudflare KV or D1 is bound. It does not send mail. For Kit double opt-in, use the <a href="https://autonomy-ladder.io/waitlist">waitlist</a>.</p>
+    </div>
+    <section>
+      <form class="cap-form" method="post" action="/api/leads" accept-charset="utf-8">
+        <input type="hidden" name="source" value="leads">
+        <div class="cap-field">
+          <label for="name">Name (optional)</label>
+          <input id="name" name="name" type="text" maxlength="120" autocomplete="name">
+        </div>
+        <div class="cap-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required maxlength="120" autocomplete="email">
+        </div>
+        <div class="cap-field">
+          <label for="role">Role (optional)</label>
+          <input id="role" name="role" type="text" maxlength="80" autocomplete="organization-title">
+        </div>
+        <div class="cap-field">
+          <label for="firm_type">Firm type (optional)</label>
+          <input id="firm_type" name="firm_type" type="text" maxlength="80">
+        </div>
+        <div class="cap-field full">
+          <label for="interest">Interest</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select</option>
+            <option value="self-score">Free self-score</option>
+            <option value="libraries">Open libraries</option>
+            <option value="builder">Builder plan</option>
+            <option value="operator">Operator plan</option>
+            <option value="services">Services / advisory</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="cap-field full">
+          <label for="notes">Notes (optional)</label>
+          <input id="notes" name="notes" type="text" maxlength="1000">
+        </div>
+        <button type="submit" data-event="cta_leads_submit">Store the request</button>
+      </form>
+      <p class="note" style="margin-top:16px">Until LEADS or DB is bound in Cloudflare Pages, this endpoint returns 503 and you should use the waitlist or email contact@autonomy-ladder.io.</p>
+      <p class="plain"><a href="https://autonomy-ladder.io/assessment" data-event="cta_assessment_from_leads">Or run the free self-score now</a> · <a href="https://calendly.com/kunjarbhaduri/intro" data-event="cta_book_from_leads">Book 15 minutes</a></p>
+    </section>
+  </main>
+  <footer>
+    <p class="fineprint">Reference framework, not legal advice. No postal address. © 2026.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -56,3 +56,7 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 - No customer names, no testimonials, and no usage counts.
 - No paid price. Builder and Operator are plans.
 - No street address.
+
+## Lead capture
+
+https://autonomy-ladder.io/leads stores a follow-up request at /api/leads when Cloudflare storage is bound. No automatic email from that form.

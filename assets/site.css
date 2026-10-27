@@ -57,6 +57,11 @@ footer{padding:36px 0 56px}
 details{border-top:1px solid var(--line); padding:12px 0}
 summary{cursor:pointer; font-weight:700; color:var(--navy)}
 details p{margin:8px 0 0; max-width:64ch}
+.proof-strip{display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:space-between; padding:28px 0; border-bottom:1px solid var(--line)}
+.proof-stat{min-width:9rem; max-width:14rem}
+.proof-stat .number{display:block; font-size:1.6rem; font-weight:800; color:var(--navy); letter-spacing:-0.02em}
+.proof-stat .label{display:block; font-size:0.9rem; color:#5b6b7e; margin-top:4px}
+.proof-empty{border:1px dashed var(--line); border-radius:12px; padding:16px 18px; color:#5b6b7e; background:var(--card); max-width:64ch}
 @media (max-width:680px){
   .cards,.cap-form{grid-template-columns:1fr}
   .nav a{margin-left:0; margin-right:12px}
