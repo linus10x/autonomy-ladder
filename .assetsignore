@@ -10,3 +10,7 @@ README.md
 .assetsignore
 wrangler.jsonc
 GATE_REQUEST.md
+# Pages-style functions/ and the Worker entry are not static assets.
+functions
+workers
+.github
