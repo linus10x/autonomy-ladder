@@ -60,7 +60,7 @@ class Page(HTMLParser):
 
 
 def is_gsc_file(path):
-    """Search Console HTML-file check. It is not a page."""
+    """Search Console HTML-file check. Google requires this exact body, so it is not a page."""
     if not re.fullmatch(r"google[0-9a-f]+\.html", path.name):
         return False
     body = path.read_text(encoding="utf-8").strip()
