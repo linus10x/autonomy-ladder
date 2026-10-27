@@ -16,6 +16,7 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 - [Libraries](https://autonomy-ladder.io/libraries): six open libraries and four tools. Reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 - [Docs](https://autonomy-ladder.io/docs): level definitions, scoring rule, library list, FAQ.
 - [Waitlist](https://autonomy-ladder.io/waitlist): email capture on Kit form 9506738, the same form the home page uses.
+- [Book 15 minutes](https://calendly.com/kunjarbhaduri/intro): Calendly intro with Kunjar Bhaduri (services and whitepaper CTAs use this link).
 - [Services](https://autonomy-ladder.io/services): the methodology page already on the site.
 - [Whitepaper](https://autonomy-ladder.io/whitepaper): the whitepaper page already on the site.
 
