@@ -32,6 +32,47 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Autonomy Ladder","url":"https://autonomy-ladder.io/"}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://autonomy-ladder.io/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do A0 through A4 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A0 Informational: the agent reads and recommends and has no write authority. A1 Assisted: the agent drafts and a human approves every write. A2 Delegated: the agent writes inside a hard envelope, with sampled review and review of every out-of-envelope decision. A3 Supervised Autonomous: in-scope writes, a non-overridable sovereign veto, and a live audit ledger. A4 Production Autonomous: A3 plus inter-agent orchestration and operator-validated escalation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the self-score cost money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The diagnostic is the free tier. It runs in the browser. A paid price is not charged on that page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the tier chosen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The diagnostic takes the lower of the rounded average and one step above the weakest answer, and it does not go above A4. A single low answer holds the tier down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I buy a paid plan on this site today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Builder and Operator are marked Plan. No price is listed and there is no checkout. The waitlist uses the same Kit form as the rest of the site."
+      }
+    }
+  ]
+}
+</script>
 <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
@@ -118,6 +159,27 @@
         <a href="https://autonomy-ladder.io/waitlist" data-event="cta_waitlist_what">Join the waitlist</a>
         <a href="https://autonomy-ladder.io/leads" data-event="cta_leads_what">Request a follow-up</a>
       </div>
+    </section>
+
+    <section id="faq">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">Short answers</h2>
+      <details open>
+        <summary>What do A0 through A4 mean?</summary>
+        <p>A0 Informational: the agent reads and recommends and has no write authority. A1 Assisted: the agent drafts and a human approves every write. A2 Delegated: the agent writes inside a hard envelope, with sampled review and review of every out-of-envelope decision. A3 Supervised Autonomous: in-scope writes, a non-overridable sovereign veto, and a live audit ledger. A4 Production Autonomous: A3 plus inter-agent orchestration and operator-validated escalation.</p>
+      </details>
+      <details>
+        <summary>Does the self-score cost money?</summary>
+        <p>No. The diagnostic is the free tier. It runs in the browser. A paid price is not charged on that page.</p>
+      </details>
+      <details>
+        <summary>How is the tier chosen?</summary>
+        <p>The diagnostic takes the lower of the rounded average and one step above the weakest answer, and it does not go above A4. A single low answer holds the tier down.</p>
+      </details>
+      <details>
+        <summary>Can I buy a paid plan on this site today?</summary>
+        <p>No. Builder and Operator are marked Plan. No price is listed and there is no checkout. The waitlist uses the same Kit form as the rest of the site.</p>
+      </details>
     </section>
   </main>
 

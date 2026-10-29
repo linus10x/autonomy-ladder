@@ -1,6 +1,6 @@
 # Autonomy Ladder
 
-> A regulated-operations AI governance framework with levels A0 to A4 and six open libraries. The free hook is an in-browser self-score. Builder and Operator are plans, not a checkout, and this site does not list a paid price.
+> A regulated-operations AI governance framework with levels A0 to A4 and six open libraries. Start with the free self-assessment: seven questions, about two minutes, in your browser. Builder and Operator are plans, not a checkout, and this site does not list a paid price.
 
 Full page text: https://autonomy-ladder.io/llms-full.txt
 
