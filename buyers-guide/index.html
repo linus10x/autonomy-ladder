@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agent Audit Buyer's Guide: Platforms, Independent Audits, and Open Audit Kits Compared</title>
+<meta name="description" content="Platforms, independent audits, and open audit kits compared, checked against each vendor's own public pages in October 2026. By Kunjar Bhaduri.">
+<link rel="canonical" href="https://autonomy-ladder.io/buyers-guide">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Autonomy Ladder">
+<meta property="og:title" content="AI Agent Audit Buyer's Guide: Platforms, Independent Audits, and Open Audit Kits Compared">
+<meta property="og:description" content="Platforms, independent audits, and open audit kits compared, checked against each vendor's own public pages in October 2026.">
+<meta property="og:url" content="https://autonomy-ladder.io/buyers-guide">
+<meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous. autonomy-ladder.io, by Kunjar Bhaduri.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Agent Audit Buyer's Guide: Platforms, Independent Audits, and Open Audit Kits Compared">
+<meta name="twitter:description" content="Platforms, independent audits, and open audit kits compared, checked against each vendor's own public pages in October 2026.">
+<meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Agent Audit Buyer's Guide: Platforms, Independent Audits, and Open Audit Kits Compared",
+  "url": "https://autonomy-ladder.io/buyers-guide",
+  "author": { "@type": "Person", "name": "Kunjar Bhaduri" },
+  "datePublished": "2026-10-29",
+  "dateModified": "2026-10-29"
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="https://autonomy-ladder.io/"><span class="tick"></span> autonomy-ladder.io</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://autonomy-ladder.io/product">Product</a>
+      <a href="https://autonomy-ladder.io/pricing">Pricing</a>
+      <a href="https://autonomy-ladder.io/diagnostic">Diagnostic</a>
+      <a href="https://autonomy-ladder.io/docs">Docs</a>
+      <a href="https://autonomy-ladder.io/libraries">Libraries</a>
+      <a href="https://autonomy-ladder.io/waitlist">Waitlist</a>
+      <a href="https://autonomy-ladder.io/services">Services</a>
+    </nav>
+  </header>
+  <main id="main-content">
+<section>
+<h1>AI Agent Audit Buyer's Guide</h1>
+<p class="lede">Platforms, independent audits, and open audit kits compared</p>
+<p class="plain">By Kunjar Bhaduri</p>
+<p class="plain">Buyers are being offered three different kinds of product under one label, and the differences matter more than the shared name. A governance platform is software your team runs. An independent audit is an opinion from a firm that did not build your system. An audit kit is material your own engineers adopt and run themselves. If you buy one of these expecting what another one provides, the purchase will disappoint you no matter how good the product is.</p>
+<p class="plain">My background is in regulated operations technology, with work at Broadridge, O'Neil, and JPMorgan, and a period as CTO at Wipro Opus Risk Solutions from May 2019 to February 2022. The division I led there started as a $12M loss-making division and reached $40M in total revenue. One service I launched there, for document processing, generated $25M in net new annual revenue. That $25M sits inside the $40M total, so the two figures describe a part and the whole rather than two separate totals. In those settings, the question that decided whether a system could be trusted was usually a practical one. When the system acts, can you show who allowed it to act, and can you produce that record later? An AI agent audit exists to answer that question for agents.</p>
+<p class="plain">I publish one of the options compared in this guide, the Autonomy Ladder audit kits. That is a conflict of interest, and it belongs at the top of the page rather than at the end. Where this guide describes another vendor, the description summarises what that vendor says on its own public pages, checked in October 2026. Vendor descriptions change, so confirm the current position on the vendor's site before you rely on any detail here.</p>
+</section>
+<section>
+<h2 class="sec-title">What an AI agent audit is</h2>
+<p class="plain">A model evaluation asks whether outputs are accurate, fair, or safe on sampled inputs. An agent audit asks about authority. It examines what an agent is allowed to do, who allowed it, and what record remains afterwards.</p>
+<ol>
+<li>What decisions can the agent make, and what actions can it take without a human approving each one?</li>
+<li>Who granted that authority, against what evidence, and when?</li>
+<li>What check sits between the agent and a consequential action, and can the agent argue with that check or route around it?</li>
+<li>Is the check independent of the agent, or does the same model effectively grade its own work?</li>
+<li>Where is the record of each decision, its inputs, and the gate outcome, and would tampering with that record be visible?</li>
+<li>How is authority taken back when something goes wrong, and is the revocation itself recorded?</li>
+</ol>
+<p class="plain">In the Autonomy Ladder framework these questions map to five tiers, A0 to A4. At A0 an agent reads and recommends, with no write authority. At A1 it drafts and a human approves every write. At A2 it writes inside a hard envelope, with sampled human review and review of every decision outside the envelope. At A3 it writes for a defined decision class under a non-overridable veto and a live audit ledger, with humans supervising by exception. At A4 it adds inter-agent orchestration and operator validated escalation paths. The step from A2 to A3 is the boundary an examiner is most likely to test first, because it is where routine human approval ends.</p>
+<p class="plain">An audit can be done by your own team against a published framework, supported by a platform that collects and organises the evidence, or performed by an independent firm that issues an opinion other people can rely on. Those are the three buying routes compared in this guide.</p>
+</section>
+<section>
+<h2 class="sec-title">When a company needs one</h2>
+<p class="plain">You probably need an agent audit, in some form, when any of the following is true.</p>
+<ul>
+<li>An agent can move money, change a customer record, deny or approve something, or place an order, and no single document states the limits of that authority.</li>
+<li>An examiner, an acquirer, an enterprise customer, or your own model risk function has asked who can override the agent and where the record sits, and the answer required reconstruction from logs and memory.</li>
+<li>You plan to move an agent from human approval of every action to autonomous action for a decision class. That move needs evidence prepared before it happens, not after.</li>
+<li>Agents have been adopted across teams and vendors, and nobody holds a current inventory of what is running, who owns it, and what each one can reach.</li>
+<li>A rule that applies to your sector requires human oversight, a bias audit, or documented risk management for the decision the agent touches. Summaries of those rules, including the ones on this site, are orientation only. Confirm the current obligations and dates with counsel for your jurisdiction before you plan around them.</li>
+</ul>
+<p class="plain">You may not need to buy anything yet if your agents only read and recommend, a human approves every consequential action, and you can already produce the record. In that case a short self-assessment will usually tell you where you stand, and the honest answer may be that you are at A1 and that is appropriate for now.</p>
+</section>
+<section>
+<h2 class="sec-title">What a good audit leaves behind</h2>
+<p class="plain">Whatever route you choose, judge it by the artifacts it produces. A useful audit leaves you with:</p>
+<ul>
+<li>An inventory of agents and decision classes, with an owner and an authority level for each.</li>
+<li>A statement, per decision class, of what the agent may do, what it may never do, and what happens outside that envelope.</li>
+<li>Evidence that the gate between the agent and the action works, including evidence from tests where the agent should have been stopped and was.</li>
+<li>A decision record that can be retrieved for a specific past decision, not only aggregate dashboards.</li>
+<li>A revocation procedure that has been exercised at least once in a test, with the revocation recorded.</li>
+<li>A mapping from each control to the specific obligation it is meant to satisfy, so a reviewer can follow the reasoning rather than trust a label.</li>
+</ul>
+<p class="plain">If a vendor or a framework cannot show you a sample of these artifacts before you commit, that tells you something about what you will hold afterwards.</p>
+</section>
+<section>
+<h2 class="sec-title">Selection criteria that separate the options</h2>
+<p class="plain"><b>Independence.</b> Who is marking the work? A self-assessment is useful for finding gaps early, and it is the weakest form of assurance because you grade yourself. A platform organises evidence and workflow, but the organisation still asserts its own compliance. An independent audit firm can issue an opinion that a regulator, buyer, or insurer can rely on without trusting your team. Decide which level of assurance your audience requires before you compare features.</p>
+<p class="plain"><b>Scope.</b> Some products govern models and generative AI assets across an enterprise. Some focus on the authority and behaviour of agents in production. Some, including the Autonomy Ladder libraries, focus on a single regulated decision class at a time. A wider scope is better only if your problem is actually that wide.</p>
+<p class="plain"><b>Delivery model.</b> A SaaS platform is a system your team operates every week. An audit engagement is a bounded piece of work that ends in a report. An open kit is code and patterns your engineers adopt and adapt themselves. The delivery model decides whose time the purchase consumes, which is often the real cost.</p>
+<p class="plain"><b>Evidence collection.</b> Ask whether the product collects evidence automatically from the systems where work happens, or whether your team assembles it by hand before each review. Automation matters at enterprise scale. It matters much less if you govern three agents.</p>
+<p class="plain"><b>Runtime behaviour.</b> Some platforms describe testing and monitoring agents in production, with intervention when a threshold is crossed. A kit or a periodic audit cannot do that on its own. If your risk is an agent misbehaving tonight, you need a runtime control, and no document based product substitutes for one.</p>
+<p class="plain"><b>Vertical fit.</b> Regulated work is specific. A control for a payments agent has to respect sanctions screening and the finality of a transfer. A control for a payer agent sits next to coverage decisions and member data. Check whether the vendor's controls speak your sector's rules in detail, or only framework names in general.</p>
+<p class="plain"><b>Exit and portability.</b> Ask what you keep if you cancel. Open, permissively licensed code stays with you. Evidence held in a vendor platform stays useful only if exports are complete and in formats your auditors accept. Test an export during evaluation, not at renewal.</p>
+<p class="plain"><b>Pricing transparency.</b> One vendor in this comparison, IBM, publishes prices on its own site. Most of the others do not, and the Autonomy Ladder paid tiers are not on sale at all today. Where no price is public, budget for a sales process. I would not plan around numbers quoted on third party review sites, because vendors do not stand behind them.</p>
+<p class="plain"><b>Support and accountability.</b> An enterprise platform vendor offers an organisation behind the product: implementation help, a support channel, security documentation, and a contract your procurement team can process. A single author framework offers none of that at the same scale. For many regulated firms that difference is decisive, and it should be.</p>
+</section>
+<section>
+<h2 class="sec-title">The options, compared</h2>
+<p class="plain">Each description below summarises the vendor's own published material as checked in October 2026. Treat vendor capability statements as vendor claims, and test the ones that matter to you in an evaluation.</p>
+<h3>Modulos</h3>
+<p class="plain">On its own pages, Modulos describes a dedicated AI governance platform for regulated enterprises, built around what it calls the Governance Graph, which links frameworks, requirements, controls, and evidence. Its documentation describes mapping controls across several frameworks, including the EU AI Act, ISO/IEC 42001, and the NIST AI RMF, so that one control can be used against several requirements. It also describes risk quantification in monetary terms, an AI assistant called Scout that helps draft control assessments and collect evidence, scheduled testing of AI system properties over time, and audit ready exports. Its enterprise page describes a path from inventorying AI systems, through mapping to requirements and evidence collection, to continuous monitoring, and invites buyers to book a demo. Modulos states on its own guide page that it holds a SOC 2 Type 2 report and a CertX ISO/IEC 42001 product conformity certificate, and that deployment is SaaS by default, with other deployment options available on request.</p>
+<p class="plain">Who it fits: compliance officers, risk managers, internal auditors, and AI product owners running governance across multiple business units and several frameworks at once, where duplicated control work is the pain.</p>
+<p class="plain">Pricing: not publicly stated on the Modulos pages reviewed for this guide. The call to action is to book a demo.</p>
+<p class="plain">What a kit does not offer here: framework breadth with control reuse, evidence automation, quantified risk reporting for boards, and deployment choices for firms with data residency constraints. The Autonomy Ladder libraries cover six regulated verticals and do not attempt a general framework graph.</p>
+<h3>Holistic AI</h3>
+<p class="plain">On its platform page, Holistic AI organises its enterprise AI governance platform in three parts: Identify, Protect, and Enforce. It describes continuous discovery and inventory of models, agents, APIs, and pipelines across cloud, code, and vendors, including shadow AI. Under Protect it describes automated testing for bias, robustness, efficacy, privacy, and transparency, plus agentic red teaming. Under Enforce it describes turning policy into workflows, mapping controls to frameworks including the EU AI Act, the NIST AI RMF, ISO 42001, and New York City Local Law 144, and producing audit trails and reports. It also describes a supervisory layer for autonomous AI, with agents that monitor agent output in production and agents that can intervene, governing which tools an agent calls, what it can access, and how much it can spend. The platform page states that the platform is SOC 2 certified. Read the current platform page for its integration list, because that list changes as connectors are added.</p>
+<p class="plain">Who it fits: enterprises with AI spread across many teams and suppliers, where unknown or untested AI is the first problem, and where runtime oversight of agents in production is a requirement.</p>
+<p class="plain">Pricing: not publicly stated on the Holistic AI pages reviewed for this guide.</p>
+<p class="plain">What a kit does not offer here: automated discovery across an estate, depth of bias and adversarial testing, and live intervention in agent behaviour. An open kit gives you patterns for a gate and a ledger. It does not scan your cloud accounts or watch production traffic.</p>
+<h3>Credo AI</h3>
+<p class="plain">A note on sources before the description. Credo AI's main product pages did not render in the text tools used to research this guide, so this section is deliberately brief. It rests on Credo AI's own published announcements, and you should check the current platform page before relying on module level detail.</p>
+<p class="plain">In its published material, Credo AI describes an enterprise AI governance platform organised around governance of the use case, the model, and the third party vendor. It describes registry functions for AI use cases and models, a vendor registry for third party AI suppliers, and an assistant called GAIA that helps with intake and documentation tasks inside the platform. Credo AI has also announced work on letting customer built agents interact with platform data. Where an announcement describes a capability as in preview, treat it as a preview capability rather than a current product feature.</p>
+<p class="plain">Who it fits, based on that material: enterprise governance teams whose bottleneck is intake volume and consistency, with many AI requests arriving from many departments, each needing documented risk identification and controls before approval.</p>
+<p class="plain">Pricing: not publicly stated on the Credo AI pages reviewed for this guide. Its pages invite readers to request a demo.</p>
+<p class="plain">What a kit does not offer here: a maintained registry across use cases, models, and vendors, and workflow for cross-functional review. A kit does not maintain your registry or process your intake queue.</p>
+<h3>BABL AI</h3>
+<p class="plain">BABL AI is an independent AI audit and assurance firm. Its site describes three routes: Audit and Assurance, Education and Training, and Advisory and Consulting. Its audit page states that engagements are conducted under ISAE 3000, and that the firm does not build, sell, or operate the systems it assesses, with advisory work kept separate from assurance work to protect independence. It describes three engagement types: attestation, where the firm verifies results you have already produced; direct engagements, where it measures and evaluates the system itself; and assurance over assertions, where a claim you want to make becomes the criteria when no settled standard exists. Named use cases on its site include New York City Local Law 144 bias audits, internal audit for ISO 42001, and verification of guardrails for a chatbot. The same page states that most standard audits run five to eight weeks from kickoff to final report for a single system, and that a test alone does not make a system compliant.</p>
+<p class="plain">Who it fits: organisations that need an independent opinion a regulator, board, insurer, or enterprise buyer can rely on, especially for high risk systems that make or inform decisions about people, such as hiring tools and credit models.</p>
+<p class="plain">Pricing: not publicly stated on the BABL AI pages reviewed for this guide. Engagements are scoped individually.</p>
+<p class="plain">On independence, this option stands apart from every platform in this guide and from my own framework. I cannot audit my own customers with any credibility, and a platform vendor cannot give an independent opinion on a programme its product helps to run. If an outside party must be able to rely on the result, an independent firm is the route in this comparison built for that purpose. Its limit is the mirror image. It reports on systems. It does not build your controls or run your governance week to week, so you still need the underlying work done by your team or another provider.</p>
+<h3>IBM watsonx.governance</h3>
+<p class="plain">IBM describes watsonx.governance as its AI governance offering, available as a service on IBM Cloud, as enterprise software, and on AWS. IBM's documentation divides it into Model Management and Risk and Compliance. Model Management covers evaluating models for fairness, quality, and drift, tracking AI use cases with factsheets, managing AI inventories, and governing generative AI applications. Risk and Compliance covers assessing and scoring AI risk, tracking compliance across the AI lifecycle, and managing accountability workflows, with optional integration with the IBM OpenPages governance console.</p>
+<p class="plain">IBM publishes prices on its own pricing page, and it is the only vendor in this comparison that does so. I have not reproduced the figures here, because IBM states that its published prices are indicative, may vary by country, and exclude taxes and duties, and because its documentation also describes resource unit based billing and plan limits that change what a given workload costs. Read the current pricing and plan pages for your own workload before you estimate a total.</p>
+<p class="plain">Who it fits: larger enterprises, especially those already using IBM cloud, OpenPages, or watsonx tools, that want model governance and risk and compliance workflows from an established vendor with published entry pricing and enterprise procurement behind it.</p>
+<p class="plain">Pricing: publicly stated on IBM's own pricing page, subject to the conditions above.</p>
+<p class="plain">What a kit does not offer here: breadth across model evaluation and compliance workflow, an established enterprise vendor behind the contract, and integration with a wider governance stack. Its cost and complexity are aimed at enterprise programmes. A two person team governing one agent will likely find it more than the problem requires.</p>
+<h3>Autonomy Ladder (this site)</h3>
+<p class="plain">Autonomy Ladder is a smaller and narrower offer than any of the options above, and it should be judged on those terms. There is no platform to log into and no monitoring of your production systems. What exists today, at no cost, is:</p>
+<ul>
+<li>A free self-assessment: seven questions in the browser, with no account and no card. It returns a tier from A0 to A4, scored by your weakest control rather than your average. The published scoring rule takes the lower of the rounded average and one step above your weakest answer, capped at A4. The result stays in your browser unless you choose to email yourself the brief. It is a self-score. It is not an examination and not a certification.</li>
+<li>Six open governance libraries, one per regulated vertical: financial services, banking, payments, healthcare payer, private capital, and commercial real estate. Each library is public and permissively licensed, so you can read it, run it, and adapt it. Each library works on the same underlying ideas, a readiness and authority model, a veto that an agent cannot clear on its own, and a hash-chained audit record, applied to its sector. The payments library, for example, covers sanctions screening, BSA and AML, and Regulation E, plus a check for transfers that cannot be reversed. The banking library covers model risk effective challenge and an ECOA and Regulation B adverse action gate.</li>
+<li>Runnable reference controls described on the site, including a funds gate that denies a transfer unless a sanctions screen finished first, a tamper-evident decision ledger, and an audit packet you can forward or wire into continuous integration.</li>
+</ul>
+<p class="plain">The limits are these, stated as plainly as I can state them. These are reference implementations you can read, run, and adapt. They are not a control running in any institution's production environment today. They are not legal advice, not a certification, and not an audit opinion, and they carry no guarantee of regulatory compliance. There is no live discovery of shadow AI, no dashboard across an enterprise estate, no support organisation, and no independent assurance. If you need any of those, consider one of the options above.</p>
+<p class="plain">Pricing is also stated plainly because buyers deserve to know where a purchase stands. The self-assessment and the libraries cost $0 today. The paid Builder and Operator tiers shown on the pricing page are marked as plans. No price is listed for them and there is no checkout on this site today. Separate services engagements, a fixed scope diagnostic read, an audit build, and a governance retainer, are scoped in conversation and have no standard list price. If your procurement process needs a priced product with a contract today, this is not yet that product.</p>
+<p class="plain">Who it fits: an individual or a small team at a regulated firm that wants to place one programme honestly on the ladder, read working control patterns for its own sector before committing budget, and build evidence in the open where its own engineers and auditors can inspect it. It also fits teams evaluating the larger platforms, because running the self-assessment first gives you a weakest control finding to test each vendor demo against.</p>
+</section>
+<section>
+<h2 class="sec-title">A short way to decide</h2>
+<p class="plain">Work through these questions in order. Stop at the first one that settles the choice.</p>
+<ol>
+<li>Must an outside party be able to rely on the result, without trusting your team? If yes, commission an independent audit. BABL AI is the option in this guide built for that. A platform or a kit can prepare you for it, and neither replaces it.</li>
+<li>Is your problem an estate problem, with unknown AI across cloud, code, and vendors, and continuous testing and monitoring required? If yes, shortlist the platforms. Consider Modulos where multi-framework control reuse and quantified risk matter, Holistic AI where discovery, testing depth, and runtime oversight of agents matter, Credo AI where registry and intake at volume matter, and IBM watsonx.governance if IBM is already part of your stack or published pricing matters to your process.</li>
+<li>Is your problem a single decision class in one regulated vertical, where you need to know what authority the agent can defend and you want the control patterns in hand before you spend? If yes, run the free self-assessment and read the library for your vertical. Then decide, with the gap in front of you, whether you need a platform, an engagement, or an independent audit next.</li>
+<li>Do you not yet know which problem you have? Run the self-assessment anyway. It costs nothing, and the weakest control it names is a reasonable agenda for any vendor conversation that follows.</li>
+</ol>
+</section>
+<section>
+<h2 class="sec-title">What I would ask every vendor, including me</h2>
+<ul>
+<li>Show me the audit record for one real decision, with inputs, gate outcome, and approver visible.</li>
+<li>Show me a case where the system stopped an agent, and what happened next.</li>
+<li>Show me how a granted authority is revoked, and where that revocation is recorded.</li>
+<li>Show me an export my external auditor can use without your product in the room.</li>
+<li>Tell me what your product does not do, in writing.</li>
+</ul>
+<p class="plain">A vendor that answers those five questions with evidence has earned the next meeting. A vendor that answers them with a roadmap has told you what you are actually buying.</p>
+</section>
+<section>
+<h2 class="sec-title">About the author</h2>
+<p class="plain">Kunjar Bhaduri publishes the Autonomy Ladder framework and its six open libraries. His background is in regulated operations technology and includes work at Broadridge, Wipro Opus, O'Neil, and JPMorgan. This guide is a reference framework summary, not legal advice. Product descriptions were checked against each vendor's own public pages in October 2026, and the Credo AI section is based on that company's published announcements for the reason stated in that section. Prices are stated only where a vendor publishes them on its own site, and are otherwise recorded as not publicly stated.</p>
+<p class="plain">Autonomy Ladder is a common-law mark of Kunjar Bhaduri.</p>
+</section>
+  </main>
+  <footer>
+    <p class="fineprint">Reference framework, not legal advice. No postal address. © 2026.</p>
+  </footer>
+</div>
+</body>
+</html>
