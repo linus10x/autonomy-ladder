@@ -1,6 +1,6 @@
 # Autonomy Ladder
 
-> A regulated-operations AI governance framework with levels A0 to A4 and six open libraries. Start with the free self-assessment: seven questions, about two minutes, in your browser. Builder and Operator are plans, not a checkout, and this site does not list a paid price.
+> A regulated-operations AI governance framework with levels A0 to A4 and six open libraries. Start with the free self-assessment: seven questions, about two minutes, in your browser. The Scored Diagnostic + Board Brief is on sale at $49, one time, credited in full toward a Step 1 Diagnostic engagement. Operator is a plan, not a checkout.
 
 Full page text: https://autonomy-ladder.io/llms-full.txt
 
@@ -11,7 +11,7 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 
 - [Home](https://autonomy-ladder.io/): the six verticals and the A0 to A4 ladder.
 - [Product](https://autonomy-ladder.io/product): what is live (self-score and libraries) and what is not (no account, no card).
-- [Pricing](https://autonomy-ladder.io/pricing): free self-score and open libraries at $0; Builder and Operator marked Plan.
+- [Pricing](https://autonomy-ladder.io/pricing): free self-score and open libraries at $0; Scored Diagnostic + Board Brief at $49 one time (https://buy.stripe.com/4gM00iaxjfWTcNj7RQ9fW0n), credited in full toward a Step 1 Diagnostic engagement; Operator marked Plan.
 - [Assessment](https://autonomy-ladder.io/assessment): seven-question self-score. The tier is the lower of the rounded average and one step above the weakest answer, capped at A4. /diagnostic, /assess, and /start redirect here.
 - [Libraries](https://autonomy-ladder.io/libraries): six open libraries and four tools. Reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 - [Docs](https://autonomy-ladder.io/docs): level definitions, scoring rule, library list, FAQ.
@@ -22,7 +22,7 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 - [Services](https://autonomy-ladder.io/services): the methodology page already on the site.
 - [Whitepaper](https://autonomy-ladder.io/whitepaper): the whitepaper page already on the site.
 - [Privacy](https://autonomy-ladder.io/privacy): what the site's forms, self-score, and booking links collect, who handles it (Cloudflare, Kit, Calendly), and how long it is kept. Contact hello@autonomy-ladder.io.
-- [Terms](https://autonomy-ladder.io/terms): terms for the site and the open libraries. No checkout on the site; paid engagements are governed by their written agreement.
+- [Terms](https://autonomy-ladder.io/terms): terms for the site and the open libraries. One paid item is sold through a Stripe payment link; paid engagements are governed by their written agreement.
 - [Security](https://autonomy-ladder.io/security): static site on Cloudflare, no accounts and no card data; vulnerability reports to hello@autonomy-ladder.io.
 
 ## Levels
@@ -59,7 +59,7 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 ## Not on this site
 
 - No customer names, no testimonials, and no usage counts.
-- No paid price. Builder and Operator are plans.
+- No paid price for Operator, which is a plan. The one paid price is $49 for the Scored Diagnostic + Board Brief.
 - No street address.
 
 ## Lead capture

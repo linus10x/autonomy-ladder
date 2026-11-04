@@ -1,6 +1,6 @@
 # Autonomy Ladder
 
-> Full visible text of the public pages. Lines that restate biography figures are left on the pages and are not copied here. No street address. Builder and Operator have no paid price.
+> Full visible text of the public pages. Lines that restate biography figures are left on the pages and are not copied here. No street address. Operator has no paid price. The Scored Diagnostic + Board Brief is $49, one time, at https://buy.stripe.com/4gM00iaxjfWTcNj7RQ9fW0n, credited in full toward a Step 1 Diagnostic engagement.
 
 ## https://autonomy-ladder.io/diagnostic
 
@@ -223,13 +223,11 @@ A0 is informational, no write authority. A1 is assisted, a human approves every 
 Does the self-score cost money?
 No. It is the free tier.
 Pricing
-marks Builder and Operator as plans.
+marks Operator as a plan, and it is not on sale.
 How is the tier chosen?
 Lower of the rounded average and one step above the weakest answer, never above A4.
 Can I buy a paid plan on this site today?
-No. There is no checkout. The
-waitlist
-uses the same Kit form as the home page.
+One paid item is on sale. The Scored Diagnostic + Board Brief is $49, one time, through the payment link on the pricing page, and the full $49 is credited toward a Step 1 Diagnostic engagement. Operator is still marked Plan and is not on sale. The waitlist uses the same Kit form as the rest of the site.
 Reference framework, not legal advice. No postal address. © 2026.
 
 ## https://autonomy-ladder.io/
@@ -396,8 +394,8 @@ Docs
 Waitlist
 Services
 Pricing
-Free is live. Paid rows are plans.
-Two rows you can use today cost nothing. Two rows are marked Plan so they are not mistaken for a checkout. This page does not name a paid price.
+Free is live. One paid item is on sale.
+Two rows you can use today cost nothing. One row is a paid item at a named price. One row is marked Plan so it is not mistaken for a checkout.
 Free tier, available now
 Self-score
 $0.
@@ -408,11 +406,12 @@ Open libraries
 $0.
 Six public repos, one per regulated vertical, with the Zenodo DOIs listed in the docs. Read and run them on GitHub.
 The six repos
-Plan, not on sale
-Builder
-A plan for someone who wants the board brief that the diagnostic form already describes, packaged as a paid tier later.
-No price is listed. There is no buy button.
-Waitlist, and name Builder
+Paid, available now
+Scored Diagnostic + Board Brief
+The board brief the diagnostic form describes, sold as a paid item: your scored tier set against the peer band for your firm type, plus the one-page brief written for the board.
+$49, one time.
+The full $49 is credited toward a Step 1 Diagnostic engagement.
+Buy the Scored Diagnostic + Board Brief
 Plan, not on sale
 Operator
 A plan for a firm that wants a scored tier read against one of the six verticals, beyond the self-score.
@@ -447,8 +446,8 @@ Six open libraries
 One library per vertical: private capital, commercial real estate, financial services, banking, payments, and healthcare payer. Each repo is public and DOI-archived. The list and the DOIs are on the home page and in the docs.
 Library list
 What is not live
-No account, no card, no paid checkout
-There is no login on this site. There is no Stripe checkout on this site. Builder and Operator are named on the pricing page so the shape of the offer is visible, and each one is marked Plan. A price is not listed because none is published here.
+No account, no card
+There is no login on this site. The one paid item, the Scored Diagnostic + Board Brief, is sold through a Stripe payment link on the pricing page at $49, one time, credited in full toward a Step 1 Diagnostic engagement. Operator is named on the pricing page so the shape of the offer is visible. It is marked Plan, it is not on sale, and no price is listed for it.
 If you want a note when a paid plan is actually for sale, the waitlist posts to the same Kit form the home page and the diagnostic already use.
 Join the waitlist
 Read the docs
@@ -1104,7 +1103,7 @@ If a vendor or a framework cannot show you a sample of these artifacts before yo
 
 **Exit and portability.** Ask what you keep if you cancel. Open, permissively licensed code stays with you. Evidence held in a vendor platform stays useful only if exports are complete and in formats your auditors accept. Test an export during evaluation, not at renewal.
 
-**Pricing transparency.** One vendor in this comparison, IBM, publishes prices on its own site. Most of the others do not, and the Autonomy Ladder paid tiers are not on sale at all today. Where no price is public, budget for a sales process. I would not plan around numbers quoted on third party review sites, because vendors do not stand behind them.
+**Pricing transparency.** One vendor in this comparison, IBM, publishes prices on its own site. Most of the others do not. Autonomy Ladder sells one paid item today, the Scored Diagnostic + Board Brief, at $49. Its Operator tier is named on the pricing page as a plan and is not on sale. Where no price is public, budget for a sales process. I would not plan around numbers quoted on third party review sites, because vendors do not stand behind them.
 
 **Support and accountability.** An enterprise platform vendor offers an organisation behind the product: implementation help, a support channel, security documentation, and a contract your procurement team can process. A single author framework offers none of that at the same scale. For many regulated firms that difference is decisive, and it should be.
 
@@ -1176,7 +1175,7 @@ Autonomy Ladder is a smaller and narrower offer than any of the options above, a
 
 The limits are these, stated as plainly as I can state them. These are reference implementations you can read, run, and adapt. They are not a control running in any institution's production environment today. They are not legal advice, not a certification, and not an audit opinion, and they carry no guarantee of regulatory compliance. There is no live discovery of shadow AI, no dashboard across an enterprise estate, no support organisation, and no independent assurance. If you need any of those, consider one of the options above.
 
-Pricing is also stated plainly because buyers deserve to know where a purchase stands. The self-assessment and the libraries cost $0 today. The paid Builder and Operator tiers shown on the pricing page are marked as plans. No price is listed for them and there is no checkout on this site today. Separate services engagements, a fixed scope diagnostic read, an audit build, and a governance retainer, are scoped in conversation and have no standard list price. If your procurement process needs a priced product with a contract today, this is not yet that product.
+Pricing is also stated plainly because buyers deserve to know where a purchase stands. The self-assessment and the libraries cost $0 today. The one paid item is the Scored Diagnostic + Board Brief, $49 through the payment link on the pricing page, credited in full toward a Step 1 Diagnostic engagement. The Operator tier is shown on the pricing page as a plan. It is not on sale, and no price is listed for it. Separate services engagements, a fixed scope diagnostic read, an audit build, and a governance retainer, are scoped in conversation and have no standard list price. If your procurement process needs a priced product with a contract today, this is not yet that product.
 
 Who it fits: an individual or a small team at a regulated firm that wants to place one programme honestly on the ladder, read working control patterns for its own sector before committing budget, and build evidence in the open where its own engineers and auditors can inspect it. It also fits teams evaluating the larger platforms, because running the self-assessment first gives you a weakest control finding to test each vendor demo against.
 
@@ -1207,11 +1206,11 @@ Autonomy Ladder is a common-law mark of Kunjar Bhaduri.
 
 ## https://autonomy-ladder.io/privacy
 
-Privacy. Autonomy Ladder is run by Kunjar Bhaduri, doing business as Autonomy Ladder, in Dallas, Texas. The forms on the home page, the diagnostic, the services page, and the waitlist post to Kit (form 9506738) and ask for an email address, a role, and a firm type; the waitlist adds a plan field and a source field; the diagnostic form can include the scored tier. Kit sends a confirm link before an address is subscribed. The self-score runs in the browser; the form records that a diagnostic was started and completed, the level claimed, and the level scored. Intro calls are booked through Calendly, which collects name, email, and meeting details. A first-party script counts clicks on key links to measure which pages and links are used; it is not an advertising tracker. There is no checkout on this site today and no payment information is collected here. Cloudflare hosts the site, Kit runs the forms and email, and Calendly runs booking. We do not sell your information and do not share it for advertising. Inquiry and lead information is kept while needed to respond and operate; diagnostic data is retained no longer than 24 months. Email hello@autonomy-ladder.io to ask what we hold about you, to correct it, or to have it deleted; we aim to answer within 30 days. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
+Privacy. Autonomy Ladder is run by Kunjar Bhaduri, doing business as Autonomy Ladder, in Dallas, Texas. The forms on the home page, the diagnostic, the services page, and the waitlist post to Kit (form 9506738) and ask for an email address, a role, and a firm type; the waitlist adds a plan field and a source field; the diagnostic form can include the scored tier. Kit sends a confirm link before an address is subscribed. The self-score runs in the browser; the form records that a diagnostic was started and completed, the level claimed, and the level scored. Intro calls are booked through Calendly, which collects name, email, and meeting details. A first-party script counts clicks on key links to measure which pages and links are used; it is not an advertising tracker. Checkout runs through Stripe's hosted payment page, and no payment information is collected here. Cloudflare hosts the site, Kit runs the forms and email, Calendly runs booking, and Stripe runs the payment page. We do not sell your information and do not share it for advertising. Inquiry and lead information is kept while needed to respond and operate; diagnostic data is retained no longer than 24 months. Email hello@autonomy-ladder.io to ask what we hold about you, to correct it, or to have it deleted; we aim to answer within 30 days. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 
 ## https://autonomy-ladder.io/terms
 
-Terms. These terms cover the Autonomy Ladder website and the open libraries, run by Kunjar Bhaduri, doing business as Autonomy Ladder, in Dallas, Texas. The six libraries are public and permissively licensed under the license in each repository; they are reference implementations, not deployed production controls. No subscription is on sale on this site today: there is no account, no card, and no checkout; Builder and Operator are named as plans with no price; the self-score and libraries are free. Paid engagements are governed by their own written agreement, including what they include, what they cost, and their refund and liability terms; this page does not set those terms. Autonomy Ladder is a common-law mark of Kunjar Bhaduri. These terms are governed by Texas law. Contact hello@autonomy-ladder.io. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
+Terms. These terms cover the Autonomy Ladder website and the open libraries, run by Kunjar Bhaduri, doing business as Autonomy Ladder, in Dallas, Texas. The six libraries are public and permissively licensed under the license in each repository; they are reference implementations, not deployed production controls. No subscription is on sale on this site today: there is no account and no card; the one paid item, the Scored Diagnostic + Board Brief, is sold through a Stripe payment link on the pricing page at $49, one time, credited in full toward a Step 1 Diagnostic engagement; Operator is named as a plan, no price is stated for it, and it is not on sale; the self-score and libraries are free. Paid engagements are governed by their own written agreement, including what they include, what they cost, and their refund and liability terms; this page does not set those terms. Autonomy Ladder is a common-law mark of Kunjar Bhaduri. These terms are governed by Texas law. Contact hello@autonomy-ladder.io. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 
 ## https://autonomy-ladder.io/security
 
