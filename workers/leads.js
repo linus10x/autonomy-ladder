@@ -52,13 +52,44 @@ function okJson(id) {
   });
 }
 
+// After a lead is stored, ask the internal lead-notify Worker (desk-ops
+// systems/lead-notify) to email the owner. Storage stays the source of truth:
+// a missing binding or a failed notification never changes the response.
+export function notifyOwner(env, ctx, record) {
+  const svc = env && env.LEAD_NOTIFY;
+  if (!svc || typeof svc.fetch !== "function") return false;
+  const p = svc
+    .fetch("https://lead-notify/", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        site: "autonomy-ladder.io",
+        kind: "governance inquiry",
+        id: record.id,
+        created_at: record.created_at,
+        fields: {
+          name: record.name,
+          email: record.email,
+          role: record.role,
+          firm_type: record.firm_type,
+          interest: record.interest,
+          notes: record.notes,
+          source: record.source,
+        },
+      }),
+    })
+    .catch(() => null);
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(p);
+  return true;
+}
+
 function clip(value, n) {
   return String(value || "")
     .trim()
     .slice(0, n);
 }
 
-async function handleLeads(request, env) {
+export async function handleLeads(request, env, ctx) {
   const ctype = request.headers.get("content-type") || "";
   const wantsJson = ctype.includes("application/json");
   let data;
@@ -110,6 +141,7 @@ async function handleLeads(request, env) {
       await env.LEADS.put(`lead:${id}`, JSON.stringify(record), {
         metadata: { interest, created_at },
       });
+      notifyOwner(env, ctx, record);
       return wantsJson ? okJson(id) : okRedirect(id);
     }
     if (env.DB) {
@@ -129,6 +161,7 @@ async function handleLeads(request, env) {
           source,
         )
         .run();
+      notifyOwner(env, ctx, record);
       return wantsJson ? okJson(id) : okRedirect(id);
     }
   } catch {
@@ -142,11 +175,11 @@ async function handleLeads(request, env) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/api/leads") {
       if (request.method === "POST") {
-        return handleLeads(request, env);
+        return handleLeads(request, env, ctx);
       }
       return bad(405, "POST a lead to this URL.");
     }
