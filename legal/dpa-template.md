@@ -58,7 +58,7 @@ Breach notice timing and contents: [TBD: Kunjar/counsel].
 
 ## Contact
 
-Contact: [TBD: Kunjar/counsel]. Proposed until K3: support@autonomy-ladder.io. That address is not approved in this draft.
+Contact: [TBD: Kunjar/counsel]. Proposed until K3: kunjar@northtexascapitalinvestments.com. That address is not approved in this draft.
 
 ## Signatures
 

@@ -21,9 +21,9 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 - [Buyer's Guide](https://autonomy-ladder.io/buyers-guide): AI agent audit buyer's guide. Platforms, independent audits, and open audit kits compared, checked against each vendor's own public pages in October 2026.
 - [Services](https://autonomy-ladder.io/services): the methodology page already on the site.
 - [Whitepaper](https://autonomy-ladder.io/whitepaper): the whitepaper page already on the site.
-- [Privacy](https://autonomy-ladder.io/privacy): what the site's forms, self-score, and booking links collect, who handles it (Cloudflare, Kit, Calendly), and how long it is kept. Contact hello@autonomy-ladder.io.
+- [Privacy](https://autonomy-ladder.io/privacy): what the site's forms, self-score, and booking links collect, who handles it (Cloudflare, Kit, Calendly), and how long it is kept. Contact kunjar@northtexascapitalinvestments.com.
 - [Terms](https://autonomy-ladder.io/terms): terms for the site and the open libraries. One paid item is sold through a Stripe payment link; paid engagements are governed by their written agreement.
-- [Security](https://autonomy-ladder.io/security): static site on Cloudflare, no accounts and no card data; vulnerability reports to hello@autonomy-ladder.io.
+- [Security](https://autonomy-ladder.io/security): static site on Cloudflare, no accounts and no card data; vulnerability reports to kunjar@northtexascapitalinvestments.com.
 
 ## Levels
 
