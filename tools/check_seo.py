@@ -8,7 +8,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = "https://autonomy-ladder.io"
-BOTS = ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]
+# 2026-11-04 crawler policy: search and assistant crawlers allowed, training blocked.
+ALLOW_BOTS = ["OAI-SearchBot", "ChatGPT-User", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User"]
+BLOCK_BOTS = ["GPTBot", "ClaudeBot", "Google-Extended", "Applebot-Extended"]
 BANNED = [re.compile(r"inwood", re.I), re.compile(r"75244"), re.compile(r"750M")]
 errors = []
 
@@ -114,9 +116,12 @@ def main():
             fail(f"duplicate title {title!r}: {ws}")
 
     robots = (ROOT / "robots.txt").read_text()
-    for bot in BOTS:
+    for bot in ALLOW_BOTS:
         if not re.search(rf"User-agent: {bot}\nAllow: /\n", robots):
             fail(f"robots.txt does not allow {bot}")
+    for bot in BLOCK_BOTS:
+        if not re.search(rf"User-agent: {bot}\nDisallow: /\n", robots):
+            fail(f"robots.txt does not block training crawler {bot}")
     sm = (ROOT / "sitemap.xml").read_text()
     sm_locs = set(re.findall(r"<loc>(.*?)</loc>", sm))
     if sm_locs != locs:
