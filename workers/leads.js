@@ -170,7 +170,7 @@ export async function handleLeads(request, env, ctx) {
 
   return bad(
     503,
-    "Lead storage is not configured yet. Use the waitlist form or email contact@autonomy-ladder.io.",
+    "Lead storage is not configured yet. Use the waitlist form or email kunjar@northtexascapitalinvestments.com.",
   );
 }
 
