@@ -8,7 +8,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = "https://autonomy-ladder.io"
-BOTS = ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]
+# 2026-11-04 crawler policy: search and assistant crawlers allowed, training blocked.
+ALLOW_BOTS = ["OAI-SearchBot", "ChatGPT-User", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User"]
+BLOCK_BOTS = ["GPTBot", "ClaudeBot", "Google-Extended", "Applebot-Extended"]
 BANNED = [re.compile(r"inwood", re.I), re.compile(r"75244"), re.compile(r"750M")]
 errors = []
 
@@ -114,9 +116,12 @@ def main():
             fail(f"duplicate title {title!r}: {ws}")
 
     robots = (ROOT / "robots.txt").read_text()
-    for bot in BOTS:
+    for bot in ALLOW_BOTS:
         if not re.search(rf"User-agent: {bot}\nAllow: /\n", robots):
             fail(f"robots.txt does not allow {bot}")
+    for bot in BLOCK_BOTS:
+        if not re.search(rf"User-agent: {bot}\nDisallow: /\n", robots):
+            fail(f"robots.txt does not block training crawler {bot}")
     sm = (ROOT / "sitemap.xml").read_text()
     sm_locs = set(re.findall(r"<loc>(.*?)</loc>", sm))
     if sm_locs != locs:
@@ -138,8 +143,11 @@ def main():
     pricing = (ROOT / "pricing" / "index.html").read_text()
     if '"@type": "Product"' not in pricing or '"price": "0"' not in pricing:
         fail("pricing page missing the $0 Product offers")
-    if re.search(r'"price":\s*"(?!0")', pricing):
-        fail("pricing page has a paid Product price")
+    # The only paid offer is the $49 Scored Diagnostic + Board Brief (live
+    # since 2026-11-04, Stripe link on this page). Any other paid price fails.
+    for price in re.findall(r'"price":\s*"([^"]+)"', pricing):
+        if price not in ("0", "49"):
+            fail(f"pricing page has an unexpected paid Product price {price}")
     if errors:
         print("\n".join(errors))
         return 1

@@ -1,0 +1,10 @@
+.legal-list{margin:0 0 16px; padding-left:1.2em; max-width:64ch; color:#39455c}
+.legal-list li{margin:0 0 8px}
+.verbatim{
+  border-left:4px solid #b8893b;
+  margin:0 0 16px;
+  padding:10px 14px;
+  background:#fff;
+  max-width:64ch;
+  color:#1b2536;
+}

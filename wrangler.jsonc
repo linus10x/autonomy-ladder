@@ -15,5 +15,10 @@
 			"binding": "LEADS",
 			"id": "d865bc977c5d46439401fc8e69bde289"
 		}
+	],
+	// Internal lead-notify Worker (desk-ops systems/lead-notify). Autonomy
+	// Ladder leads go to the owner's personal Gmail (owner decision 2026-11-09).
+	"services": [
+		{ "binding": "LEAD_NOTIFY", "service": "lead-notify" }
 	]
 }
