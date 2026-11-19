@@ -15,3 +15,8 @@ jobs:
       - uses: actions/checkout@v7
       - name: SEO and AI crawl files
         run: python3 tools/check_seo.py
+      - name: Lead form tests
+        run: |
+          node tests/leads-notify.test.mjs
+          node tests/leads-spam.test.mjs
+          node tests/leads-spam-worker.test.mjs

@@ -89,6 +89,46 @@ function clip(value, n) {
     .slice(0, n);
 }
 
+const MIN_FILL_MS = 3000; // a person can't fill this in and submit faster
+const SPAM_TTL_S = 60 * 60 * 24 * 30;
+
+/**
+ * Spam screen (no external service). Returns reasons a submission looks
+ * automated ([] = looks human). Hard: honeypot `website` filled, or submitted
+ * under MIN_FILL_MS after page load (`ts`). Soft, spam only when both fire:
+ * notes have letters but none Latin; the name field is one CamelCase token
+ * ("RobertLot"). A missing timestamp (no JavaScript) never counts.
+ * Suspected spam gets the normal success response, is kept as spam:<id>
+ * (30-day TTL, metadata spam=1) and never reaches LEAD_NOTIFY.
+ */
+export function spamReasons(data, now = Date.now()) {
+  const hard = [];
+  if (String(data.website || "").trim() !== "") hard.push("honeypot");
+  const ts = Number(data.ts);
+  if (Number.isFinite(ts) && ts > 0 && now - ts >= 0 && now - ts < MIN_FILL_MS) {
+    hard.push("too_fast");
+  }
+  if (hard.length) return hard;
+  const soft = [];
+  const notes = String(data.notes || "");
+  if (/\p{L}/u.test(notes) && !/\p{Script=Latin}/u.test(notes)) soft.push("non_latin_notes");
+  if (/^[A-Z][a-z]+[A-Z][a-z]+$/.test(String(data.name || "").trim())) soft.push("camelcase_name");
+  return soft.length >= 2 ? soft : [];
+}
+
+async function keepSpam(env, record, reasons, metaKey) {
+  try {
+    if (env && env.LEADS) {
+      await env.LEADS.put(`spam:${record.id}`, JSON.stringify({ ...record, spam: 1, reasons }), {
+        expirationTtl: SPAM_TTL_S,
+        metadata: { [metaKey]: record[metaKey], created_at: record.created_at, spam: 1, reasons: reasons.join(",") },
+      });
+    }
+  } catch {
+    // best-effort; the bot still gets the normal response
+  }
+}
+
 export async function handleLeads(request, env, ctx) {
   const ctype = request.headers.get("content-type") || "";
   const wantsJson = ctype.includes("application/json");
@@ -135,6 +175,12 @@ export async function handleLeads(request, env, ctx) {
     notes,
     source,
   };
+
+  const reasons = spamReasons(data);
+  if (reasons.length) {
+    await keepSpam(env, record, reasons, "interest");
+    return wantsJson ? okJson(id) : okRedirect(id);
+  }
 
   try {
     if (env.LEADS) {
