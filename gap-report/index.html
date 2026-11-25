@@ -205,7 +205,7 @@ fieldset.q .prompt{display:block}
       .then(function(x){
         if(x.ok&&x.j.url){location.href=x.j.url;return;}
         b.setAttribute("aria-disabled","false");b.textContent="Get the full report";
-        if(x.status===409){$("berr").textContent="This report has already been purchased. Open it from the private link in your Stripe receipt, or email kunjar@northtexascapitalinvestments.com.";return;}
+        if(x.status===409){$("berr").textContent=(x.j&&x.j.error)||"This report has already been purchased. Open it from the private link in your Stripe receipt.";return;}
         if(x.status===503){$("berr").innerHTML='Checkout opens shortly. You can <a href="'+BOOK+'" data-event="cta_book_gap_503">book 15 minutes</a> in the meantime.';return;}
         throw new Error(x.j.error||"Checkout is not available right now.");
       })
