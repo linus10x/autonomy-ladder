@@ -24,4 +24,5 @@ jobs:
           node tests/leads-notify.test.mjs
           node tests/leads-spam.test.mjs
           node tests/leads-spam-worker.test.mjs
+          node tests/gap-report-proxy.test.mjs
           node tests/collect-beacon.test.mjs

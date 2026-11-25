@@ -143,10 +143,10 @@ def main():
     pricing = (ROOT / "pricing" / "index.html").read_text()
     if '"@type": "Product"' not in pricing or '"price": "0"' not in pricing:
         fail("pricing page missing the $0 Product offers")
-    # The only paid offer is the $49 Scored Diagnostic + Board Brief (live
-    # since 2026-11-04, Stripe link on this page). Any other paid price fails.
+    # The only paid offer is the $299 Gap Report (replaced the $49 Scored
+    # Diagnostic + Board Brief on 2026-11-25). Any other paid price fails.
     for price in re.findall(r'"price":\s*"([^"]+)"', pricing):
-        if price not in ("0", "49"):
+        if price not in ("0", "299"):
             fail(f"pricing page has an unexpected paid Product price {price}")
     if errors:
         print("\n".join(errors))
