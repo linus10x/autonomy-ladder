@@ -79,7 +79,7 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
       <p class="kicker">Gap Report</p>
       <h1>Know what an examiner will ask about your AI agents, and what record answers it.</h1>
       <p class="lede">Answer fifteen questions for your type of firm. You get your tier free. The full report names every gap, the questions a regulator, auditor or diligence team will ask about it, the records that answer them, and a 90-day plan to move up one rung.</p>
-      <p class="plain"><b>$299, one time.</b> Credited in full toward a Step 1 Diagnostic. About eight minutes. No account.</p>
+      <p class="plain"><b>$299, one time.</b> Credited in full toward a Step 1 Diagnostic. Full refund within 30 days if it is not useful to you. About eight minutes. No account.</p>
     </div>
 
     <section id="whats-in">
@@ -162,7 +162,7 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
       '<p class="plain"><b>'+p.gap_count+' controls are below the top level.</b> The first three to work on: '+esc(p.gap_titles.join("; "))+'.</p>'+
       '<p class="plain">The full report gives each of the '+p.gap_count+' gaps the questions a reviewer will ask and the records that answer them, plus your 90-day plan, regulatory clock, vendor questions, evidence index and board summary.</p>'+
       (d.paid?'<p><a class="btn" href="/gap-report/view?id='+esc(d.id)+'">Open your report</a></p>':
-      '<p><button class="btn gold" id="buy" type="button">Get the full report, $'+d.price+'</button></p><p class="sub">Secure checkout by Stripe, by card or wallet. An invoice is issued for expensing. The report opens as soon as payment clears, and the receipt carries your link.</p>')+
+      '<p><button class="btn gold" id="buy" type="button">Get the full report, $'+d.price+'</button></p><p class="sub">Secure checkout by Stripe, by card or wallet. An invoice is issued for expensing. The report opens as soon as payment clears, and the receipt carries your link. <b>Full refund within 30 days if it is not useful to you, no questions asked.</b></p>')+
       '<p class="err" id="berr" role="alert"></p><p class="sub">Prefer to talk first? <a href="https://calendly.com/kunjarbhaduri/intro" data-event="cta_book_gap">Book 15 minutes</a>.</p></div>';
     $("out").innerHTML=h;$("out").hidden=false;$("gr").hidden=true;
     $("out").scrollIntoView({behavior:"smooth",block:"start"});
