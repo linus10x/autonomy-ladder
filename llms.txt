@@ -1,6 +1,6 @@
 # Autonomy Ladder
 
-> A regulated-operations AI governance framework with levels A0 to A4 and six open libraries. Start with the free self-assessment: seven questions, about two minutes, in your browser. The Scored Diagnostic + Board Brief is on sale at $49, one time, credited in full toward a Step 1 Diagnostic engagement. Operator is a plan, not a checkout.
+> A regulated-operations AI governance framework with levels A0 to A4 and six open libraries. Start with the free self-assessment: seven questions, about two minutes, in your browser. The Gap Report is on sale at $299, one time, credited in full toward a Step 1 Diagnostic engagement. Operator is a plan, not a checkout.
 
 Full page text: https://autonomy-ladder.io/llms-full.txt
 
@@ -11,7 +11,8 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 
 - [Home](https://autonomy-ladder.io/): the six verticals and the A0 to A4 ladder.
 - [Product](https://autonomy-ladder.io/product): what is live (self-score and libraries) and what is not (no account, no card).
-- [Pricing](https://autonomy-ladder.io/pricing): free self-score and open libraries at $0; Scored Diagnostic + Board Brief at $49 one time (https://buy.stripe.com/4gM00iaxjfWTcNj7RQ9fW0n), credited in full toward a Step 1 Diagnostic engagement; Operator marked Plan.
+- [Pricing](https://autonomy-ladder.io/pricing): free self-score and open libraries at $0; Gap Report at $299 one time (https://autonomy-ladder.io/gap-report), credited in full toward a Step 1 Diagnostic engagement; Operator marked Plan.
+- [Gap Report](https://autonomy-ladder.io/gap-report): $299 paid report. Fifteen controls for your vertical; free tier preview first; full report lists the questions an examiner or diligence team will ask for each gap and the records that answer them, a 90-day plan, a regulatory clock checked against primary sources, AI vendor due diligence questions, an evidence index and a board summary. Seven verticals: banks, lenders, payments, wealth and private funds, broker-dealers, real estate, insurers and health payers.
 - [Assessment](https://autonomy-ladder.io/assessment): seven-question self-score. The tier is the lower of the rounded average and one step above the weakest answer, capped at A4. /diagnostic, /assess, and /start redirect here.
 - [Libraries](https://autonomy-ladder.io/libraries): six open libraries and four tools. Reference code to adopt and inspect. None is a deployed production control. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 - [Docs](https://autonomy-ladder.io/docs): level definitions, scoring rule, library list, FAQ.
@@ -59,7 +60,7 @@ Built by Kunjar Bhaduri. Level names and library DOIs below are the ones on the 
 ## Not on this site
 
 - No customer names, no testimonials, and no usage counts.
-- No paid price for Operator, which is a plan. The one paid price is $49 for the Scored Diagnostic + Board Brief.
+- No paid price for Operator, which is a plan. The one paid price is $299 for the Gap Report.
 - No street address.
 
 ## Lead capture

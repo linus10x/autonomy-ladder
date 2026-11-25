@@ -1,6 +1,6 @@
 {
 	"name": "autonomy-ladder",
-	// Worker handles /api/leads; ASSETS serves the static site.
+	// Worker handles /api/leads, forwards Gap Report paths to REPORT_ENGINE; ASSETS serves the static site.
 	"main": "workers/leads.js",
 	"compatibility_date": "2026-09-29",
 	"assets": {
@@ -19,6 +19,9 @@
 	// Internal lead-notify Worker (desk-ops systems/lead-notify). Autonomy
 	// Ladder leads go to the owner's personal Gmail (owner decision 2026-11-09).
 	"services": [
-		{ "binding": "LEAD_NOTIFY", "service": "lead-notify" }
+		{ "binding": "LEAD_NOTIFY", "service": "lead-notify" },
+		// Private Gap Report engine (autonomy-ladder-platform saas/report-engine).
+		// Deploy it before this Worker.
+		{ "binding": "REPORT_ENGINE", "service": "al-report-engine" }
 	]
 }

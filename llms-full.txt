@@ -1,6 +1,6 @@
 # Autonomy Ladder
 
-> Full visible text of the public pages. Lines that restate biography figures are left on the pages and are not copied here. No street address. Operator has no paid price. The Scored Diagnostic + Board Brief is $49, one time, at https://buy.stripe.com/4gM00iaxjfWTcNj7RQ9fW0n, credited in full toward a Step 1 Diagnostic engagement.
+> Full visible text of the public pages. Lines that restate biography figures are left on the pages and are not copied here. No street address. Operator has no paid price. The Gap Report is $299, one time, at https://autonomy-ladder.io/gap-report, credited in full toward a Step 1 Diagnostic engagement.
 
 ## https://autonomy-ladder.io/assessment
 
@@ -227,7 +227,7 @@ marks Operator as a plan, and it is not on sale.
 How is the tier chosen?
 Lower of the rounded average and one step above the weakest answer, never above A4.
 Can I buy a paid plan on this site today?
-One paid item is on sale. The Scored Diagnostic + Board Brief is $49, one time, through the payment link on the pricing page, and the full $49 is credited toward a Step 1 Diagnostic engagement. Operator is still marked Plan and is not on sale. The waitlist uses the same Kit form as the rest of the site.
+One paid item is on sale. The Gap Report is $299, one time, at https://autonomy-ladder.io/gap-report, and the full $299 is credited toward a Step 1 Diagnostic engagement. Operator is still marked Plan and is not on sale. The waitlist uses the same Kit form as the rest of the site.
 Reference framework, not legal advice. No postal address. © 2026.
 
 ## https://autonomy-ladder.io/
@@ -407,11 +407,11 @@ $0.
 Six public repos, one per regulated vertical, with the Zenodo DOIs listed in the docs. Read and run them on GitHub.
 The six repos
 Paid, available now
-Scored Diagnostic + Board Brief
-The board brief the diagnostic form describes, sold as a paid item: your scored tier set against the peer band for your firm type, plus the one-page brief written for the board.
-$49, one time.
-The full $49 is credited toward a Step 1 Diagnostic engagement.
-Buy the Scored Diagnostic + Board Brief
+Gap Report
+The Gap Report covers fifteen controls for your vertical. It contains a gap register with the questions an examiner or diligence team will ask and the records that answer them, a 90-day plan, a dated regulatory clock checked against primary sources, AI vendor due diligence questions, an evidence index, and a board summary.
+$299, one time.
+The full $299 is credited toward a Step 1 Diagnostic engagement.
+Start the Gap Report
 Plan, not on sale
 Operator
 A plan for a firm that wants a scored tier read against one of the six verticals, beyond the self-score.
@@ -447,7 +447,7 @@ One library per vertical: private capital, commercial real estate, financial ser
 Library list
 What is not live
 No account, no card
-There is no login on this site. The one paid item, the Scored Diagnostic + Board Brief, is sold through a Stripe payment link on the pricing page at $49, one time, credited in full toward a Step 1 Diagnostic engagement. Operator is named on the pricing page so the shape of the offer is visible. It is marked Plan, it is not on sale, and no price is listed for it.
+There is no login on this site. The one paid item, the Gap Report, is sold through Stripe checkout on the gap report page at $299, one time, credited in full toward a Step 1 Diagnostic engagement. Operator is named on the pricing page so the shape of the offer is visible. It is marked Plan, it is not on sale, and no price is listed for it.
 If you want a note when a paid plan is actually for sale, the waitlist posts to the same Kit form the home page and the diagnostic already use.
 Join the waitlist
 Read the docs
@@ -1103,7 +1103,7 @@ If a vendor or a framework cannot show you a sample of these artifacts before yo
 
 **Exit and portability.** Ask what you keep if you cancel. Open, permissively licensed code stays with you. Evidence held in a vendor platform stays useful only if exports are complete and in formats your auditors accept. Test an export during evaluation, not at renewal.
 
-**Pricing transparency.** One vendor in this comparison, IBM, publishes prices on its own site. Most of the others do not. Autonomy Ladder sells one paid item today, the Scored Diagnostic + Board Brief, at $49. Its Operator tier is named on the pricing page as a plan and is not on sale. Where no price is public, budget for a sales process. I would not plan around numbers quoted on third party review sites, because vendors do not stand behind them.
+**Pricing transparency.** One vendor in this comparison, IBM, publishes prices on its own site. Most of the others do not. Autonomy Ladder sells one paid item today, the Gap Report, at $299. Its Operator tier is named on the pricing page as a plan and is not on sale. Where no price is public, budget for a sales process. I would not plan around numbers quoted on third party review sites, because vendors do not stand behind them.
 
 **Support and accountability.** An enterprise platform vendor offers an organisation behind the product: implementation help, a support channel, security documentation, and a contract your procurement team can process. A single author framework offers none of that at the same scale. For many regulated firms that difference is decisive, and it should be.
 
@@ -1175,7 +1175,7 @@ Autonomy Ladder is a smaller and narrower offer than any of the options above, a
 
 The limits are these, stated as plainly as I can state them. These are reference implementations you can read, run, and adapt. They are not a control running in any institution's production environment today. They are not legal advice, not a certification, and not an audit opinion, and they carry no guarantee of regulatory compliance. There is no live discovery of shadow AI, no dashboard across an enterprise estate, no support organisation, and no independent assurance. If you need any of those, consider one of the options above.
 
-Pricing is also stated plainly because buyers deserve to know where a purchase stands. The self-assessment and the libraries cost $0 today. The one paid item is the Scored Diagnostic + Board Brief, $49 through the payment link on the pricing page, credited in full toward a Step 1 Diagnostic engagement. The Operator tier is shown on the pricing page as a plan. It is not on sale, and no price is listed for it. Separate services engagements, a fixed scope diagnostic read, an audit build, and a governance retainer, are scoped in conversation and have no standard list price. If your procurement process needs a priced product with a contract today, this is not yet that product.
+Pricing is also stated plainly because buyers deserve to know where a purchase stands. The self-assessment and the libraries cost $0 today. The one paid item is the Gap Report, $299 through Stripe checkout on the gap report page, credited in full toward a Step 1 Diagnostic engagement. The Operator tier is shown on the pricing page as a plan. It is not on sale, and no price is listed for it. Separate services engagements, a fixed scope diagnostic read, an audit build, and a governance retainer, are scoped in conversation and have no standard list price. If your procurement process needs a priced product with a contract today, this is not yet that product.
 
 Who it fits: an individual or a small team at a regulated firm that wants to place one programme honestly on the ladder, read working control patterns for its own sector before committing budget, and build evidence in the open where its own engineers and auditors can inspect it. It also fits teams evaluating the larger platforms, because running the self-assessment first gives you a weakest control finding to test each vendor demo against.
 
@@ -1210,8 +1210,16 @@ Privacy. Autonomy Ladder is run by Kunjar Bhaduri, doing business as Autonomy La
 
 ## https://autonomy-ladder.io/terms
 
-Terms. These terms cover the Autonomy Ladder website and the open libraries, run by Kunjar Bhaduri, doing business as Autonomy Ladder, in Dallas, Texas. The six libraries are public and permissively licensed under the license in each repository; they are reference implementations, not deployed production controls. No subscription is on sale on this site today: there is no account and no card; the one paid item, the Scored Diagnostic + Board Brief, is sold through a Stripe payment link on the pricing page at $49, one time, credited in full toward a Step 1 Diagnostic engagement; Operator is named as a plan, no price is stated for it, and it is not on sale; the self-score and libraries are free. Paid engagements are governed by their own written agreement, including what they include, what they cost, and their refund and liability terms; this page does not set those terms. Autonomy Ladder is a common-law mark of Kunjar Bhaduri. These terms are governed by Texas law. Contact kunjar@northtexascapitalinvestments.com. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
+Terms. These terms cover the Autonomy Ladder website and the open libraries, run by Kunjar Bhaduri, doing business as Autonomy Ladder, in Dallas, Texas. The six libraries are public and permissively licensed under the license in each repository; they are reference implementations, not deployed production controls. No subscription is on sale on this site today: there is no account and no card; the one paid item, the Gap Report, is sold through Stripe checkout on the gap report page at $299, one time, credited in full toward a Step 1 Diagnostic engagement; Operator is named as a plan, no price is stated for it, and it is not on sale; the self-score and libraries are free. Paid engagements are governed by their own written agreement, including what they include, what they cost, and their refund and liability terms; this page does not set those terms. Autonomy Ladder is a common-law mark of Kunjar Bhaduri. These terms are governed by Texas law. Contact kunjar@northtexascapitalinvestments.com. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
 
 ## https://autonomy-ladder.io/security
 
 Security. This site is static files served on Cloudflare. There is no application server behind it, no user account, and no card data collected on this site. The diagnostic self-score runs in the browser. Six pattern libraries are public and permissively licensed; archived copies carry Zenodo DOIs listed on the libraries page. Send vulnerability reports about this site to kunjar@northtexascapitalinvestments.com, with enough detail to reproduce the problem, and give us a reasonable chance to fix it before publishing the details. Not legal advice, not a certification or audit opinion, and no guarantee of regulatory compliance.
+
+## Gap Report (https://autonomy-ladder.io/gap-report)
+
+Know what an examiner will ask about your AI agents, and what record answers it.
+Answer fifteen questions for your type of firm. You get your tier free. The full report names every gap, the questions a regulator, auditor or diligence team will ask about it, the records that answer them, and a 90-day plan to move up one rung.
+$299, one time. Credited in full toward a Step 1 Diagnostic. About eight minutes. No account.
+Contents: gap register; examiner questions and evidence; 90-day plan; regulatory clock checked against primary sources; ten AI vendor due diligence questions; board summary and evidence index.
+Seven verticals: banks and credit unions, lenders, payments, wealth managers and private funds, broker-dealers, real estate, and insurers and health payers.

@@ -220,9 +220,36 @@ export async function handleLeads(request, env, ctx) {
   );
 }
 
+// Paths served by the private Gap Report engine (linus10x/autonomy-ladder-platform,
+// saas/report-engine) through the REPORT_ENGINE service binding. The report
+// content and scoring never live in this public repository.
+export function isEnginePath(pathname) {
+  const p = pathname.replace(/\/$/, "");
+  return p === "/api/gap-report" || p.startsWith("/api/gap-report/") || p === "/gap-report/view" || p === "/api/stripe/webhook";
+}
+
+function engineDown(pathname) {
+  if (pathname.startsWith("/api/")) {
+    return bad(503, "The Gap Report is briefly unavailable. Please try again in a few minutes or email kunjar@northtexascapitalinvestments.com.");
+  }
+  return new Response(
+    "<!doctype html><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Gap Report</title><p style='font:16px system-ui;max-width:560px;margin:48px auto;padding:0 16px'>Your report is briefly unavailable. Please reload in a few minutes. If you paid and it does not appear, email kunjar@northtexascapitalinvestments.com with the address in your browser bar.</p>",
+    { status: 503, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } },
+  );
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (isEnginePath(url.pathname)) {
+      const svc = env && env.REPORT_ENGINE;
+      if (!svc || typeof svc.fetch !== "function") return engineDown(url.pathname);
+      try {
+        return await svc.fetch(request);
+      } catch {
+        return engineDown(url.pathname);
+      }
+    }
     if (url.pathname === "/api/leads") {
       if (request.method === "POST") {
         return handleLeads(request, env, ctx);
