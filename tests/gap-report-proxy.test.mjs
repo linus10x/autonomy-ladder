@@ -22,4 +22,6 @@ r = await worker.fetch(new Request("https://autonomy-ladder.io/api/gap-report", 
 assert.equal(r.status, 503); assert.match((await r.json()).error, /briefly unavailable/);
 r = await worker.fetch(new Request("https://autonomy-ladder.io/gap-report/view?id=x"), { ...down, REPORT_ENGINE: { fetch: async () => { throw new Error("x"); } } }, {});
 assert.equal(r.status, 503); assert.match(await r.text(), /briefly unavailable/);
+for (const h of ["x-robots-tag", "x-frame-options", "content-security-policy", "x-content-type-options"]) assert.ok(r.headers.get(h), "fallback header " + h);
+assert.equal(r.headers.get("cache-control"), "no-store");
 console.log("gap report proxy: all tests passed");

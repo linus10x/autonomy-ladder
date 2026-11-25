@@ -234,7 +234,18 @@ function engineDown(pathname) {
   }
   return new Response(
     "<!doctype html><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Gap Report</title><p style='font:16px system-ui;max-width:560px;margin:48px auto;padding:0 16px'>Your report is briefly unavailable. Please reload in a few minutes. If you paid and it does not appear, email kunjar@northtexascapitalinvestments.com with the first 8 characters of your report ID and the email you paid with. Please do not send the full link.</p>",
-    { status: 503, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } },
+    {
+      status: 503,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-store",
+        "x-robots-tag": "noindex",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      },
+    },
   );
 }
 

@@ -150,7 +150,9 @@ fieldset.q .prompt{display:block}
   var $=function(id){return document.getElementById(id);};
   function ev(n){try{if(window.alCollect)window.alCollect(n);}catch(e){}}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-  function utm(){try{return JSON.parse(sessionStorage.getItem("al_utm")||"{}")||{};}catch(e){return {};}}
+  // Only tags already reduced to the collector vocabulary by /assets/collect.js
+  // are sent; the engine enforces the same allowlist again.
+  function utm(){try{var t=window.alCollectTest&&window.alCollectTest.tags;return t?{utm_source:t.utm_source||"",utm_medium:t.utm_medium||"",utm_campaign:t.utm_campaign||""}:{};}catch(e){return {};}}
   function fail(msg){$("err").textContent=msg;}
   function say(msg){var s=$("status");s.textContent="";setTimeout(function(){s.textContent=msg;},50);}
   function setGo(on,label){var g=$("go");g.setAttribute("aria-disabled",on?"false":"true");if(label)g.textContent=label;}
@@ -182,9 +184,10 @@ fieldset.q .prompt{display:block}
 
   function showPreview(d){
     var p=d.preview;
-    var terms='<p class="sub" id="buy-terms">By paying you agree to the <a href="/terms">terms</a>: $299 one time; your report opens right after payment and your Stripe receipt carries its private link, which anyone holding it can open, so keep it private; full refund within 30 days of purchase; the amount you paid is credited toward a Step 1 Diagnostic; self-assessed reference material, not legal advice. How we handle your data: <a href="/privacy">privacy</a>.</p>';
+    var terms='<p class="sub" id="buy-terms">By paying you agree to the <a href="/terms">terms</a>: $299 one time; your report opens right after payment and your Stripe receipt carries its private link, which anyone holding it can open, so keep it private; full refund within 30 days of purchase, after which the report link stops working; the amount you paid is credited toward a Step 1 Diagnostic; self-assessed reference material, not legal advice. How we handle your data: <a href="/privacy">privacy</a>.</p>';
     var h='<div class="result"><h2 id="result-h" tabindex="-1">Your tier ('+esc(p.vertical_label)+')</h2>'+
       '<div class="tierline"><span class="t">'+esc(p.tier)+'</span><span class="n">'+esc(p.tier_name)+'</span><span class="s">'+esc(p.score)+' / 60</span></div>'+
+      (p.na_count?'<p class="sub">'+esc(p.na_count)+' control'+(p.na_count>1?'s were':' was')+' marked not applicable and left out. The score is scaled to 60 from the controls that apply and rounded down, never up.</p>':'')+
       '<p class="plain"><b>What holds it down:</b> '+esc(p.binding.join(", "))+'.</p>'+
       '<p class="plain"><b>'+esc(p.gap_count)+' controls are below the top level.</b> The first three to work on: '+esc(p.gap_titles.join("; "))+'.</p>'+
       '<p class="plain">The full report gives each of the '+esc(p.gap_count)+' gaps the likely questions a reviewer will ask and the records that answer them, plus your 90-day plan, regulatory clock, vendor questions, evidence index and board summary.</p>'+
