@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Governance Gap Report | Autonomy Ladder</title>
-<meta name="description" content="Fifteen controls for your vertical, the questions an examiner will ask about your AI agents, the records that answer them, and a 90-day plan. $299.">
+<meta name="description" content="Fifteen controls for your firm type, the likely questions an examiner, auditor or diligence team will ask about your AI agents, and a 90-day plan. $299.">
 <link rel="canonical" href="https://autonomy-ladder.io/gap-report">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Autonomy Ladder">
 <meta property="og:title" content="AI Governance Gap Report | Autonomy Ladder">
-<meta property="og:description" content="The questions an examiner or diligence team will ask about your AI agents, and the records that answer them. Free tier preview, full report $299.">
+<meta property="og:description" content="Likely questions an examiner, auditor or diligence team will ask about your AI agents, and the records that answer them. Free tier preview, full report $299.">
 <meta property="og:url" content="https://autonomy-ladder.io/gap-report">
 <meta property="og:image" content="https://autonomy-ladder.io/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -19,14 +19,14 @@
 <meta property="og:image:alt" content="Autonomy Ladder social card: regulated-operations AI governance, levels A0 Informational through A4 Production Autonomous.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Governance Gap Report | Autonomy Ladder">
-<meta name="twitter:description" content="The questions an examiner or diligence team will ask about your AI agents, and the records that answer them. Free tier preview, full report $299.">
+<meta name="twitter:description" content="Likely questions an examiner, auditor or diligence team will ask about your AI agents, and the records that answer them. Free tier preview, full report $299.">
 <meta name="twitter:image" content="https://autonomy-ladder.io/assets/og.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Autonomy Ladder Gap Report",
-  "description": "AI governance gap report for financial firms: fifteen controls for your vertical, examiner questions and evidence for each gap, a 90-day plan, a regulatory clock checked against primary sources, AI vendor due diligence questions and a board summary.",
+  "description": "AI governance gap report for financial firms: ten controls shared by every financial firm plus five for your vertical, likely examiner, auditor and diligence questions with the records that answer them for each gap, a 90-day plan for the first three gaps, a regulatory clock filtered to your vertical and the places you select, AI vendor due diligence questions, an evidence index and a board summary.",
   "url": "https://autonomy-ladder.io/gap-report",
   "offers": {
     "@type": "Offer",
@@ -39,25 +39,33 @@
 </script>
 <style>
 .steps{counter-reset:s}
-fieldset{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 18px;margin:0 0 14px}
+fieldset{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 18px;margin:0 0 14px;min-width:0}
 legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17px;padding:0 6px}
-.q{border-top:1px solid var(--line);padding:14px 0 6px}.q:first-of-type{border-top:0}
-.q p{margin:0 0 8px;font-weight:600;color:var(--navy);font-size:15.5px}
-.q .area{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-ink);font-weight:700;margin-bottom:4px}
-.opt{display:flex;gap:10px;align-items:flex-start;padding:7px 8px;border-radius:8px;cursor:pointer;font-size:14.5px;color:#33415a}
-.opt:hover{background:#f4f1e8}.opt input{margin-top:4px;flex:none}
+fieldset.q{border:0;border-top:1px solid var(--line);border-radius:0;padding:14px 0 6px;margin:0;background:transparent}
+fieldset.q:first-child{border-top:0}
+fieldset.q legend{font-family:inherit;font-size:15.5px;font-weight:600;color:var(--navy);padding:0;margin:0 0 8px;float:left;width:100%}
+fieldset.q legend + *{clear:both}
+fieldset.q .area{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-ink);font-weight:700;margin-bottom:4px}
+fieldset.q .prompt{display:block}
+.opt{display:flex;gap:10px;align-items:flex-start;min-height:44px;box-sizing:border-box;padding:10px 8px;border-radius:8px;cursor:pointer;font-size:14.5px;color:#33415a}
+.opt:hover{background:#f4f1e8}.opt input{margin-top:3px;flex:none;width:18px;height:18px}
+.opt.na span{color:var(--muted)}
 .verts{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:640px){.verts{grid-template-columns:1fr}}
-.vert{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;cursor:pointer}.vert b{display:block;color:var(--navy)}.vert span{font-size:13px;color:var(--muted)}
+.vert{border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;box-sizing:border-box;display:flex;gap:10px;cursor:pointer}.vert b{display:block;color:var(--navy)}.vert span{font-size:13px;color:var(--muted)}
+.vert input{width:18px;height:18px;flex:none}
 .vert:has(input:checked){border-color:var(--gold);background:#fbf6ea}
-.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:10px;padding:13px 20px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none}
-.btn[disabled]{opacity:.55;cursor:not-allowed}.btn.gold{background:var(--gold-ink)}
+.btn{display:inline-block;min-height:44px;box-sizing:border-box;background:var(--navy);color:#fff;border:0;border-radius:10px;padding:13px 20px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed}.btn.gold{background:var(--gold-ink)}
 .prog{position:sticky;top:0;background:var(--bg);padding:8px 0;font-size:13px;color:var(--muted);z-index:2}
 .result{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;background:#fff;padding:20px}
+.result h2{font:700 20px Georgia,serif;color:var(--navy);margin:0 0 8px}.result h2:focus{outline:2px solid var(--gold-ink);outline-offset:4px}
 .tierline{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.tierline .t{font:700 56px/1 Georgia,serif;color:var(--navy)}.tierline .n{font:700 22px Georgia,serif;color:var(--navy)}.tierline .s{color:var(--gold-ink);font-weight:700}
-.lock li{margin:6px 0}.err{color:#9b1c1c;font-weight:600}
+.lock li{margin:6px 0}.err{color:#9b1c1c;font-weight:600}.err:empty{display:none}
 .sample{background:#fff;border:1px dashed var(--gold);border-radius:12px;padding:14px 16px;font-size:14.5px}
+.sample ul{margin:4px 0 8px;padding-left:20px}
 .sub{font-size:13px;color:var(--muted)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 </style>
 </head>
 <body>
@@ -77,28 +85,34 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
   <main id="main-content">
     <div class="hero">
       <p class="kicker">Gap Report</p>
-      <h1>Know what an examiner will ask about your AI agents, and what record answers it.</h1>
-      <p class="lede">Answer fifteen questions for your type of firm. You get your tier free. The full report names every gap, the questions a regulator, auditor or diligence team will ask about it, the records that answer them, and a 90-day plan to move up one rung.</p>
-      <p class="plain"><b>$299, one time.</b> Credited in full toward a Step 1 Diagnostic. Full refund within 30 days if it is not useful to you. About eight minutes. No account.</p>
+      <h1>Know what an examiner is likely to ask about your AI agents, and which record answers it.</h1>
+      <p class="lede">Answer fifteen questions: ten on controls shared by every financial firm and five specific to your vertical. You get your tier free. The full report lists each gap, the likely questions an examiner, auditor or diligence team will ask about it, the records that answer them, and a 90-day plan of priority actions for your first three gaps.</p>
+      <p class="plain"><b>$299, one time.</b> The amount you paid is credited in full toward a Step 1 Diagnostic engagement. Full refund within 30 days of purchase if it is not useful to you. About eight minutes. No account.</p>
     </div>
 
     <section id="whats-in">
       <span class="sec-label">What the full report contains</span>
       <h2 class="sec-title">Built for the person who has to answer for the program</h2>
       <div class="cards">
-        <article class="card"><h3>Gap register</h3><p>Every control below the top level, in the order to fix it. Your answer, what the next level requires, why it matters for your vertical, and the rules that make it matter.</p></article>
-        <article class="card"><h3>Examiner questions and evidence</h3><p>For each gap, the questions an examiner, internal auditor or PE diligence team will ask, and the named records that answer them.</p></article>
-        <article class="card"><h3>90-day plan</h3><p>Thirty, sixty and ninety day actions for your first three gaps, sized to move each one up a level.</p></article>
-        <article class="card"><h3>Regulatory clock</h3><p>Dated rule changes for your vertical and jurisdictions, checked against primary sources. For example, the EU AI Act high-risk dates moved to December 2, 2027 and Colorado's AI law takes effect January 1, 2027.</p></article>
+        <article class="card"><h3>Gap register</h3><p>Every control below the top level, in the order to work on it. Your answer, what the next level requires, why it matters for your vertical, and the rules that make it matter.</p></article>
+        <article class="card"><h3>Likely questions and evidence</h3><p>For each gap, the likely questions an examiner, auditor or diligence team will ask, and the records that answer them.</p></article>
+        <article class="card"><h3>90-day plan</h3><p>Priority actions at thirty, sixty and ninety days for your first three gaps.</p></article>
+        <article class="card"><h3>Regulatory clock</h3><p>Dated rule changes, checked against primary sources on November 25, 2026, and filtered to your vertical and the places you select. For example, EU AI Act obligations for Annex III high-risk systems, which include creditworthiness assessment and life and health insurance pricing, apply from December 2, 2027. Colorado's AI law (SB 26-189) takes effect January 1, 2027.</p></article>
         <article class="card"><h3>AI vendor questions</h3><p>Ten due diligence questions to send every vendor whose model sits in a consequential decision.</p></article>
-        <article class="card"><h3>Board summary and evidence index</h3><p>A one-page summary for the board or investment committee, and a checklist of every record a reviewer will ask for.</p></article>
+        <article class="card"><h3>Board summary and evidence index</h3><p>A summary for the board or investment committee showing what it takes to reach the next rung, and an index of the records a reviewer may ask for.</p></article>
       </div>
-      <p class="plain" style="margin-top:16px">Seven verticals: banks and credit unions, lenders, payments, wealth managers and private funds, broker-dealers, real estate, and insurers and health payers. Every control is specific to that vertical, not a generic maturity quiz.</p>
-      <div class="sample" aria-label="Sample from a report">
-        <span class="sec-label">Sample, from a bank's report</span>
-        <p><b>Non-overridable veto, level 0 of 4.</b> Your answer: the AI's output is committed as written. Next level: a check for some write classes.</p>
-        <p><b>Questions you should expect:</b> Where exactly does the veto sit between the agent and the system of record? Show the code path. How many writes did it block last month, and what happened to each one?</p>
-        <p class="sub">The full report gives every gap this treatment, with the records that answer each question.</p>
+      <p class="plain" style="margin-top:16px">Seven verticals: banks and credit unions, lenders, payments, wealth managers and private funds, broker-dealers, real estate, and insurers and health payers. Every report covers ten controls shared by every financial firm and five specific to your vertical. Where a vertical control applies only to some firms, you can mark it "Not applicable to us".</p>
+      <div class="sample" role="note" aria-labelledby="sample-h">
+        <span class="sec-label" id="sample-h">Illustrative sample</span>
+        <p class="sub">Written for this page to show the format. It is generic and is not taken from any firm's report.</p>
+        <p><b>Example control: stopping an agent.</b> Example answer: an agent can only be stopped by changing and redeploying its code. A stronger answer: a named person can pause the agent within minutes, and each pause is logged with who did it and why.</p>
+        <p><b>Example questions a reviewer might raise:</b></p>
+        <ul>
+          <li>Who has the authority to pause this agent today, and how would they reach it on a weekend?</li>
+          <li>When was a pause last tested, and where is the record of that test?</li>
+          <li>What happens to work the agent had started when it is paused?</li>
+        </ul>
+        <p class="sub">The full report gives each of your gaps this treatment, with the records that answer each question.</p>
       </div>
     </section>
 
@@ -106,8 +120,10 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
       <span class="sec-label">Start</span>
       <h2 class="sec-title">Your answers, your tier, free</h2>
       <noscript><p class="err">This assessment needs JavaScript. You can also email kunjar@northtexascapitalinvestments.com.</p></noscript>
+      <p class="err" id="restore" role="alert"></p>
+      <p class="sr-only" id="status" role="status" aria-live="polite"></p>
       <form id="gr" novalidate>
-        <fieldset><legend>1. Your firm</legend><div class="verts" id="verts"><p class="sub">Loading...</p></div></fieldset>
+        <fieldset><legend>1. Your firm: choose the type that fits best</legend><div class="verts" id="verts"><p class="sub">Loading...</p></div></fieldset>
         <fieldset><legend>2. Where you operate (optional)</legend><div id="juris"></div><p class="sub">Adds the dated rules for those places to your regulatory clock. Federal US rules are always included.</p></fieldset>
         <div id="qs" hidden>
           <div class="prog" id="prog" aria-live="polite"></div>
@@ -115,11 +131,11 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
           <fieldset><legend>4. Controls for <span id="vname"></span></legend><div id="vert"></div></fieldset>
         </div>
         <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <p><button class="btn" id="go" type="submit" disabled>See my tier (free)</button></p>
+        <p><button class="btn" id="go" type="submit" aria-disabled="true">See my tier (free)</button></p>
         <p class="err" id="err" role="alert"></p>
       </form>
       <div id="out" hidden></div>
-      <p class="sub">Answers are stored for 30 days so you can buy the full report, and kept with the report if you do. They are never sold or shared. See the <a href="/privacy">privacy page</a>. Self-assessment, not legal advice.</p>
+      <p class="sub">Your answers, firm type, jurisdictions and recognized campaign tags are stored on Cloudflare for 30 days so you can buy the full report. If you buy it, they are kept with the report until you ask us to delete them. They are not sold or shared for advertising. See the <a href="/privacy">privacy page</a> and the <a href="/terms">terms</a>. Self-assessment, not legal advice.</p>
     </section>
   </main>
   <footer>
@@ -129,63 +145,87 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
 <script>
 (function(){
   "use strict";
-  var F=null, vertical=null, answers={};
+  var F=null, vertical=null, answers={}, busy=false;
+  var BOOK="https://calendly.com/kunjarbhaduri/intro";
   var $=function(id){return document.getElementById(id);};
   function ev(n){try{if(window.alCollect)window.alCollect(n);}catch(e){}}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
   function utm(){try{return JSON.parse(sessionStorage.getItem("al_utm")||"{}")||{};}catch(e){return {};}}
   function fail(msg){$("err").textContent=msg;}
+  function say(msg){var s=$("status");s.textContent="";setTimeout(function(){s.textContent=msg;},50);}
+  function setGo(on,label){var g=$("go");g.setAttribute("aria-disabled",on?"false":"true");if(label)g.textContent=label;}
 
-  function qHtml(c,area){
-    return '<div class="q"><span class="area">'+esc(area||c.title)+'</span><p>'+esc(c.prompt)+'</p>'+c.options.map(function(o,i){
-      return '<label class="opt"><input type="radio" name="'+esc(c.id)+'" value="'+i+'"><span>'+esc(o)+'</span></label>';}).join("")+'</div>';
+  var qn=0;
+  function qHtml(c){
+    var pid="qp-"+(++qn), aid="qa-"+qn;
+    var opts=c.options.map(function(o,i){
+      return '<label class="opt"><input type="radio" name="'+esc(c.id)+'" value="'+i+'"><span>'+esc(o)+'</span></label>';}).join("");
+    if(c.applies_if){
+      opts+='<label class="opt na"><input type="radio" name="'+esc(c.id)+'" value="na"><span>'+esc("Not applicable to us (applies if "+c.applies_if+")")+'</span></label>';
+    }
+    return '<fieldset class="q"><legend><span class="area" id="'+aid+'">'+esc(c.area||c.title)+'</span><span class="prompt" id="'+pid+'">'+esc(c.prompt)+'</span></legend><div>'+opts+'</div></fieldset>';
   }
   function needed(){return F.core.length+(vertical?F.verticals[vertical].controls.length:0);}
+  function answered(){var n=0,k;for(k in answers)if(answers.hasOwnProperty(k))n++;return n;}
+  function ready(){return !!vertical&&answered()===needed();}
   function count(){
-    var n=0,k;for(k in answers)if(answers.hasOwnProperty(k))n++;
-    var need=needed();$("prog").textContent=n+" of "+need+" answered";
-    $("go").disabled=!(vertical&&n===need);
+    $("prog").textContent=answered()+" of "+needed()+" answered";
+    setGo(ready());
   }
   function pickVertical(v){
     vertical=v;answers={};
     $("vname").textContent=F.verticals[v].label.toLowerCase();
-    $("core").innerHTML=F.core.map(function(c){return qHtml(c);}).join("");
-    $("vert").innerHTML=F.verticals[v].controls.map(function(c){return qHtml(c);}).join("");
+    $("core").innerHTML=F.core.map(qHtml).join("");
+    $("vert").innerHTML=F.verticals[v].controls.map(qHtml).join("");
     $("qs").hidden=false;count();
   }
 
   function showPreview(d){
     var p=d.preview;
-    var h='<div class="result"><span class="sec-label">Your tier ('+esc(p.vertical_label)+')</span>'+
-      '<div class="tierline"><span class="t">'+esc(p.tier)+'</span><span class="n">'+esc(p.tier_name)+'</span><span class="s">'+p.score+' / 60</span></div>'+
+    var terms='<p class="sub" id="buy-terms">By paying you agree to the <a href="/terms">terms</a>: $299 one time; your report opens right after payment and your Stripe receipt carries its private link, which anyone holding it can open, so keep it private; full refund within 30 days of purchase; the amount you paid is credited toward a Step 1 Diagnostic; self-assessed reference material, not legal advice. How we handle your data: <a href="/privacy">privacy</a>.</p>';
+    var h='<div class="result"><h2 id="result-h" tabindex="-1">Your tier ('+esc(p.vertical_label)+')</h2>'+
+      '<div class="tierline"><span class="t">'+esc(p.tier)+'</span><span class="n">'+esc(p.tier_name)+'</span><span class="s">'+esc(p.score)+' / 60</span></div>'+
       '<p class="plain"><b>What holds it down:</b> '+esc(p.binding.join(", "))+'.</p>'+
-      '<p class="plain"><b>'+p.gap_count+' controls are below the top level.</b> The first three to work on: '+esc(p.gap_titles.join("; "))+'.</p>'+
-      '<p class="plain">The full report gives each of the '+p.gap_count+' gaps the questions a reviewer will ask and the records that answer them, plus your 90-day plan, regulatory clock, vendor questions, evidence index and board summary.</p>'+
-      (d.paid?'<p><a class="btn" href="/gap-report/view?id='+esc(d.id)+'">Open your report</a></p>':
-      '<p><button class="btn gold" id="buy" type="button">Get the full report, $'+d.price+'</button></p><p class="sub">Secure checkout by Stripe, by card or wallet. An invoice is issued for expensing. The report opens as soon as payment clears, and the receipt carries your link. <b>Full refund within 30 days if it is not useful to you, no questions asked.</b></p>')+
-      '<p class="err" id="berr" role="alert"></p><p class="sub">Prefer to talk first? <a href="https://calendly.com/kunjarbhaduri/intro" data-event="cta_book_gap">Book 15 minutes</a>.</p></div>';
-    $("out").innerHTML=h;$("out").hidden=false;$("gr").hidden=true;
-    $("out").scrollIntoView({behavior:"smooth",block:"start"});
+      '<p class="plain"><b>'+esc(p.gap_count)+' controls are below the top level.</b> The first three to work on: '+esc(p.gap_titles.join("; "))+'.</p>'+
+      '<p class="plain">The full report gives each of the '+esc(p.gap_count)+' gaps the likely questions a reviewer will ask and the records that answer them, plus your 90-day plan, regulatory clock, vendor questions, evidence index and board summary.</p>'+
+      (d.paid?'<p class="plain"><b>This report has been purchased.</b> Open it from the private link in your Stripe receipt. Lost it? Email kunjar@northtexascapitalinvestments.com from the address you paid with and we will resend it.</p>':
+      terms+'<p><button class="btn gold" id="buy" type="button" aria-describedby="buy-terms">Get the full report, $'+esc(d.price)+'</button></p><p class="sub">Secure checkout by Stripe, by card or wallet. <b>Full refund within 30 days of purchase if it is not useful to you, no questions asked.</b></p>')+
+      '<p class="err" id="berr" role="alert"></p><p class="sub">Prefer to talk first? <a href="'+BOOK+'" data-event="cta_book_gap">Book 15 minutes</a>.</p></div>';
+    $("out").innerHTML=h;$("out").hidden=false;$("gr").hidden=true;$("restore").textContent="";
+    var hd=$("result-h");try{hd.focus();}catch(e){}
+    say("Your tier is "+p.tier+" "+p.tier_name+", score "+p.score+" of 60.");
     var b=$("buy");if(b)b.addEventListener("click",function(){buy(d.id,b);});
   }
 
   function buy(id,b){
-    ev("al_gap_checkout_click");b.disabled=true;b.textContent="Opening checkout...";
+    if(b.getAttribute("aria-disabled")==="true")return;
+    ev("al_gap_checkout_click");b.setAttribute("aria-disabled","true");b.textContent="Opening checkout...";$("berr").textContent="";
     fetch("/api/gap-report/checkout",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id:id})})
-      .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
-      .then(function(x){if(x.ok&&x.j.url){location.href=x.j.url;}else{throw new Error(x.j.error||"Checkout is not available right now.");}})
-      .catch(function(e){b.disabled=false;b.textContent="Get the full report";$("berr").textContent=e.message+" You can also email kunjar@northtexascapitalinvestments.com.";});
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,status:r.status,j:j};});})
+      .then(function(x){
+        if(x.ok&&x.j.url){location.href=x.j.url;return;}
+        b.setAttribute("aria-disabled","false");b.textContent="Get the full report";
+        if(x.status===409){$("berr").textContent="This report has already been purchased. Open it from the private link in your Stripe receipt, or email kunjar@northtexascapitalinvestments.com.";return;}
+        if(x.status===503){$("berr").innerHTML='Checkout opens shortly. You can <a href="'+BOOK+'" data-event="cta_book_gap_503">book 15 minutes</a> in the meantime.';return;}
+        throw new Error(x.j.error||"Checkout is not available right now.");
+      })
+      .catch(function(e){b.setAttribute("aria-disabled","false");b.textContent="Get the full report";$("berr").textContent=e.message+" You can also email kunjar@northtexascapitalinvestments.com.";});
   }
 
   $("gr").addEventListener("change",function(e){
     var t=e.target;
     if(t.name==="vertical"){pickVertical(t.value);ev("al_gap_start");return;}
-    if(t.type==="radio"&&t.name!=="vertical"){answers[t.name]=Number(t.value);count();}
+    if(t.type==="radio"){answers[t.name]=t.value==="na"?"na":Number(t.value);count();}
   });
   $("gr").addEventListener("submit",function(e){
     e.preventDefault();fail("");
+    if(busy)return;
+    if(!ready()){
+      fail(vertical?"Please answer every question. "+answered()+" of "+needed()+" answered.":"Please choose your type of firm first.");
+      return;
+    }
     var juris=[].slice.call(document.querySelectorAll('input[name="juris"]:checked')).map(function(x){return x.value;});
-    $("go").disabled=true;$("go").textContent="Scoring...";
+    busy=true;setGo(false,"Scoring...");say("Scoring your answers.");
     fetch("/api/gap-report",{method:"POST",headers:{"content-type":"application/json"},
       body:JSON.stringify({vertical:vertical,juris:juris,answers:answers,utm:utm(),website:$("gr").website.value})})
       .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
@@ -194,12 +234,17 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
         try{history.replaceState(null,"","/gap-report?id="+x.j.id);}catch(e){}
         ev("al_gap_scored_"+String(x.j.preview.tier).toLowerCase());showPreview(x.j);
       })
-      .catch(function(err){$("go").disabled=false;$("go").textContent="See my tier (free)";fail(err.message);});
+      .catch(function(err){busy=false;setGo(ready(),"See my tier (free)");fail(err.message);});
   });
 
+  var EXPIRED="That saved result has expired. Please retake the assessment.";
   var id=new URLSearchParams(location.search).get("id");
-  if(id&&/^[a-f0-9]{32}$/.test(id)){
-    fetch("/api/gap-report/preview?id="+id).then(function(r){return r.json();}).then(function(j){if(j.ok)showPreview(j);}).catch(function(){});
+  if(id!==null){
+    if(/^[a-f0-9]{32}$/.test(id)){
+      fetch("/api/gap-report/preview?id="+id).then(function(r){return r.json();})
+        .then(function(j){if(j&&j.ok)showPreview(j);else throw 0;})
+        .catch(function(){$("restore").textContent=EXPIRED;});
+    }else{$("restore").textContent=EXPIRED;}
   }
   fetch("/api/gap-report/form").then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(f){
     F=f;
@@ -207,7 +252,7 @@ legend{font-family:Georgia,serif;font-weight:700;color:var(--navy);font-size:17p
       return '<label class="vert"><input type="radio" name="vertical" value="'+esc(k)+'"><span><b>'+esc(v.label)+'</b><span>'+esc(v.blurb)+'</span></span></label>';}).join("");
     $("juris").innerHTML=Object.keys(f.jurisdictions).map(function(k){
       return '<label class="opt"><input type="checkbox" name="juris" value="'+esc(k)+'"><span>'+esc(f.jurisdictions[k])+'</span></label>';}).join("");
-  }).catch(function(){$("verts").innerHTML='<p class="err">The assessment could not load. Please reload, or email kunjar@northtexascapitalinvestments.com.</p>';});
+  }).catch(function(){$("verts").innerHTML='<p class="err" role="alert">The assessment could not load. Please reload, or email kunjar@northtexascapitalinvestments.com.</p>';});
 })();
 </script>
 <script src="/assets/collect.js" defer></script>
